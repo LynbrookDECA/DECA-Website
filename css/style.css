@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+body {
+  background: whitesmoke;
+  position: relative;
+  line-height: 1.5;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+h3 span {
+  color: #286090;
+}
+
+.jumbotron {
+  border-radius: 0px;
+  background: #5fb3ce;
+  margin-bottom: 0;
+}
+
+.jumbotron button {
+  margin-top: 10px;
+}
+
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid #c1e1ec;
+}
+
+#web-development,
+#mobile-development {
+  padding-bottom: 0;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+.col-md-3 .nav {
+  background: #1F3A93;
+}
+
+.col-md-3 .nav a {
+  color: whitesmoke;
+  font-size:125%;
+
+}
+
+.col-md-3 .nav li a:hover,
+.col-md-3 .nav li a:focus {
+  background: #3366FF;
+}
+
+.col-md-3 .nav .active {
+  font-weight: bold;
+  background: #2E5CE6;
+}
+
+.col-md-3 .nav .nav {
+  display: none;
+}
+
+.col-md-3 .nav .active .nav {
+  display: block;
+}
+
+.col-md-3 .nav .nav a {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.col-md-3 .nav .nav span {
+  margin: 0 5px 0 2px;
+}
+
+.col-md-3 .nav .nav .active a,
+.col-md-3 .nav .nav .active:hover a,
+.col-md-3 .nav .nav .active:focus a {
+  font-weight: bold;
+  padding-left: 30px;
+  border-left: 5px solid #CDCDCD;
+}
+
+.col-md-3 .nav .nav .active span,
+.col-md-3 .nav .nav .active:hover span,
+.col-md-3 .nav .nav .active:focus span {
+  display: none;
+}
+
+.application {
+  border-top: 1px solid #c1e1ec;
+}
+
+.affix-top {
+  position: relative;
+}
+
+.affix {
+  top: 100px;
+}
+
+.affix, 
+.affix-bottom {
+    width: 213px;
+}
+
+.affix-bottom {
+  position: absolute;
+}
+
+footer {
+  border-top: 1px solid #c1e1ec;
+  height: 50px;
+}
+
+footer p {
+  line-height: 50px;
+  margin-bottom: 0;
+}
+
+@media (min-width:1200px) {
+  .affix, 
+  .affix-bottom {
+    width: 263px;
+  }
+}
+
+

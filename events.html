@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Lynbrook DECA</title>
+
+  <script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/design.css">
+
+  <script src="js/modernizr.js"></script> 
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+<script>
+  var config = {
+      apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
+      authDomain: "lynbrook-deca.firebaseapp.com",
+      databaseURL: "https://lynbrook-deca.firebaseio.com",
+      storageBucket: "lynbrook-deca.appspot.com",
+      messagingSenderId: "105997057044"
+    };
+    firebase.initializeApp(config);
+</script>
+
+
+</head>
+
+<body>
+
+  <body data-spy="scroll" data-target=".scrollspy">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" style= "padding-bottom:1.3vw" id = "heightOfnav" >
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <button type="button" style = "color: gray !important" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar" ></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <!-- <div id="navbarlogo" style="display:inline-block;">
+                  <a href ="javascript:harlem()"><img src="img/favico.png" height="30px" /></a>
+                </div> -->
+
+                <a class="navbar-brand page-scroll" href="index.html">Lynbrook DECA</a>
+
+
+
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" >
+                  <li class="hidden" style = "color: gray">
+                    <a href="#page-top"></a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="index.html" style = "color: gray" >Home</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="about.html" style = "color: gray" >About</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="calendar.html" style = "color: gray">Calendar</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll active" href="events.html" >Events</a>
+                  </li>
+                  <li>
+                        <a class="page-scroll" href="conferences.html" style = "color: gray">Conferences</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="alumni.html" style=" border-right:1px solid gray;height:50px; color:gray">Alumni</a>
+                    </li>
+
+
+                  <li style="margin-top: -6px; margin-right: -10px">
+                    <a><button type="button" class="btn btn-default navbtn page-scroll signbutton" onclick="window.location='signup.html';" >SIGN UP</button></a>
+                  </li>
+                  <li style="margin-top: -6px; margin-right: ">
+                    <a><button type="button" class="btn btn-default navbtn page-scroll logbutton" onclick="window.location='login.html';" >LOG IN</button></a>
+                 <!--  </li>
+                  <li style = "margin-top:15px">
+                      <ul class="user-menu">
+                        <li class="dropdown pull-right">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><span class ="user-name"> User </span><span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu" style ="margin-top:20px">
+                            <li style ="padding-top:0"><a href="dashboard/dashboard.html"><span class="glyphicon glyphicon-bookmark"></span> Dashboard</a></li>
+                            <li style ="padding-top:0" ><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Edit My Profile</a></li>
+                            <li style ="padding-top:0"><a href="#" id="logout-button"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+                          </ul>
+
+                        </li>
+                      </ul>
+                    </li> -->
+                  </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+          </nav> 
+
+          <div class="fixed-background background-about" style = "min-height: 50vh !important; ">
+            <h2>
+              <span >About Us</span>
+            </h2>
+          </div>
+          <div class="scrolling-line line-color"></div>
+
+        <!-- <div class="fixed-background-conferences-top fixed-background">
+          <h1>
+            <span>Events</span>
+          </h1>
+        </div> -->
+        
+
+
+
+
+        <div class="container">
+          <div class="row">
+
+           <div class="col-md-3 scrollspy">
+            <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix" style="margin-left:-20px;margin-right:20px">
+              <li><a href="#selection" style = "color:white">Event Selection</a></li>
+              <li><a href="#roleplay">Roleplay Events</a>
+                <ul class="nav">
+                  <li><a href="#principle"><span class="fa fa-angle-double-right"></span>Principles</a></li>
+                  <li><a href="#tdm"><span class="fa fa-angle-double-right"></span>Team Decision Making</a></li>
+                  <li><a href="#individual"><span class="fa fa-angle-double-right"></span>Individual Series</a></li>
+                </ul>
+              </li>
+              <li><a href="#written">Written Events</a>
+                <ul class="nav">
+                  <li><a href="#bor"><span class="fa fa-angle-double-right"></span>Business Operations Research</a></li>
+                  <li><a href="#chapter"><span class="fa fa-angle-double-right"></span>Chapter Team</a></li>
+                  <li><a href="#entrepreneurship"><span class="fa fa-angle-double-right"></span>Entrepreneurship</a></li>
+                  <li><a href="#mre"><span class="fa fa-angle-double-right"></span>Marketing Representative</a></li>
+                  <li><a href="#pse"><span class="fa fa-angle-double-right"></span>Professional Selling</a></li>
+                </ul>
+              </li>
+              <li><a href="#online">Online Events</a>
+                <ul class="nav">
+                  <li><a href="#smg"><span class="fa fa-angle-double-right"></span>Stock Market Game</a></li>
+                  <li><a href="#vbc"><span class="fa fa-angle-double-right"></span>Virtual Business Challenge</a></li>
+                </ul>
+              </li>
+              <li><a href="#video">Video Challenges</a>
+                <ul class="nav">
+                  <li><a href="#idea"><span class="fa fa-angle-double-right"></span>DECA Idea Challenge</a></li>
+                  <li><a href="#fidm"><span class="fa fa-angle-double-right"></span>FIDM Challenge</a></li>
+                  <li><a href="#herff"><span class="fa fa-angle-double-right"></span>Herff Jones Challenge</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-9">
+            <section id="selection">
+              <h2><span class="fa fa-edit"></span> Event Selection</h2>
+              <p>In DECA, there are two main types of events: roleplays and written events. Roleplays are similar to interviews or business consultations, where members are the interviewee or the business professional, and the judge is either interviewing members or seeking their help. On the other hand, written events are pre-prepared written components and presentations in which members must create an advertising plan, come up with a new business idea, or think of ways to improve existing businesses (there are more variations to this depending on the event selected).
+              </p>
+              <p>One of the most important moments in DECA is choosing the right events. Members are allowed to compete at conferences with <strong>ONE</strong> written event and <strong>ONE</strong> roleplay event. We highly recommend that members participate in one of each type to maximize their chances of placing at a conference. Additionally, members may take part in as many online events and video challenges as they would like for extra awards and more chances to place for the international conference.
+              </p>
+              <a href="https://www.deca.org/high-school-programs/high-school-competitive-events/" target="_blank"><button type="button" class="btn btn-primary">Learn More about DECA Events</button></a>
+            </section><!--end of #web-design-->
+
+            <section id="roleplay">
+              <h2><span class="fa fa-edit"></span> Roleplay Events</h2>
+              <p>In roleplays, a situation will be presented to members when they arrive at their event (no knowledge of prompt before they walk in), and they will have a short amount of time to prepare their response based on a given prompt and a set of indicators. The type of prompt and the content involved will differ based on the type of roleplay as well as the event itself. Soon after, members must present what they have come up with to their judge for approximately 10 minutes and answer any questions the judge may pose. When competing in roleplays, members must also take a test that will count for approximately 40% of their overall score.
+              </p>
+              <p><span style="font-weight:600">There are three types of roleplay events:<span>
+                <ul class="shifted-bullet">
+                  <li>Principles Events</li>
+                  <li>Individual Series Events</li>
+                  <li>Team Decision Making Events</li>
+                </ul>
+              </p>
+
+              <section id="principle">
+                <h3>Principles Events</h3>
+                <p>DECA's Principles Events measure members' proficiency in basic business concepts within all aspects of business, such as marketing, finance, business administration, emotional intelligence, etc. All members are tested through an interview situation with 10 minutes of preparation time, where members are interviewing for a position at the judge's company. Furthermore, these events are only open for first-year DECA members, so <strong>we highly recommend that all first-year members participate in a Principles Event for their roleplay</strong>, as they will then be competing against others with a similar level of experience.
+                </p>
+                <table class="event-table" border= "1">
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Participants</th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Exam</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Principles of Business Management and Administration (PBM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on structure and operation of business</li>
+                        <li>Covers basics of areas such as Human Resources Management, Operations Management, and Administrative Services</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Business Admin Core Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Principles of Finance (PFN)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on financial sector of business</li>
+                        <li>Covers basics of areas such as Accounting, Business Finance, and Investments</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Business Admin Core Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Principles of Hospitality and Tourism (PHT)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on customer interaction and accomodation</li>
+                        <li>Covers areas such as Tourism/Travel, Hotels and Lodging</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Business Admin Core Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Principles of Marketing (PMK)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing sector of business</li>
+                        <li>Covers areas such as Marketing Communication, Merchandising, and Professional Selling</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Business Admin Core Exam</td>
+                  </tr>
+                </table>
+                <button type="button" value="Open Window" class="btn btn-primary" style="margin-top:15px"  onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_PBA_Guidelines1.pdf')">Learn More about Principles</button>
+              </section><!--end of #ruby-->
+
+              <section id="tdm">
+                <h3>Team Decision Making Events</h3>
+                <p>DECA's TDM Events test members on both conceptual knowledge as well as team dynamics. All teams are tested through some form of corporate interaction, where teams are given a prompt with 30 minutes of preparation time and asked for their opinion as per what to do based on the given situation. The judge is their client who evaluates them based on content presented, style and clarity of presentation, as well as team dynamics between the partners. Members must also take an exam (depends on the event selected), and the average of both partners' scores will be taken as a team exam score.
+                </p>
+                <table class="event-table" border= "1">
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Participants</th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Exam</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Business Law and Ethics TDM (BLTDM)</td>
+                    <td style="text-align:center">Team of 2</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on business law and ethical practices</li>
+                        <li>Covers areas such as Contracts, Product Liablility, and Business Ownership</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Business Management Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Buying and Merchandising TDM (BTDM)</td>
+                    <td style="text-align:center">Team of 2</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on customer interaction and products</li>
+                        <li>Covers areas such as Customer Service, Product Display, and Forecasting</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Financial Services TDM (FTDM)</td>
+                    <td style="text-align:center">Team of 2</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on financial analysis and services</li>
+                        <li>Covers areas such as Financial Statements, Financial Management Decisions, Data Interpretation</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Finance Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Hospitality Services TDM (HTDM)</td>
+                    <td style="text-align:center">Team of 2</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing and management functions in lodging services</li>
+                        <li>Covers areas such as Customer Service, Hotel Management, and Lodging Services</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Hospitality/Tourism Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Marketing Communications TDM (MTDM)</td>
+                    <td style="text-align:center">Team of 2</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing and business communication</li>
+                        <li>Covers areas such as Market Interaction, Information Management, and Professional Selling</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Sports and Entertainment Marketing TDM (STDM)</td>
+                    <td style="text-align:center">Team of 2</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing related to sports/entertainment industry</li>
+                        <li>Covers areas such as Event Marketing, Professional Selling, and Cultural Promotions</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Travel and Tourism TDM (TTDM)</td>
+                    <td style="text-align:center">Team of 2</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing and management functions regarding tourism industry</li>
+                        <li>Covers areas such as Passenger Transportation, Arranging Tours, and Travel Services</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Hospitality/Tourism Cluster Exam</td>
+                  </tr>
+                </table>
+                <button type="button" value="Open Window" class="btn btn-primary" style="margin-top:15px"  onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_TDM_Guidelines1.pdf')">Learn More about TDMs</button>
+              </section><!--end of #python-->
+
+              <section id="individual">
+                <h3>Individual Series Events</h3>
+                <p>DECA's Individual Series Events test members on both conceptual knowledge as well as thinking quickly under a time constraint. Members are given a prompt with 10 minutes of preparation time and asked for their opinion as per what to do based on the given situation. The judge is their client/boss who evaluates them based on content presented and style/clarity of presentation. Members must also take an exam (depends on the event selected), the score of which count towards 40% of the overall event score.
+                </p>
+                <table class="event-table" border= "1" >
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Participants</th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Exam</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Accounting Applications (ACT)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on financial calculations and data analysis</li>
+                        <li>Covers areas relating to Accounting, Financial Documents, and Business Mathematics</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Finance Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Apparel and Accessories Marketing (AAM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing in the clothing industry</li>
+                        <li>Covers areas relating to Retail Stores, Wholesale Operations, and Customer Service</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Automotive Services Marketing (ASM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing within automotive industry</li>
+                        <li>Covers areas relating to Auto Dealers, Service Stations, and Auto Parts</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Business Finance (BFS)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on high level financial and business calculation/planning</li>
+                        <li>Covers areas such as Corporate Planning, Financial Documents, and Business Mathematics</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Finance Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Business Services Marketing (BSM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing services to clients</li>
+                        <li>Covers areas such as Marketing, Providing Services, and Contracts</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Food Marketing (FMS)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing in the food industry</li>
+                        <li>Covers areas such as Manufacturing, Food Regulation, and Retail/Wholesale establishments</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Hotel and Lodging Management (HLM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing involving hotels, motels, etc.</li>
+                        <li>Covers areas such as Housing, Legal Regulations, and Customer Satisfaction</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Hospitality/Tourism Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Human Resources Management (HRM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on management functions within businesses</li>
+                        <li>Covers areas such as Recruitment/Staffing, Employee Regulations, and Safety</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Business Management Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Marketing Communications (MCS)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing functions related to the target market</li>
+                        <li>Covers all general concepts of marketing</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Quick Serve Restaurant Management (QSRM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on management in fast-food restaurants</li>
+                        <li>Covers areas such as Food Regulation, Customer-Employee Interaction, and Business Management</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Hospitality/Tourism Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Restaurant and Food Service Management (RFSM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on management in large-scale restaurants</li>
+                        <li>Covers areas such as Food Regulation, Customer-Employee Interaction, and Business Management</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Hospitality/Tourism Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Retail Merchandising (RMS)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing in a retail environment</li>
+                        <li>Covers all general concepts of marketing</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Sports and Entertainment Marketing (SEM)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Focuses on marketing within the sports and entertainment industry</li>
+                        <li>Covers areas such as Event Marketing, Professional Selling, and Cultural Promotions</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Marketing Cluster Exam</td>
+                  </tr>
+                </table>
+                <button type="button" value="Open Window" class="btn btn-primary" style="margin-top:15px;margin-bottom:15px"  onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_Ind_Series_Guidelines1.pdf')">Learn More about Individual Series</button>
+                <table class="event-table" border= "1">
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Participants</th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Exam</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Personal Financial Literacy (PFL)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Technically a separate cluster, but very similar to Individual Series Events</li>
+                        <li>Focuses on personal finance and making everyday financial decisions</li>
+                        <li>Covers areas such as Credit Scores, General Living Expenses, and Income</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center">Financial Literacy Exam (Not Finance Cluster Exam)</td>
+                  </tr>
+                </table>
+                <button type="button" value="Open Window" class="btn btn-primary" style="margin-top:15px"  onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_PFL_Guidelines1.pdf')">Learn More about Personal Financial Literacy</button>
+              </section><!--end of #php-->
+
+            </section><!--end of #web-devlopment-->
+
+            <section id="written">
+              <h2><span class="fa fa-edit"></span> Written Events</h2>
+              <p>Written events are not as on-the-spot as roleplays, because members must complete all aspects of their event before coming to the conference, including their written component, presentation, etc. Every written event is a bit different, but in general, most events have a written component as well as a presentation that must be made to the judge. The size of the written portion, the length of the presentation, and the task at hand all depends on what event members select.
+              </p>
+              <p><span style="font-weight:600">There are five types of written events:<span>
+                <ul class="shifted-bullet">
+                  <li>Business Operations Research Events</li>
+                  <li>Chapter Team Events</li>
+                  <li>Entrepreneurship Events</li>
+                  <li>Marketing Representative Events</li>
+                  <li>Professional Selling Events</li>
+                </ul>
+              </p>
+
+              <section id="bor">
+                <h3>Business Operations Research Events</h3>
+                <p>DECA’s BOR Events provide opportunities for members to demonstrate knowledge and skills needed by management personnel. Every year, DECA introduces a new topic that tests each participant's ability to develop a detailed business plan that solves or helps solve the problem presented. Members chooose a company of their liking, and based on the given topic, they must research the company and present what they have found, as well as the changes they think should be implemented. <strong>This years prompt: <br><br> The 2017 topic for each career category is the development or enhancement of a social, local, mobile (SoLoMo)
+                strategy. Participants will collaborate with a local business or organization to analyze current promotional
+                strategies and practices and then develop and present a strategic plan to improve or implement social, local,
+                mobile strategies and practices. </strong><br><br>Each type of BOR event has the same prompt, and they only differ in what company you are able to select to write your plan on. And so, <strong>we highly recommend that members choose a company, see what event it fits under, and then select that event</strong>, rather than selecting an event and then picking the company. No exam needs to be taken for a BOR event.
+                </p>
+                <p><span style="font-weight:600">There are some common traits across all BORs:<span>
+                  <ul class="shifted-bullet" style="margin-top:-5px">
+                    <li>Participants: Team of 1-3</li>
+                    <li>Page Count (Maximum): 30 Pages</li>
+                    <li>Presentation Time: 15 Minutes</li>
+                  </ul>
+                </p>
+                <table class="event-table" style="margin-top:25px" border= "1">
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Types of Companies</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Business Services Operations Research (BOR)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Human Resources</li>
+                        <li>Information Technology</li>
+                        <li>Personal and Contracted Services</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Buying and Merchandising Operations Research (BMOR)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Retail Stores</li>
+                        <li>Wholesale Businesses (must provide consumer goods)</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Finance Operations Research (FOR)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Banks</li>
+                        <li>Credit Unions</li>
+                        <li>Investment Firms</li>
+                        <li>Any other financial business</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Hospitality and Tourism Operations Research (HTOR)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Hotels/Lodges</li>
+                        <li>Restaurants</li>
+                        <li>Tourism</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Sports and Entertainment Operations Research (SEOR)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Conducts Sports Events</li>
+                        <li>Holds Entertainment Events (Plays, Cinemas, Cultural Events, etc.)</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+                <button type="button" value="Open Window" class="btn btn-primary" style="margin-top:15px"  onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_BOR_Guidelines1.pdf')">Learn More about BORs</button>
+              </section><!--end of #ruby-->
+
+              <section id="chapter">
+                <h3>Chapter Team Events</h3>
+                <p>CTEs provide opportunities for members to become more involved within the chapter by attempting to run a successful campaign and engage everyone within the Lynbrook DECA chapter to help out and support the campaign. Because of the level of involvement required by these events, <strong>we highly recommend that only experienced members consider selecting one of these events for their written event choice</strong>. No exam is required for participating in a CTE. Furthermore, each chapter is only allowed to send one team to compete for each of the CTEs, so if anyone would like to compete in one of them, please inform a Lynbrook DECA officer ASAP so we can discuss your project.
+                </p>
+                <p><span style="font-weight:600">There are some common traits across all CTEs:<span>
+                  <ul class="shifted-bullet" style="margin-top:-5px">
+                    <li>Participants: Team of 1-3</li>
+                    <li>Page Count (Maximum): 30 Pages</li>
+                    <li>Presentation Time: 15 Minutes</li>
+                  </ul>
+                </p>
+                <table class="event-table" style="margin-top:25px" border= "1">
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Learn More</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Community Service Project (CSP)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must organize an event/campaign that helps the community</li>
+                        <li>Members learn to create, plan, and organize a community-wide project</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_CSP_Guidelines1.pdf')">CSP</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Creative Marketing Project (CMP)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must organize a marketing campaign for a local company of their choice</li>
+                        <li>Members learn to create, plan, and organize a marketing campaign</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_CMP_Guidelines1.pdf')">CMP</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Entrepreneurship Promotion Project (EPP)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must organize a campaign that teaches the club members as well as the public about the benefits of entrepreneurship</li>
+                        <li>Members learn to create, plan, and teach the concept of entrepreneurship to others</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_EPP_Guidelines1.pdf')">EPP</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Financial Literacy Promotion Project (FLPP)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must organize a campaign that teaches the club members as well as the public about the benefits of financial literacy</li>
+                        <li>Members learn to create, plan, and teach the concept of financial literacy to others</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_FLPP_Guidelines1.pdf')">FLPP</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Learn and Earn Project (LEP)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must come up with a service/activity to be run as a real entrepreneurial venture</li>
+                        <li>Members learn to create, plan, and organize a startup</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_LEP_Guidelines1.pdf')">LEP</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Public Relations Project (PRP)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must organize a campaign that addresses an issue in the community</li>
+                        <li>Members learn to create, plan, and organize a community-wide campaign</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_PRP_Guidelines1.pdf')">PRP</button></td>
+                  </tr>
+                </table>
+              </section><!--end of #python-->
+
+              <section id="entrepreneurship">
+                <h3>Entrepreneurship Events</h3>
+                <p>DECA's ENTREs provide opportunities for members to explore the entrepreneurial process, from idea generation to business planning to implementation. By recognizing new innovative opportunities, participants are required to generate new ideas to take advantage of market opportunities to introduce a new business, product, or service. Through various different events, members get to explore how businesses are started, improved, and expanded. No exam needs to be taken for an ENTRE event.
+                </p>
+                <p><span style="font-weight:600">There are some common traits across all ENTREs:<span>
+                  <ul class="shifted-bullet" style="margin-top:-5px">
+                    <li>Presentation Time: 15 Minutes</li>
+                  </ul>
+                </p>
+                <table class="event-table" style="margin-top:25px" border= "1">
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Participants</th>
+                    <th style="text-align:center">Page Count (Maximum)</th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Learn More</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Innovation Plan (EIP)</td>
+                    <td style="text-align:center">Team of 1-3</td>
+                    <td style="text-align:center">5 Pages</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must come up with an original, innovative business idea</li>
+                        <li>Members must then identify a target market and why people would buy their innovation</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_EIP_Guidelines.pdf')">EIP</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Independent Business Plan (EIB)</td>
+                    <td style="text-align:center">Team of 1-3</td>
+                    <td style="text-align:center">30 Pages</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must come up with a comprehensive business plan for a new business proposal</li>
+                        <li>This involves detailed marketing, financial, and operational plans</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_EIB_Guidelines.pdf')">EIB</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Business Growth Plan (EBG)</td>
+                    <td style="text-align:center">Team of 1-3</td>
+                    <td style="text-align:center">30 Pages</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li><strong>Members must own an existing business to be able to compete in this event</strong></li>
+                        <li>Write a plan requesting funding and what you plan to do to improve your existing company</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_EBG_Guidelines.pdf')">EBG</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">International Business Plan (IBP)</td>
+                    <td style="text-align:center">Team of 1-3</td>
+                    <td style="text-align:center">30 Pages</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members write a plan about expanding a current business into a new country</li>
+                        <li>Explain the benefits of acquiring a new market in the selected location for the selected company</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_IBP_Guidelines1.pdf')">IBP</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Start-up Business Plan (ESB)</td>
+                    <td style="text-align:center">1 Person</td>
+                    <td style="text-align:center">11 Pages</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members come up with a business plan to start up a new business</li>
+                        <li>Similar to EIB, except 11 pages instead of 30, so less detailed plan</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_ESB_Guidelines.pdf')">ESB</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Franchise Business Plan (EFB)</td>
+                    <td style="text-align:center">Team of 1-3</td>
+                    <td style="text-align:center">30 Pages</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members must write a plan about buying a franchise of an existing company</li>
+                        <li>Explain how their new franchise will make a lot of money and what will be different from existing franchises</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_EFB_Guidelines.pdf')">EFB</button></td>
+                  </tr>
+                </table>
+              </section><!--end of #php-->
+
+              <section id="mre">
+                <h3>Marketing Representative Events</h3>
+                <p>MREs are marketing-related written events in which members exlore how to design a campaign/promotion for a company/group and will learn about marketing costs, how to implement advertising methods, and how to forecast generated revenue. Everyone competing in an MRE is required to take a Marketing Cluster Exam. If a member is in a team of more than one person, the average of the teams' scores are taken into account. Also, if a member is doing a roleplay with a marketing exam, then the exam will be taken once, and will be counted for both the written event and the roleplay event. If it's a roleplay with a different exam, then the member must take both exams.
+                </p>
+                <p><span style="font-weight:600">There are some common traits across all ENTREs:<span>
+                  <ul class="shifted-bullet" style="margin-top:-5px">
+                    <li>Participants: Team of 1-3</li>
+                    <li>Exam: Marketing Cluster Exam</li>
+                    <li>Page Count (Maximum): 11 Pages</li>
+                    <li>Presentation Time: 15 Minutes</li>
+                  </ul>
+                </p>
+                <table class="event-table" style="margin-top:25px" border= "1">
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Learn More</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Advertising Campaign (ADC)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members design an advertising campaign for an existing company</li>
+                        <li>Come up with campaign plan, cost of campaign, as well as revenue generated</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_ADC_Guidelines1.pdf')">ADC</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Fashion Merchandising Promotion Plan (FMP)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members design a seasonal sales promotion for a retail store</li>
+                        <li>Come up with promotion plan, cost of promotion, as well as revenue generated</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_FMP_Guidelines1.pdf')">FMP</button></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Sports and Entertainment Promotion Plan (SEPP)</td>
+                    <td>
+                      <ul style="margin-left:20px">
+                        <li>Members design a seasonal sales promotion for a sports team/company or an entertainment company</li>
+                        <li>Come up with promotion plan, cost of promotion, as well as revenue generated</li>
+                      </ul>
+                    </td>
+                    <td style="text-align:center"><button type="button" value="Open Window" class="btn btn-primary" onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_SEPP_Guidelines1.pdf')">SEPP</button></td>
+                  </tr>
+                </table>
+              </section><!--end of #php-->
+
+              <section id="pse">
+                <h3>Professional Selling Events</h3>
+                <p>DECA’s PSEs provide opportunities for members to market a product/company to a prospective buyer or provide a client with advice. A PSE is oriented around a person's speaking skills and provided ideas, and so does not have a written component (Yes, it's a written event without a written portion). Therefore, a PSE only requires members to create a presentation that answers the prompt provided by DECA. The prompt is different for each event.
+                </p>
+                <p><span style="font-weight:600">There are some common traits across all PSEs:<span>
+                  <ul class="shifted-bullet" style="margin-top:-5px">
+                    <li>Participants: 1 Person</li>
+                    <li><strong>Page Count (Maximum): 0 Pages</strong></li>
+                    <li>Presentation Time: 15 Minutes</li>
+                  </ul>
+                </p>
+                <table class="event-table" style="margin-top:25px" border= "1">
+                  <tr>
+                    <th style="text-align:center">Event</th>
+                    <th style="text-align:center">Prompt</th>
+                    <th style="text-align:center">Exam</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Financial Consulting (FCE)</td>
+                    <td>For 2016-2017, the participant will assume the role of a financial consultant. A client has scheduled a meeting with the participant because he/she is looking to purchase or lease a new car. The client would like for the participant to share the pros and cons of both purchasing and leasing and make a recommendation that will have the most positive financial impact.</td>
+                    <td style="text-align:center">Finance Cluster Exam</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Hospitality and Tourism Professional Selling (HTPS)</td>
+                    <td>For 2016-2017, the participant will assume the role of a salesperson for
+                      a destination management company (DMC). A non-profit meeting manager is planning a four-day meeting for its 25 person board of directors in a downtown hotel. However, the meeting manager has asked the participant’s DMC to arrange for VIP airport transfers and three nights of entertainment that takes advantage of the city’s unique culture.</td>
+                      <td style="text-align:center">Hospitality/Tourism Cluster Exam</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">Professional Selling (PSE)</td>
+                      <td>For 2016-2017, the participant will assume the role of a sales representative of a drone technologies firm. A local real estate agent has scheduled a meeting with the participant because he/she has a desire to utilize drones to help his/her real estate business and wants to learn how the participant’s firm’s products and services can be beneficial to his/her business.</td>
+                      <td style="text-align:center">Marketing Cluster Exam</td>
+                    </tr>
+                  </table>
+                  <button type="button" value="Open Window" class="btn btn-primary" style="margin-top:15px"  onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_PSE_Guidelines1.pdf')">Learn More about PSEs</button>
+                </section><!--end of #php-->
+              </section><!--end of #web-devlopment-->
+
+              <section id="online">
+                <h2><span class="fa fa-edit"></span> Online Events</h2>
+                <p>DECA’s Online Events provide opportunities for members to participate in online simulations to learn how to invest in the stock market, manage personal finances, and operate business ventures. Online events don't count as written events or roleplays, so members may participate in them outside of their regular events. These online events serve as a way to place for ICDC without placing at actual conferences. Members may participate in as many online events as they'd like, but no more than once per event.
+                </p>
+                <p><span style="font-weight:600">There are two types of online events:<span>
+                  <ul class="shifted-bullet">
+                    <li>Stock Market Game</li>
+                    <li>Virtual Business Challenges</li>
+                  </ul>
+                </p>
+
+                <section id="smg">
+                  <h3>Stock Market Game</h3>
+                  <p>Participants in the Stock Market Game develop and manage an investment portfolio. Each participating team manages all aspects of the portfolio including stock selection, buying and selling. The goal of the competition is to increase the value of the beginning portfolio. Members may compete in Teams of 1-3, and there is nothing else besides the trading in the online portfolio that has to be done (no written component, test, etc.). For Lynbrook, the top 25 teams in Western USA will advance to compete at ICDC. Winners will be judged on the growth of their portfolio from the initial amount of virtual money.
+                  </p>
+                  <button type="button" value="Open Window" class="btn btn-primary" style="margin-top:15px"  onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_SMG_Guidelines1.pdf')">Learn More about SMG</button>
+                </section><!--end of #ruby-->
+
+                <section id="vbc">
+                  <h3>Virtual Business Challenges</h3>
+                  <p>Participants in the DECA Virtual Business Challenge (VBC) operate a computerized business simulation utilizing a competition version of the Virtual Business software. The VBC qualifying rounds are conducted via the Internet, where participants post competition scores for chartered association, regional and overall rankings. Think of VBC as a game like The Sims, but oriented towards business and with profit as the main goal. Members can compete in VBCs as Teams of 1-3, and the top two teams from each region (for Lynbrook, it's Western USA) will be invited to compete at ICDC.
+                  </p>
+                  <table class="event-table" style="margin-top:25px" border= "1">
+                    <tr>
+                      <th style="text-align:center">Event</th>
+                      <th style="text-align:center">Description</th>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">VBC Accounting (VBCAC)</td>
+                      <td>In the VBC Accounting track, participants will use forensic accounting to identify fraud and errors and use managerial accounting techniques to maximize profits. Participants will analyze accounting documents such as T-accounts, worksheets, journals and the general ledger as well as source documents such as time sheets, customer invoices, pay records and more in order to identify issues.</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">VBC Hotel Management (VBCHM)</td>
+                      <td>In the VBC Hotel Management track, participants will manage various aspects of a hotel such as determining room rates, making bids on group sales and setting front desk and housekeeping staffing schedules. Participants will monitor their competitors, analyze various reports and financial information as well as keep a close watch on ratings and social media feedback.</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">VBC Personal Finance (VBCPF)</td>
+                      <td>In the VBC Personal Finance track, participants will manage bank accounts, credit and debit cards, bills, credit scores, taxes, insurance and investing. Participants will interpret actions, charts and graphs to make strategic financial decisions and optimize net worth.</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">VBC Restaurant (VBCRS)</td>
+                      <td>In the VBC Restaurant track, participants will manage specific marketing and business concepts such as market research, menu design and pricing, advertising strategies and purchasing within a restaurant. Participants will interpret actions, reports and financial information in order to make strategic marketing decisions for their restaurant to optimize profitability.</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">VBC Retail (VBCRT)</td>
+                      <td>In the VBC Retailing track, participants will manage specific marketing concepts such as pricing, purchasing and promotion within a convenience store. Participants will interpret actions, charts and graphs in order to make strategic marketing decisions for their store to optimize profitability.</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">VBC Sports (VBCSP)</td>
+                      <td>In the VBC Sports track, participants will manage specific marketing concepts such as ticket pricing, media planning and sponsorships within a football franchise. Participants will interpret actions, charts and graphs in order to make strategic marketing decisions for their franchise to optimize profitability.</td>
+                    </tr>
+                  </table>
+                  <button type="button" value="Open Window" class="btn btn-primary" style="margin-top:15px"  onclick="window.open('https://www.deca.org/wp-content/uploads/2014/08/HS_VBC_Guidelines1.pdf')">Learn More about VBCs</button>
+                </section><!--end of #python-->
+              </section><!--end of #web-devlopment-->
+
+              <section id="video">
+                <h2><span class="fa fa-edit"></span> Video Challenges</h2>
+                <p>DECA and several corporate partners collaborate to offer members opportunities to demonstrate the knowledge and skills learned in the classroom through innovative challenges. Each challenge has a unique focus and a specific set of required tasks, but one common element is the requirement that presentations are made via YouTube videos. These video challenges are not considered competitive events, but taking part gives members a chance to win cash prizes, awards, recognition, and more! There are three video challenges, as listed below.
+                </p>
+                <a href="https://www.deca.org/high-school-programs/high-school-video-challenges/" target="_blank"><button type="button" class="btn btn-primary">Learn More about DECA Video Challenges</button></a>
+
+                <section id="idea">
+                  <h3>DECA Idea Challenge</h3>
+                  <p>A premiere event of Global Entrepreneurship Week (GEW), the DECA Idea Challenge is a fast-paced, hands-on learning experience that dares students around the globe to generate an innovative new use for a commonplace item in just eight days. Students must organize into groups, access the challenge item online, collaborate as a team to produce an original and sustainable use for the item and pitch their invention in an engaging YouTube video presentation. The item to be used in the challenge will remain a mystery until revealed by DECA Inc. on November 12, 2015.
+                  </p>
+                </section><!--end of #ruby-->
+
+                <section id="fidm">
+                  <h3>FIDM Challenge</h3>
+                  <p>Participants in the Fashion Institute of Design & Merchandising (FIDM) Challenge will translate a seasonal fashion trend into a “look” depicting the researched fashion forecast. First, participants will forecast a fashion trend for fall/winter 2016/2017. Second, participants will put together an outfit that your demographic would wear depicting this up and coming trend. Third, participants must explain why, based on their research, they believe in their trend forecast.
+                  </p>
+                </section><!--end of #python-->
+
+                <section id="herff">
+                  <h3>Herff Jones Marketing Results Challenge</h3>
+                  <p>Participants in the Herff Jones Marketing Results Challenge will assist Herff Jones in testing an array of promotional messages delivered to potential yearbook buyers through various channels. After analysis of buying patterns and attitudes at their own schools, teams will create and implement marketing campaigns to increase yearbook awareness and sales on campus. Whether they opt to employ a single campaign with messages delivered through multiple channels or several different approaches in order to study and measure effectiveness, they will conclude the challenge by preparing a video which details their methods and results. These videos will be evaluated by Herff Jones executives to determine finalists.
+                  </p>
+                </section><!--end of #php-->
+              </section><!--end of #web-devlopment-->
+            </div>
+          </div><!--end of .row-->
+        </div><!--end of .container-->
+
+        <div class="scrolling-line line-color" style="height:5px;"></div>
+        <!-- Footer w/Sitemap -->
+        <div class="scrolling-footer footer-color" >
+          <h3>Sitemap</h3>
+          <p>
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a> | 
+            <a href="calendar.html">Calendar</a> | 
+            <a href="events.html">Events</a> | 
+            <a href="conferences.html">Conferences</a>
+          </p>
+
+          <h3 style="font-weight:300;font-size:110%">Our Proud Sponsor</h3>
+          <img src="data1/images/sponsor.png" style = "margin-bottom:0px; padding-bottom:10px">
+          <div class="container">
+            <p>&copy 2015 Lynbrook DECA</p>
+          </div>
+        </div>
+      </body>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js'></script>
+
+      <script src="js/index.js"></script>
+
+
+
+
+    </body>
+    </html>

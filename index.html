@@ -1,0 +1,311 @@
+ 
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<!-- Lynbrook DECA Website -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
+	<script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+    <!--Fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!--Stylesheets-->
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/design.css"> <!-- Resource style -->
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-auth.js"></script>
+    <!--Script-->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>Lynbrook DECA</title>
+    <link rel="icon" href="img/favico.png"></link>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+    // alert("Come to Lynbrook DECA's first meeting on 9/8 at lunch in the auditorium!")
+    </script>
+
+  <script > 
+    	// Parse.initialize("kScQXRCZFHxkzilbr6loKIKO2hxt7lcKom9DWKRD", "R0gxChWChXhekNDydkGcxGCLfZndbw3H6dQSUHgr");
+
+  //   	var currentUser = Parse.User.current();
+		// if (currentUser) {
+		//     alert("hidden");
+		//     window.location.href='dashboard/dashboard.html';
+
+		// } else {
+		//     alert("no log");
+		// }
+     </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+
+	<link rel="stylesheet" type="text/css" href="ws-bg.css" />
+	<style>
+		.user-menu a {
+			text-decoration:none !important;
+			/*color:black !important;*/
+		}
+		.user-menu a:hover {
+			color:black !important;
+		}
+
+		.scrolling-footer a {
+			text-decoration:none !important;
+		}
+	</style>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+  <script src="dashboard/index.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+
+<script>
+    var config = {
+        apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
+        authDomain: "lynbrook-deca.firebaseapp.com",
+        databaseURL: "https://lynbrook-deca.firebaseio.com",
+        storageBucket: "lynbrook-deca.appspot.com",
+        messagingSenderId: "105997057044"
+      };
+      firebase.initializeApp(config);
+</script>
+
+<link rel="manifest" href="dashboard/manifest.json">  
+  <script src="//messaging-public.realtime.co/js/2.1.0/ortc.js"></script>
+  <script src="dashboard/WebPushManager.js"></script>
+    
+</head>
+
+<body>
+
+        
+        
+        
+ <!-- Navigation -->
+ 
+    <nav class="navbar navbar-default navbar-fixed-top" style= "padding-bottom:1.3vw"  >
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <div id="navbarlogo" style="display:inline-block;">
+           			 	<a href ="javascript:harlem()"><img src="img/favico.png" height="30px" /></a>
+        		</div> -->
+                
+                	<a class="navbar-brand page-scroll" href="#">Lynbrook DECA</a>
+                
+                
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll active" href="#" >Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="calendar.html">Calendar</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="events.html">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="conferences.html">Conferences</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="alumni.html" style=" border-right:1px solid gray;height:50px">Alumni</a>
+                    </li>
+
+
+                    <li style="margin-top: -6px; margin-right: -10px">
+                      <a><button type="button" class="btn btn-default navbtn page-scroll signbutton" onclick="window.location='signup.html';" >SIGN UP</button></a>
+                    </li>
+
+                    <li style="margin-top: -6px; margin-right: ">
+                      <a><button type="button" class="btn btn-default navbtn page-scroll logbutton" onclick="window.location='login.html';" >LOG IN</button></a>
+                    </li>
+
+                    <li style = "margin-top:15px; float: left">
+                      <ul class="user-menu">
+                        <li class="dropdown pull-right">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><span class ="user-name"> User </span><span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu" style ="margin-top:20px">
+                            <li style ="padding-top:0"><a href="dashboard/dashboard.html"><span class="glyphicon glyphicon-bookmark"></span> Dashboard</a></li>
+                            <li style ="padding-top:0" ><a href="dashboard/profile.html"><span class="glyphicon glyphicon-user"></span> Edit My Profile</a></li>
+                            <li style ="padding-top:0"><a href="#" id="logout-button"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+                          </ul>
+
+                        </li>
+                      </ul>
+                      </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>	
+
+        
+	
+	<main class="main-content">
+
+		<!-- Start WOWSlider.com BODY section -->
+		<div id="wowslider-container1" style = "margin-top:0px">
+			
+				<h2>
+                	<span>Welcome to Lynbrook DECA!</span>
+            	</h2>
+			<div class="ws_images">
+				<ul>
+					<li><img src="data1/images/cdbackgroundmain2.jpg" alt="" title="" id="wows1_0"/></li>
+					<li><img src="data1/images/cdbackground5.jpg" alt="" title="" id="wows1_1"/></li>
+					<li><img src="data1/images/culture.jpg" alt="" title="" id="wows1_2"/></li>
+					<li><a href="https://wowslider.com/vi"><img src="data1/images/cdbackgroundmain.jpg" alt="angular carousel" title="" id="wows1_3"/></a></li>
+					<li><img src="data1/images/conferencesicdc.jpg" alt="" title="" id="wows1_4"/></li>
+				</ul>
+			</div>
+			<div class="ws_bullets"><div>
+				<a href="#" title=""><span><img src="data1/tooltips/cdbackgroundmain2.jpg" alt=""/>1</span></a>
+				<a href="#" title=""><span><img src="data1/tooltips/cdbackground5.jpg" alt=""/>2</span></a>
+				<a href="#" title=""><span><img src="data1/tooltips/culture.jpg" alt=""/>3</span></a>
+				<a href="#" title=""><span><img src="data1/tooltips/cdbackgroundmain.jpg" alt=""/>4</span></a>
+				<a href="#" title=""><span><img src="data1/tooltips/conferencesicdc.jpg" alt=""/>5</span></a>
+			</div></div><div class="ws_script" style="position:absolute;left:-99%"></div>
+			<div class="ws_shadow"></div>
+		</div>	
+
+		<script type="text/javascript" src="engine1/wowslider.js"></script>
+		<script type="text/javascript" src="engine1/script.js"></script>
+		<!-- End WOWSlider.com BODY section -->
+
+		
+		<div class="scrolling-line line-color"></div>
+        
+		<div class="fixed-background background-2">
+			<h2>
+                <span >What is DECA?</span>
+            </h2>
+		</div>
+
+		<div class="scrolling-background color-3 textHolder0">
+			<div class="wordscontainer">
+				<p style="font-family:'Raleway',sans-serif" id = "para0">DECA is an internationally recognized competitive business club that aims to create opportunities that enhance business knowledge and foster the entrepreneurial spirit amongst high school students. Competitive events span across four career clusters: business management, marketing, finance, and hospitality/tourism. DECA members get the chance to compete in events in these clusters at the regional, state, and international level. All these experiences provide them with an opportunity to network, connect their classroom skills with the real world, and have lots of fun!</p>
+			</div>
+		</div>
+		
+		<div class="scrolling-line line-color"></div>
+
+		<div class="fixed-background background-3">
+			<h2>
+                <span >Conference</span>
+            </h2>
+		</div>
+
+		<div class="scrolling-background color-1 textHolder1">
+			<div class="wordscontainer">
+				<p style="font-family:'Raleway',sans-serif" id = "para1">
+					Every school year, Lynbrook DECA offers members the opportunity to attend four distinct conferences: LACE, SVCDC, SCDC, and ICDC. While most conferences are competitive, some are purely learning experiences for DECA members to learn about the various aspects of business through organized events, such as workshops and guest speaker. Regardless of the type of conference, each one provides members with the opportunity to mingle with friends, make new ones, and learn at the same time!
+				</p>
+			</div>
+		</div>
+		
+		<div class="scrolling-line line-color"></div>
+
+		<div class="fixed-background background-4">
+			<h2>
+                <span >Events</span>
+            </h2>
+		</div>
+        
+        <div class="scrolling-background color-3 textHolder2">
+			<div class="wordscontainer">
+				<p style="font-family:'Raleway',sans-serif;margin-top:-30px" id = "para2">DECA’s competitive events are the highlight of the member experience. These events allow members to apply critical thinking and public speaking skills to their work in a way that isn’t possible in the classroom. DECA’s competitive events span across four career clusters: business management, marketing, finance, and hospitality and tourism. Some events within these clusters require preparation in advance, like the creation of an 11-page business plan, while other events require quick decision making and eloquence under pressure. Regardless, the diversity of events in DECA, from financial analysis to fashion promotion plans, ensures that there is an event for everyone.</p>
+			</div>
+		</div>
+		
+		<div class="scrolling-line line-color"></div>
+        
+        <div class="fixed-background background-5">
+			<h2>
+                <span >Culture</span>
+            </h2>
+		</div>
+        
+        <div class="scrolling-background color-1 textHolder3">
+			<div class="wordscontainer">
+				<p style="font-family:'Raleway',sans-serif; margin-top:-50px" id = "para3">Past all of its educational and competitive aspects, Lynbrook DECA has a rich culture filled with laughs, sarcasm, chapter-wide inside jokes, intense games of Mafia, and friendships spanning across every grade level. Members connect with each other at enrichment opportunities and various social events and gatherings. To enrich business knowledge, Lynbrook DECA organizes speaker events and company tours for a first-hand view into the corporate world. Past speakers include start-up executives and political leaders, and past company tours include Box and LinkedIn. To allow members to also bond in a non-academic setting, Lynbrook DECA hosts socials, like pizza parties at conferences, and an end-of-the-year banquet.</p>
+			</div>
+		</div>
+		
+		<div class="scrolling-line line-color"></div>
+        <!-- Footer w/Sitemap -->
+        <div class="scrolling-footer footer-color" style ="padding-top:10px;line-height:50%; margin-bottom:0;" id ="footerwords">
+            <h3 style="font-weight:300;font-size:110%">Sitemap</h3>
+             
+            
+            <p >
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="calendar.html">Calendar</a> | 
+                <a href="events.html">Events</a> | 
+                <a href="conferences.html">Conferences</a>
+            </p>
+
+            <h3 style="font-weight:300;font-size:110%">Our Proud Sponsor</h3>
+            <img src="data1/images/sponsor.png" style = "margin-bottom:0px; padding-bottom:10px">
+
+			<div >
+				<p>&copy 2015 Lynbrook DECA</p>
+			</div>
+		</div>
+		
+	</main>
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/modernizr.js"></script>
+
+
+    <script src="js/jquery.js"></script>
+
+
+
+   
+
+</body>
+</html>

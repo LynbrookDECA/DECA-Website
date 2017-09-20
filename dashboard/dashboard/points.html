@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lynbrook DECA - Dashboard</title>
+<link rel="icon" href="../img/favico.png"></link>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<!-- <script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script> -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+<script>
+	var config = {
+	  	apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
+	  	authDomain: "lynbrook-deca.firebaseapp.com",
+	  	databaseURL: "https://lynbrook-deca.firebaseio.com",
+	  	storageBucket: "lynbrook-deca.appspot.com",
+	  	messagingSenderId: "105997057044"
+	  };
+	  firebase.initializeApp(config);
+</script>
+
+</head>
+
+<body class = "bodyDisplay" style = "display:none">
+	<nav class="navbar navbar-inverse navbar-fixed-top dash-header" role="navigation" >
+		<div class="container-fluid">
+			<div class="navbar-header">
+				
+				<div id="navbarlogo">
+            	<a href=""><img src="../img/favico.png" height="30px" /></a>
+        		</div>
+        
+		       
+
+		        <button type="button"  id ="icon-bar1" style = "background-color: #1F3A93; margin-top:17px; margin-right: 5px !important" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar" style = "color:brown" ></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+        
+				<!-- <a class="navbar-brand" href="dashboard.html"><span>Lynbrook DECA</span> Admin</a> -->
+				<ul class = "dash-hover">
+
+					<li class = "s"><a href="../index.html">HOME</a></li>
+					<li class = "s"><a href="../about.html">ABOUT</a></li>
+					<li class = "s"><a href="../calendar.html">CALENDAR</a></li>
+					<li class = "s"><a href="../events.html">EVENTS</a></li>
+	                <li class = "s"><a href="../conferences.html" style="border-right:1px solid black">CONFERENCES</a></li>
+	                <!-- <button class="login-button" id="loginform">LOG IN</button>
+	                <button class="signup-button" onclick="window.location='signup.html';">SIGN UP</button> -->
+				
+
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><span class ="user-name"> User </span><span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" style ="margin-top:20px">
+							<li style ="padding-top:0"><a href="dashboard.html"><span class="glyphicon glyphicon-bookmark"></span> Dashboard</a></li>
+							<li style ="padding-top:0" ><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Edit My Profile</a></li>
+							<li style ="padding-top:0"><a href="#" class="logout-button"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+							
+						</ul>
+						
+					</li>
+				</ul>
+				</ul>
+			</div>
+							
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div id="" class="nav-menu" style="padding-top: 0px; display:none">
+
+		
+		<ul class="nav menu" style = "text-align:center; background-color:whitesmoke;">
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../about.html">About</a></li>
+			<li><a href="../calendar.html">Calender</a></li>
+			<li><a href="../events.html">Events</a></li>
+			<li><a href="../conferences.html">Conferences</a></li>
+			<li><a href="profile.html">Profile</a></li>
+			<li><a class="logout-button" href = "#">Logout</a></li>
+			
+			
+			
+			<li role="presentation" class="divider"></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+	<div id="" class="test" style="padding-top: 0px; display:none">
+		
+		<ul class="nav menu" style = "text-align:center; background-color:white">
+			<li ><a href="dashboard.html"><span id ="test1" class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+			<li><a href="presentations.html"><span class="glyphicon glyphicon-folder-close"></span> Presentations/Videos</a></li>
+			<li class="active1"><a href="points.html" style = "color:white"><span class="glyphicon glyphicon-stats"></span> Point System</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk9qZjc1OWZIZjMxWFBabl9BUmFac1pMU3g1clpjZ1pzTlNxUjlRVjUyQzg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-list-alt"></span> Written Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfjFSamlPMGVsX2llQU1md0ZCSmNEVUxVNUl5Qm83TzVaSWdKbDgxNzkzaUU&usp=sharing" target="_blank"><span class="glyphicon glyphicon-book"></span> Roleplay Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfklJZEFBYlYtTWJxZDIxclBwejVEcGVXeDRvMlpidDdHOTNHU0g2bDR5Z00&usp=sharing" target="_blank"><span class="glyphicon glyphicon-briefcase"></span> Principles Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk91RnNQU3RmRnNRWUJDVjBvX1hfeEtmNWpjZFlmem5PSl9Tcm1iNVh4bDg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Testing Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0Bw48OQ3LltH9fmkwN3VRaTN0T3ZSaHIyUlFjWkdlOEtsNzY5aDhvc3pSXzNvaExNdEJkVU0&usp=sharing" target="_blank"><span class="glyphicon glyphicon-camera"></span> DECA Memories</a></li>
+			
+			
+			<li role="presentation" class="divider"></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 40px">
+		
+		<ul class="nav menu">
+			<li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+			<li><a href="presentations.html"><span class="glyphicon glyphicon-folder-close"></span> Presentations/Videos</a></li>
+			<li class="active"><a href="points.html"><span class="glyphicon glyphicon-stats"></span> Point System</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk9qZjc1OWZIZjMxWFBabl9BUmFac1pMU3g1clpjZ1pzTlNxUjlRVjUyQzg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-list-alt"></span> Written Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfjFSamlPMGVsX2llQU1md0ZCSmNEVUxVNUl5Qm83TzVaSWdKbDgxNzkzaUU&usp=sharing" target="_blank"><span class="glyphicon glyphicon-book"></span> Roleplay Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfklJZEFBYlYtTWJxZDIxclBwejVEcGVXeDRvMlpidDdHOTNHU0g2bDR5Z00&usp=sharing" target="_blank"><span class="glyphicon glyphicon-briefcase"></span> Principles Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk91RnNQU3RmRnNRWUJDVjBvX1hfeEtmNWpjZFlmem5PSl9Tcm1iNVh4bDg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Testing Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0Bw48OQ3LltH9fmkwN3VRaTN0T3ZSaHIyUlFjWkdlOEtsNzY5aDhvc3pSXzNvaExNdEJkVU0&usp=sharing" target="_blank"><span class="glyphicon glyphicon-camera"></span> DECA Memories</a></li>
+			
+			
+			<li role="presentation" class="divider"></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="dashboard.html"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active" >Point System</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header" style = "text-align:center">Point System</h1>
+				<hr>
+			</div>
+		</div><!--/.row-->
+
+		<div class="row">
+			<div class="col-lg-12" style ="width:100%">
+				<div class="panel panel-default">
+					<div class="panel-heading" style = "font-size:2em">Sign In For Points</div>
+					<div class="panel-body">
+						<div class="col-md-6">
+							<form role="form">
+							
+								<h4 id ="date"></h4>
+								<h4>DECA Diamonds Amount: 3</h4>
+																
+								<div class="form-group">
+									<label id = "message">Meeting Code</label>
+									<input type ="text" class="form-control" id = "pointspass" placeholder="Enter the code given by the officer for points">
+								</div>
+								
+								
+								
+								<!-- <button type="" class="btn btn-primary">Submit Button</button> -->
+								<button type="button" id = "pointsbutton" class="btn btn-default">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div><!-- /.col-->
+		</div><!-- /.row -->
+
+
+
+		<div class="row">
+			<div class="col-lg-12" style ="width:100%">
+				<div class="panel panel-default">
+					<div class="panel-heading" style = "font-size:2em">Points for Preperation</div>
+					<div class="panel-body">
+						<div class="col-md-6">
+							<form role="form">
+							
+								
+																
+								<div class="form-group">
+									<label>Code</label>
+									<input class="form-control" id = "pointspass2" type = "password" placeholder="Enter the code given by the officer for points">
+								</div>
+
+								<div class="form-group">
+											<label>Preperation Selection</label>
+											<select class="form-control" id="preparation" name = "prep">
+												<option value = "3">Practice Roleplay</option>
+												<option value = "5">Practice Test</option>
+												<option value = "10">Written Deadline</option>
+												<option value = "3">Written Presentation</option>
+												<option value = "3">Other</option>
+												
+
+											</select>
+										</div>
+
+								
+								
+								
+								<!-- <button type="" class="btn btn-primary">Submit Button</button> -->
+								<button type="button" id = "pointsbutton2" class="btn btn-default">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div><!-- /.col-->
+		</div><!-- /.row -->
+				
+		
+		<div class="col-md-6" style ="width:100%">
+				<div class="panel panel-default">
+					<div class="panel-body tabs">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span> DECA Diamonds</a></li>
+							<li><a href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-lock"></span> Cord Points</a></li>
+							
+						</ul>
+		
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="tab1">
+								<h4 style ="font-size: 300%">DECA Diamonds</h4>
+								<p style="text-align:justify">In order to keep yourself accountable during competitive preparation season, you will receive "DECA Diamonds" upon completing certain tasks. This spreadsheet will allow you to track your progress. DECA Diamonds can be earned by completing practice role-plays, meeting competitive deadlines, attending various club events, etc. Every meeting or study session, the officers will announce if there is a new task that can be completed for DECA Diamonds. At the end of the year, you will only be eligible to apply for an officer position if you possess a minimum of 125 DECA Diamonds.<br><a href="https://docs.google.com/document/d/1xURwLsYZkRweM8IffiePV_I6gEyPax92Mtz6yr8gu2E/edit?usp=sharing" target="_blank">Click here for more information about DECA Diamond distribution per activity.</a></p>
+
+								<h3 id = "decaDiamondPointDisplay"></h3>
+								
+								<!-- <iframe  src="https://docs.google.com/spreadsheets/d/1FDlI9m4XtE8ztG6D-MJKBYMksR59aAfT6lky8Lyzebc/pubhtml?widget=true&amp;headers=false&gid=0&range=A1:Z300&chrome=false" width="100%" height='700' frameborder='10'></iframe> -->
+							</div>
+							<div class="tab-pane fade" id="tab2">
+								<h4 style ="font-size: 300%">Cord Points</h4>
+								<p style="text-align:justify">In order to receive a graduation cord from Lynbrook DECA during your senior year graduation, you must meet a certain cord point requirement to illustrate your active membership within the club. These cord points can be earned by attending meetings, study sessions, conferences, socials, and all the other enrichment activities that Lynbrook DECA offers.<br><a href="https://docs.google.com/document/d/1gKBRsw7P0PvZlWfn2gDbQn_NqOkKGRTl8SZ30sbEStU/edit?usp=sharing" target="_blank">Click here for more information about Cord Point distribution per activity.</a></p>
+								<!-- <iframe src="https://docs.google.com/spreadsheets/d/12jyrKeuUKJdECOWUWGfxBM6p6A4MujmOyfL4eP3XVqY/pubhtml?widget=true&amp;headers=false&gid=0&range=A1:Z300&chrome=false" width="100%" height="700" frameborder='10'></iframe> -->
+							</div>
+						</div>
+					</div>
+				</div><!--/.panel-->
+			</div><!--/.col-->
+		<script>
+		    $(function () {
+		        $('#hover, #striped, #condensed').click(function () {
+		            var classes = 'table';
+		
+		            if ($('#hover').prop('checked')) {
+		                classes += ' table-hover';
+		            }
+		            if ($('#condensed').prop('checked')) {
+		                classes += ' table-condensed';
+		            }
+		            $('#table-style').bootstrapTable('destroy')
+		                .bootstrapTable({
+		                    classes: classes,
+		                    striped: $('#striped').prop('checked')
+		                });
+		        });
+		    });
+		
+		    function rowStyle(row, index) {
+		        var classes = ['active', 'success', 'info', 'warning', 'danger'];
+		
+		        if (index % 2 === 0 && index / 2 < classes.length) {
+		            return {
+		                classes: classes[index / 2]
+		            };
+		        }
+		        return {};
+		    }
+		</script>
+	</div>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src = "js/gathering.js"></script>
+	<script src = "js/dashboard-parse.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+	<script>
+		!function ($) {
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
+				$(this).find('em:first').toggleClass("glyphicon-minus");	  
+			}); 
+			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>

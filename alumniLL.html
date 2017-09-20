@@ -1,0 +1,275 @@
+  <!DOCTYPE html>
+  <html lang="en" class="no-js">
+
+  <head>
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  	<script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+  	<!--Fonts-->
+  	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+
+  	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  	<!--Stylesheets-->
+  	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+  	<link rel="stylesheet" href="css/design.css"> <!-- Resource style -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  	<!-- Bootstrap Core CSS -->
+  	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+  	<!-- Custom CSS -->
+  	<link href="css/landing-page.css" rel="stylesheet">
+
+  	<!--Script-->
+  	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+  	<title>Lynbrook DECA</title>
+  	<link rel="icon" href="img/favico.png"></link>
+
+  	<script > 
+  	// Parse.initialize("kScQXRCZFHxkzilbr6loKIKO2hxt7lcKom9DWKRD", "R0gxChWChXhekNDydkGcxGCLfZndbw3H6dQSUHgr");
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Start WOWSlider.com HEAD section -->
+  <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+  <script type="text/javascript" src="engine1/jquery.js"></script>
+  <!-- End WOWSlider.com HEAD section -->
+
+  <link rel="stylesheet" type="text/css" href="ws-bg.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+<script>
+  var config = {
+      apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
+      authDomain: "lynbrook-deca.firebaseapp.com",
+      databaseURL: "https://lynbrook-deca.firebaseio.com",
+      storageBucket: "lynbrook-deca.appspot.com",
+      messagingSenderId: "105997057044"
+    };
+    firebase.initializeApp(config);
+</script>
+</head>
+
+<body style="background-color:whitesmoke;">
+ <!-- Navigation -->
+ <nav class="navbar navbar-default navbar-fixed-top" style= "padding-bottom:1.3vw"  >
+  <div class="container">
+   <!-- Brand and toggle get grouped for better mobile display -->
+   <div class="navbar-header page-scroll">
+    <button type="button" style = "color: gray !important" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar" ></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+   </button>
+                  <!-- <div id="navbarlogo" style="display:inline-block;">
+             			 	<a href ="javascript:harlem()"><img src="img/favico.png" height="30px" /></a>
+             			 </div> -->
+
+             			 <a class="navbar-brand page-scroll" href="index.html">Lynbrook DECA</a>
+
+
+
+             			</div>
+
+             			<!-- Collect the nav links, forms, and other content for toggling -->
+             			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             				<ul class="nav navbar-nav navbar-right" >
+             					<li class="hidden" style = "color: gray">
+             						<a href="#page-top"></a>
+             					</li>
+             					<li>
+             						<a class="page-scroll" href="index.html" style = "color: gray" >Home</a>
+             					</li>
+             					<li>
+             						<a class="page-scroll" href="about.html" style = "color: gray">About</a>
+             					</li>
+             					<li>
+             						<a class="page-scroll" href="calendar.html" style = "color: gray">Calendar</a>
+             					</li>
+             					<li>
+             						<a class="page-scroll" href="events.html" style = "color: gray">Events</a>
+             					</li>
+             					<li>
+             						<a class="page-scroll" href="conferences.html" style = "color: gray">Conferences</a>
+             					</li>
+                      <li>
+                        <a class="page-scroll active" href="alumni.html" style = "color: gray; border-right:1px solid gray;height:50px">Alumni</a>
+                      </li>
+
+
+                      <li style="margin-top: -6px; margin-right: -10px">
+                        <a><button type="button" class="btn btn-default navbtn page-scroll signbutton" onclick="window.location='signup.html';" >SIGN UP</button></a>
+                      </li>
+                      <li style="margin-top: -6px; margin-right: ">
+                        <a><button type="button" class="btn btn-default navbtn page-scroll logbutton" onclick="window.location='login.html';" >LOG IN</button></a>
+                      </li>
+                      
+                      <li style = "margin-top:15px;float: left">
+                      <ul class="user-menu">
+                        <li class="dropdown pull-right">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><span class ="user-name"> User </span><span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu" style ="margin-top:20px">
+                            <li style ="padding-top:0"><a href="dashboard/dashboard.html"><span class="glyphicon glyphicon-bookmark"></span> Dashboard</a></li>
+                            <li style ="padding-top:0" ><a href="dashboard/profile.html"><span class="glyphicon glyphicon-user"></span> Edit My Profile</a></li>
+                            <li style ="padding-top:0"><a href="#" id="logout-button"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+                          </ul>
+
+                        </li>
+                      </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+            </nav>	
+
+            <main class="main-content">
+
+
+              <div class="fixed-background background-alums" style = "min-height: 50vh !important">
+               <h2>
+                <span>Arvin's Thoughts</span>
+              </h2>
+            </div>
+
+
+            <div class="scrolling-line line-color"></div>
+
+            <a  name="services"></a>
+            <div class="content-section-a" style="background-color:#E8E8E8">
+
+             <div class="container">
+              <div class="row">
+                <h2 class="section-heading" style = "text-align: center">Hey You...</h2>
+                <p class="lead" style="font-size:160%">Yeah, you. Can you keep a secret? Ok good. Listen, don't tell the webmaster, but we (alumni) snuck into the DECA website to preach about our lives as alumni. Wanna find out if there's actually life after DECA? Keep on scrolling.</p>
+              </div>
+            </div>
+
+          <!-- /.container -->
+
+        </div>
+        <!-- /.content-section-a -->
+
+      <!-- <div class="col-lg-12"> -->
+
+        <h2 class="section-heading" style = "text-align: center; font-size: 300%; padding-top:2%">What's New?</h2>
+        <div class="panel panel-default"  style =" width: 75%;margin-left: 12.5%">
+
+          <div class="panel-body" style="box-shadow: 5px 5px 10px #888888; border: 10px outset #939393">
+          
+            <h1 style="text-align:center"><em style="color:blue;font-size:80%"></em> Welcome </h1> <!-- Title of Announcement -->
+            <h3 style="text-align:right">December 3rd</h3> <!-- Date of Announcement -->
+            <p style="font-size:120%; font-weight:400">Greetings fellow DECA enthusiasts! Welcome to the launch of Lynbrook DECA's newest (and likely best) page of our website. We hope you enjoy everything to come as part of our collective effort to make Lynbrook DECA great again.</p>
+            
+          </div>
+        </div>
+
+
+
+
+    <h2 class="section-heading" style ="text-align:center; margin-top:5%; font-size: 300%">Meet the Alumni</h2>
+    <!-- <hr class="section-heading-spacer"> -->
+    <div class="officers " style = "width:100%; padding-bottom: 5%" >
+
+
+     <div class="view view-first" style="margin-left:13%">
+      <img src="img/arvin.jpg">
+      <div class="mask">
+       <h2>Arvin Ng<br><span style = "font-size:28px !important">Honorary Indian</span></h2>
+
+       <p style="margin-top:0px">This picture is exactly what it seems. Hey everyone! I'm formerly known as Rawrvin, currently known as Arvin, and hope to be known as Arvind. After indulging in Indian movies, listening to Indian songs, and almost having an Indian name, I am waiting for the day that I can be fully assimilated into the culture. Btw, if you're ever in the mood to party, hit me up!</p>
+     </div>
+   </div>
+
+   <div class="view view-first" style="margin-left:5%">
+    <img src="img/indu.jpg">
+    <div class="mask">
+     <h2>Indu Pereira<br><span style = "font-size:35px !important">Engineer</span></h2>
+     <p style="margin-top:10px">As the only engineer of the DECA alumni, it is my responsibility to think, build, and innovate in the name of DECA. Besides acing my engineering classes and tinkering with robots, I make constant dining hall trips, shower, and tell people I’m in EECS. I also made this website!! #realwebmaster</p>
+   </div>
+ </div>
+
+ <div class="view view-first" style="margin-left:5%">
+  <img src="img/skr.jpg">
+  <div class="mask">
+   <h2>SKR<br><span style = "font-size:35px !important">Sugar Daddy</span></h2>
+   <p style="padding-top:15px">Upon leaving my high school days, I discovered one of the most fulfilling aspects of my life as a sponsor of sorts. Nowadays, you will generally find me deeply and financially invested in all my close relationships. As a 17-year old I am honored to be a part of the 18 under 18 in my industry. If you are currently lacking funds, give me a call so I can "connect" with you.</p>
+ </div>
+</div>
+
+<div class="view view-first" style="margin-left:13%">
+  <img src="img/vaidehi.jpg">
+  <div class="mask">
+   <h2>Vaidehi Duraphe<br><span style = "font-size:26px !important">College Dropout</span></h2>
+   <p style="margin-top:15px">Man, don’t believe all those stories ‘bout how college is poppin’. Everything is so lame. Eat, sleep, rave, repeat. It’s the same thing over and over again. Take my advice and just drop out. Y’all are in DECA, just start a company and rake in the cash! I’ll be expecting my 10% cut…</p>
+ </div>
+</div>
+
+
+<div class="view view-first" style="margin-left:5%">
+  <img src="img/pransu.jpg">
+  <div class="mask">
+   <h2>Pransu Dash<br><span style = "font-size:35px !important">Fashionista</span></h2>
+   <p style="margin-top:5px">After working at Vogue, Victoria's Secret, and Maxim for the past 18 years, I've taken a break from the fashion industry to become a professional wingman. You can generally find me either wearing a velvet suit, hiding from Gautam "city" Kapoor, or both. If you need help “socializing,” call me at 1-800-GET-SOME.</p>
+ </div>
+</div>
+
+<div class="view view-first" style="margin-left:5%">
+  <img src="img/ronald.jpg">
+  <div class="mask">
+   <h2>Ronald Zhang<br><span style = "font-size:35px !important">Former Child</span></h2>
+
+   <p style="margin-top:55px">18 years of experience.</p>
+ </div>
+</div>
+
+<div class="clear"></div>
+
+</div>
+
+
+<div class="scrolling-line line-color" style="height:5px;"></div>
+
+<!-- Footer w/Sitemap -->
+<div class="scrolling-footer footer-color" >
+  <h3>Sitemap</h3>
+  <p>
+   <a href="index.html">Home</a> | 
+   <a href="about.html">About</a> | 
+   <a href="calendar.html">Calendar</a> | 
+   <a href="events.html">Events</a> | 
+   <a href="conferences.html">Conferences</a>
+ </p>
+
+ <h3 style="font-weight:300;font-size:110%">Our Proud Sponsor</h3>
+ <img src="data1/images/sponsor.png" style = "margin-bottom:0px; padding-bottom:10px">
+ <div class="container">
+   <p>&copy 2015 Lynbrook DECA</p>
+ </div>
+</div>
+
+</main>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src="js/modernizr.js"></script>
+</body>
+</html>

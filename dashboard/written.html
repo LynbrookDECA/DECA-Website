@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lynbrook DECA - Dashboard</title>
+<link rel="icon" href="../img/favico.png"></link>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top dash-header" role="navigation" >
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div id="navbarlogo">
+            	<a href="index.html"><img src="../img/favico.png" height="30px" /></a>
+        		</div>
+        
+		        <div id="lynbrookdeca">
+		        	<p><a href="index.html">Lynbrook DECA</a></p> 
+		        </div>
+        
+				<!-- <a class="navbar-brand" href="dashboard.html"><span>Lynbrook DECA</span> Admin</a> -->
+				<ul class = "dash-hover">
+
+					<li class = "s"><a href="../index.html">HOME</a></li>
+					<li class = "s"><a href="../about.html">ABOUT</a></li>
+					<li class = "s"><a href="../calendar.html">CALENDAR</a></li>
+					<li class = "s"><a href="../events.html">EVENTS</a></li>
+	                <li class = "s"><a href="../conferences.html" style="border-right:1px solid black">CONFERENCES</a></li>
+	                <!-- <button class="login-button" id="loginform">LOG IN</button>
+	                <button class="signup-button" onclick="window.location='signup.html';">SIGN UP</button> -->
+				
+
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" style ="margin-top:20px">
+							<li style ="padding-top:0" ><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+							<li style ="padding-top:0"><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+							<li style ="padding-top:0"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						</ul>
+						
+					</li>
+				</ul>
+				</ul>
+			</div>
+							
+		</div><!-- /.container-fluid -->
+	</nav>
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 40px">
+		
+		<ul class="nav menu">
+			<li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+			<li  class="active"><a href="written.html"><span class="glyphicon glyphicon-list-alt"></span> Written Materials</a></li>
+			<li><a href="roleplay.html"><span class="glyphicon glyphicon-briefcase"></span> Roleplay Materials</a></li>
+			<li><a href="testing.html"><span class="glyphicon glyphicon-pencil"></span> Testing Materials</a></li>
+			<li><a href="points.html"><span class="glyphicon glyphicon-stats"></span> Point System</a></li>
+			<li><a href="contact.html"><span class="glyphicon glyphicon-question-sign"></span> Contact Officer Team</a></li>
+			
+			<li role="presentation" class="divider"></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li>Written Materials</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Written Study Materials</h1>
+				<hr>
+			</div>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Line Chart</div>
+					<div class="panel-body">
+						<div class="canvas-wrapper">
+							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Bar Chart</div>
+					<div class="panel-body">
+						<div class="canvas-wrapper">
+							<canvas class="main-chart" id="bar-chart" height="200" width="600"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->		
+		
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Pie Chart</div>
+					<div class="panel-body">
+						<div class="canvas-wrapper">
+							<canvas class="chart" id="pie-chart" ></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Doughnut Chart</div>
+					<div class="panel-body">
+						<div class="canvas-wrapper">
+							<canvas class="chart" id="doughnut-chart" ></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-xs-6 col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4>Label:</h4>
+						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">92%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4>Label:</h4>
+						<div class="easypiechart" id="easypiechart-orange" data-percent="65" ><span class="percent">65%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4>Label:</h4>
+						<div class="easypiechart" id="easypiechart-teal" data-percent="56" ><span class="percent">56%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4>Label:</h4>
+						<div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->
+											
+	</div>	<!--/.main-->
+	  
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script>
+		!function ($) {
+		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+		        $(this).find('em:first').toggleClass("glyphicon-minus");      
+		    }); 
+		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>

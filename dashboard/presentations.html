@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lynbrook DECA - Dashboard</title>
+<link rel="icon" href="../img/favico.png"></link>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+<script>
+	var config = {
+	  	apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
+	  	authDomain: "lynbrook-deca.firebaseapp.com",
+	  	databaseURL: "https://lynbrook-deca.firebaseio.com",
+	  	storageBucket: "lynbrook-deca.appspot.com",
+	  	messagingSenderId: "105997057044"
+	  };
+	  firebase.initializeApp(config);
+</script>
+
+</head>
+
+<body class = "bodyDisplay" style = "display:none">
+	<nav class="navbar navbar-inverse navbar-fixed-top dash-header" role="navigation" >
+		<div class="container-fluid">
+			<div class="navbar-header">
+				
+				<div id="navbarlogo">
+            	<a href=""><img src="../img/favico.png" height="30px" /></a>
+        		</div>
+        
+		        <!-- <div id="lynbrookdeca">
+		        	<p><a href="../index.html">Lynbrook DECA</a></p> 
+		        </div> -->
+
+		        <button type="button"  id ="icon-bar1" style = "background-color: #1F3A93; margin-top:17px; margin-right: 5px !important" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar" style = "color:brown" ></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+        		
+
+		        <!-- <span style = "padding-top: 11px; color: #3366FF; display:none; padding-right: 10px;" id= "icon-bar1"class="glyphicon glyphicon-align-justify glyphicon-l"></span>	 -->
+        
+				<!-- <a class="navbar-brand" href="dashboard.html"><span>Lynbrook DECA</span> Admin</a> -->
+				<ul class = "dash-hover">
+
+					<li class = "s"><a href="../index.html">HOME</a></li>
+					<li class = "s"><a href="../about.html">ABOUT</a></li>
+					<li class = "s"><a href="../calendar.html">CALENDAR</a></li>
+					<li class = "s"><a href="../events.html">EVENTS</a></li>
+	                <li class = "s"><a href="../conferences.html" style="border-right:1px solid black">CONFERENCES</a></li>
+	                <!-- <button class="login-button" id="loginform">LOG IN</button>
+	                <button class="signup-button" onclick="window.location='signup.html';">SIGN UP</button> -->
+				
+
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><span class ="user-name"> User </span><span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" style ="margin-top:20px">
+							<li style ="padding-top:0"><a href="dashboard.html"><span class="glyphicon glyphicon-bookmark"></span> Dashboard</a></li>
+							<li style ="padding-top:0" ><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Edit My Profile</a></li>
+							<li style ="padding-top:0"><a href="#" class="logout-button"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+							
+						</ul>
+						
+					</li>
+				</ul>
+				</ul>
+			</div>
+							
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div id="" class="nav-menu" style="padding-top: 0px; display:none">
+
+		
+		<ul class="nav menu" style = "text-align:center; background-color:whitesmoke;">
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../about.html">About</a></li>
+			<li><a href="../calendar.html">Calender</a></li>
+			<li><a href="../events.html">Events</a></li>
+			<li><a href="../conferences.html">Conferences</a></li>
+			<li><a href="profile.html">Profile</a></li>
+			<li><a class="logout-button" href = "#">Logout</a></li>
+			
+			
+			
+			<li role="presentation" class="divider"></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+	<div id="" class="test" style="padding-top: 0px; display:none">
+		
+		<ul class="nav menu" style = "text-align:center; background-color:white">
+			<li ><a href="dashboard.html"><span id ="test1" class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+			<li class="active1"><a href="presentations.html" style = "color:white"><span class="glyphicon glyphicon-folder-close"></span> Presentations/Videos</a></li>
+			<li><a href="points.html"><span class="glyphicon glyphicon-stats"></span> Point System</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk9qZjc1OWZIZjMxWFBabl9BUmFac1pMU3g1clpjZ1pzTlNxUjlRVjUyQzg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-list-alt"></span> Written Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfjFSamlPMGVsX2llQU1md0ZCSmNEVUxVNUl5Qm83TzVaSWdKbDgxNzkzaUU&usp=sharing" target="_blank"><span class="glyphicon glyphicon-book"></span> Roleplay Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfklJZEFBYlYtTWJxZDIxclBwejVEcGVXeDRvMlpidDdHOTNHU0g2bDR5Z00&usp=sharing" target="_blank"><span class="glyphicon glyphicon-briefcase"></span> Principles Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk91RnNQU3RmRnNRWUJDVjBvX1hfeEtmNWpjZFlmem5PSl9Tcm1iNVh4bDg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Testing Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0Bw48OQ3LltH9fmkwN3VRaTN0T3ZSaHIyUlFjWkdlOEtsNzY5aDhvc3pSXzNvaExNdEJkVU0&usp=sharing" target="_blank"><span class="glyphicon glyphicon-camera"></span> DECA Memories</a></li>
+			
+			
+			<li role="presentation" class="divider"></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 40px">
+		
+		<ul class="nav menu">
+			<li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+			<li class="active1"><a href="presentations.html" style = "color:white"><span class="glyphicon glyphicon-folder-close"></span> Presentations/Videos</a></li>
+			<li><a href="points.html"><span class="glyphicon glyphicon-stats"></span> Point System</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk9qZjc1OWZIZjMxWFBabl9BUmFac1pMU3g1clpjZ1pzTlNxUjlRVjUyQzg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-list-alt"></span> Written Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfjFSamlPMGVsX2llQU1md0ZCSmNEVUxVNUl5Qm83TzVaSWdKbDgxNzkzaUU&usp=sharing" target="_blank"><span class="glyphicon glyphicon-book"></span> Roleplay Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfklJZEFBYlYtTWJxZDIxclBwejVEcGVXeDRvMlpidDdHOTNHU0g2bDR5Z00&usp=sharing" target="_blank"><span class="glyphicon glyphicon-briefcase"></span> Principles Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk91RnNQU3RmRnNRWUJDVjBvX1hfeEtmNWpjZFlmem5PSl9Tcm1iNVh4bDg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Testing Materials</a></li>
+			<li><a href="https://drive.google.com/folderview?id=0Bw48OQ3LltH9fmkwN3VRaTN0T3ZSaHIyUlFjWkdlOEtsNzY5aDhvc3pSXzNvaExNdEJkVU0&usp=sharing" target="_blank"><span class="glyphicon glyphicon-camera"></span> DECA Memories</a></li>
+			
+			
+			<li role="presentation" class="divider"></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="dashboard.html"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active" >Presentations/Videos</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header" style = "text-align:center">Presentations/Videos</h1>
+				<hr>
+			</div>
+		</div><!--/.row-->
+				
+		
+		<div class="col-md-6" style = "width:100%">
+				<div class="panel panel-default">
+					<div class="panel-body tabs">
+					
+						<ul class="nav nav-pills">
+						<li  class = "active"><a href="#pilltab6" data-toggle="tab">Roleplays</a></li>
+<!-- 							<li><a href="#pilltab5" data-toggle="tab">Friday Meetings</a></li> -->
+							<li ><a href="#pilltab2" data-toggle="tab">Entrepreneurship</a></li>
+							<li><a href="#pilltab3" data-toggle="tab">Marketing Representative</a></li>
+							<li><a href="#pilltab4" data-toggle="tab">Operational Research</a></li>
+							<li><a href="#pilltab7" data-toggle="tab">Professional Selling</a></li>
+<!-- 							<li><a href="#pilltab1" data-toggle="tab">Principles' Lectures</a></li> -->
+ 							
+						</ul>
+		
+						<div class="tab-content">
+							<div class="tab-pane fade" id="pilltab1"> <!-- //Old principles lectres -->
+
+								<h4 style = "font-size: 300%">Profesional Development</h4>
+								
+								<a target = "_blank" href = "https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21469&authkey=AO27kh7MX5T-Bms&em=2&wdAr=1.3333333333333333">https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21469&authkey=AO27kh7MX5T-Bms&em=2&wdAr=1.3333333333333333</a>
+
+								<iframe src='https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21469&authkey=AO27kh7MX5T-Bms&em=2&wdAr=1.3333333333333333' width='100%' height='500px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+								<hr>
+
+								<h4 style = "font-size: 300%">Operations</h4>
+
+								<a target = "_blank" href = "https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21470&authkey=ABksz-2HSDa1bhQ&em=2&wdAr=1.3333333333333333">https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21470&authkey=ABksz-2HSDa1bhQ&em=2&wdAr=1.3333333333333333</a>
+
+								<iframe src='https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21470&authkey=ABksz-2HSDa1bhQ&em=2&wdAr=1.3333333333333333' width='100%' height='500px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+
+								<hr>
+
+								<h4 style = "font-size: 300%">Information Management</h4>
+
+								<a target = "_blank" href = "https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21473&authkey=APdlCdHWbqGGAHg&em=2&wdAr=1.3333333333333333">https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21473&authkey=APdlCdHWbqGGAHg&em=2&wdAr=1.3333333333333333</a>
+								
+								<iframe src='https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21473&authkey=APdlCdHWbqGGAHg&em=2&wdAr=1.3333333333333333' width='100%' height='500px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+								<hr>
+
+								<h4 style = "font-size: 300%">Human Resources Management</h4>
+
+								<a target = "_blank" href = "https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21471&authkey=AI3kQT0ABx64u_Y&em=2&wdAr=1.3333333333333333">https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21471&authkey=AI3kQT0ABx64u_Y&em=2&wdAr=1.3333333333333333</a>
+								
+								<iframe src='https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21471&authkey=AI3kQT0ABx64u_Y&em=2&wdAr=1.3333333333333333' width='100%' height='500px'frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+								<hr>
+
+								<h4 style = "font-size: 300%">Financial Analysis</h4>
+
+								<a target = "_blank" href = "https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21475&authkey=AG3ny_G-OYUEyZc&em=2&wdAr=1.3333333333333333">https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21475&authkey=AG3ny_G-OYUEyZc&em=2&wdAr=1.3333333333333333</a>
+
+								<iframe src='https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21475&authkey=AG3ny_G-OYUEyZc&em=2&wdAr=1.3333333333333333' width='100%' height='500px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+
+								<hr>
+
+								<h4 style = "font-size: 300%">Customer Relations</h4>
+								
+
+								<a target = "_blank" href = "https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21474&authkey=ALiL9HhBKUZhnhk&em=2&wdAr=1.3333333333333333">https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21474&authkey=ALiL9HhBKUZhnhk&em=2&wdAr=1.3333333333333333</a>
+
+								<iframe src='https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21474&authkey=ALiL9HhBKUZhnhk&em=2&wdAr=1.3333333333333333' width='100%' height='500px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+								<hr>
+
+
+								<h4 style = "font-size: 300%">Communication Skills</h4>
+
+								<a target = "_blank" href = "https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21476&authkey=AOtYw3hN8J7tiSQ&em=2&wdAr=1.3333333333333333">https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21476&authkey=AOtYw3hN8J7tiSQ&em=2&wdAr=1.3333333333333333</a>
+
+								<iframe src='https://onedrive.live.com/embed?cid=56C10D5FF25B1D4E&resid=56C10D5FF25B1D4E%21476&authkey=AOtYw3hN8J7tiSQ&em=2&wdAr=1.3333333333333333' width='100%' height='500px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+
+								<hr>
+
+								
+
+								<h4 style = "font-size: 300%">Emotional Intelligence</h4>
+
+								<a src="https://prezi.com/wmoslajsso4o/?utm_campaign=share&utm_medium=copy&rc=ex0share" target = "_blank">https://prezi.com/wmoslajsso4o/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+								<h4 style = "font-size: 300%">Overview</h4>
+								<a src="https://prezi.com/0u0wgdvhvjgo/?utm_campaign=share&utm_medium=copy&rc=ex0share" target = "_blank">https://prezi.com/0u0wgdvhvjgo/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+								<h4 style = "font-size: 300%">General Principles</h4>
+								<a src="https://prezi.com/qye-sflqsnux/?utm_campaign=share&utm_medium=copy&rc=ex0share" target = "_blank">https://prezi.com/qye-sflqsnux/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+								
+							</div>
+							<div class="tab-pane fade in " id="pilltab2">  <!-- //entre -->
+								<hr>
+								<h4 style = "font-size: 300%">Financials</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1Hz-pHU3LHHa5ZNbKHbh7h0ioiXZSFJm1iow5ScEZS64/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1Hz-pHU3LHHa5ZNbKHbh7h0ioiXZSFJm1iow5ScEZS64/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+								<hr>
+								<h4 style = "font-size: 300%">Revenue Streams + Cost Structure</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1Q0rzqtxEsSyYSsIf1RW0mQ9zAZwrsaFgkONt2X3wQGk/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1Q0rzqtxEsSyYSsIf1RW0mQ9zAZwrsaFgkONt2X3wQGk/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+								<hr>
+								<h4 style = "font-size: 300%">Unique Value Proposition + Customer Segments + Channels</h4>
+
+								<a href= "https://docs.google.com/presentation/d/11DDEPli7jUDn9XH3OUKC-nzz2J5UqXRqAW5mSZeE2dQ/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/11DDEPli7jUDn9XH3OUKC-nzz2J5UqXRqAW5mSZeE2dQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+								<hr>
+								<h4 style = "font-size: 300%">Problem and Solution Fit</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1P-bClGpZNe-ebTdE3-54_myI_2Hq0RzKzHNQbhkmblE/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1P-bClGpZNe-ebTdE3-54_myI_2Hq0RzKzHNQbhkmblE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+							</div>
+							<div class="tab-pane fade" id="pilltab3"> <!-- // mre -->
+								<hr>
+								<h4 style = "font-size: 300%">Delegating Money and Roles</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1He_43kc9IEBCD7_Tg02lGeiQzN9fCjSZ9Rg7oknSXKE/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1He_43kc9IEBCD7_Tg02lGeiQzN9fCjSZ9Rg7oknSXKE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+								<hr>
+
+
+
+								<hr>
+								<h4 style = "font-size: 300%">Statement of Benefits</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1pbVLDOBNJkaclhTDWENao_HLrnSVlnFkknXSzA-_FR4/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1pbVLDOBNJkaclhTDWENao_HLrnSVlnFkknXSzA-_FR4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+								<hr>
+								<h4 style = "font-size: 300%">Starting Your Plan</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1l1D-bQNU6fGkPNHSs6DU9P0d_pzQQbIfzzYE8Wz5Uw8/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1l1D-bQNU6fGkPNHSs6DU9P0d_pzQQbIfzzYE8Wz5Uw8/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>								
+							
+								<hr>
+								<h4 style = "font-size: 300%">Selecting a Business</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1SpfPIX6AFPun9gdyKVtYBlUC24Vp_DDaDQd3MRCI6j8/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1SpfPIX6AFPun9gdyKVtYBlUC24Vp_DDaDQd3MRCI6j8/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>							
+							
+							</div>
+							<div class="tab-pane fade" id="pilltab4"> <!-- //OR -->
+							
+
+								<hr>
+								<h4 style = "font-size: 300%">Strategic Plan</h4>
+								<a target = "_blank" href = "https://prezi.com/slqdeeukfomv/?utm_campaign=share&utm_medium=copy&rc=ex0share">click here if you have trouble viewing</a>
+
+								<iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="100%" height="569" src="https://prezi.com/embed/slqdeeukfomv/?bgcolor=ffffff&amp;lock_to_path=1&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5dVNtWTlYUWc5Z25tam9XdW1ycGNVUUt3PT0&amp;landing_sign=t3xEEnxDJ7qu_9Kzu_-0MU20M36S-qaL_m3MPjuRUwE"></iframe>
+
+
+
+							
+								<hr>
+								<h4 style = "font-size: 300%">Research and Conclusions</h4>
+								<a target = "_blank" href = "https://prezi.com/bju4izuzw7jp/or-presentation-10192016/?utm_campaign=share&utm_medium=copy#">click here if you have trouble viewing</a>
+
+								<iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="100%" height="569" src="https://prezi.com/embed/bju4izuzw7jp/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5KzBhbG1LMjhUb0ZOQ2NZcS85dno2ZVp3PT0&amp;landing_sign=It131SlSWt3VB9FbRttSaCE0vAnV1Jsf1wTAqkRNH30"></iframe>
+								
+								<hr>
+								<h4 style = "font-size: 300%">Presentation 1</h4>
+								<a target = "_blank" href = "https://prezi.com/sgyqthau13wx/?utm_campaign=share&utm_medium=copy">click here if you have trouble viewing</a>
+
+								<iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="100%" height="569" src="https://prezi.com/embed/sgyqthau13wx/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5L25CTFFjSHhDUFVya3V2UlZUZ0pmWjB3PT0&amp;landing_sign=u03v4lZpsX7GcnEoQo5YK3-R7eIGOZ47sVF6z23WT2o"></iframe>
+							
+								
+							</div>
+
+							<div class="tab-pane fade" id="pilltab5"> <!-- // Friday Meetings -->
+								<hr>
+								<h4 style = "font-size: 300%">Meeting 10 (Dec 11, 2015), Mandatory</h4>
+								<a target = "_blank" href = "https://prezi.com/o32bzutorkas/?utm_campaign=share&utm_medium=copy&rc=ex0share">https://prezi.com/o32bzutorkas/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+								<h4 style = "font-size: 300%">Meeting 8 (Nov 13, 2015)</h4>
+								<a target = "_blank" href = "https://prezi.com/sfrb2kbpvhkp/?utm_campaign=share&utm_medium=copy&rc=ex0share">https://prezi.com/sfrb2kbpvhkp/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+								<h4 style = "font-size: 300%">Meeting 7</h4>
+								<a target = "_blank" href = "https://prezi.com/sfrb2kbpvhkp/?utm_campaign=share&utm_medium=copy&rc=ex0share">https://prezi.com/sfrb2kbpvhkp/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+
+								<h4 style = "font-size: 300%">Meeting 6</h4>
+								<a target = "_blank" href = "https://prezi.com/5xtqiqt-eqad/?utm_campaign=share&utm_medium=copy&rc=ex0share">https://prezi.com/5xtqiqt-eqad/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+
+								<h4 style = "font-size: 300%">Meeting 5</h4>
+								<a target = "_blank" href = "https://prezi.com/ow-bjkfbj9wo/?utm_campaign=share&utm_medium=copy&rc=ex0share">https://prezi.com/ow-bjkfbj9wo/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+
+								<h4 style = "font-size: 300%">Meeting 4</h4>
+								<a target = "_blank" href = "https://prezi.com/f5nmo7xwgrck/?utm_campaign=share&utm_medium=copy&rc=ex0share">hhttps://prezi.com/f5nmo7xwgrck/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+
+								<h4 style = "font-size: 300%">Meeting 3</h4>
+								<a target = "_blank" href = "https://prezi.com/v-cvd_nu88rg/?utm_campaign=share&utm_medium=copy&rc=ex0share">https://prezi.com/v-cvd_nu88rg/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+
+								<h4 style = "font-size: 300%">Meeting 2</h4>
+								<a target = "_blank" href = "https://prezi.com/x6dx2yizwfuq/?utm_campaign=share&utm_medium=copy&rc=ex0share">https://prezi.com/x6dx2yizwfuq/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+								<hr>
+
+								<h4 style = "font-size: 300%">Meeting 1</h4>
+								<a target = "_blank" href = "https://prezi.com/tvq2ffav-1up/?utm_campaign=share&utm_medium=copy&rc=ex0share">https://prezi.com/tvq2ffav-1up/?utm_campaign=share&utm_medium=copy&rc=ex0share</a>
+
+							
+
+							</div>
+							<div class="tab-pane fade in active" id="pilltab6"> <!-- // Roleplays -->
+								<hr>
+								<h4 style = "font-size: 300%">Financial Analysis</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1EG3fBx5IDCPAnqTqcH65ofL6ZjUFjufEgcJrIUS42OU/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								
+								<iframe src="https://docs.google.com/presentation/d/1aQOySoPJFV9826GLqZW6bdvxG87Sd_-7AcFqLPExiWo/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+								
+								
+								
+								<hr>
+								<h4 style = "font-size: 300%">Customer Relations</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1EG3fBx5IDCPAnqTqcH65ofL6ZjUFjufEgcJrIUS42OU/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								
+								<iframe src="https://docs.google.com/presentation/d/1EG3fBx5IDCPAnqTqcH65ofL6ZjUFjufEgcJrIUS42OU/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+
+								<hr>
+								<h4 style = "font-size: 300%">Marketing</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1QIgDo7VKVwI4ftv559TSdDMvu1h8tr45zD5Xm0JXdR0/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								
+								<iframe src="https://docs.google.com/presentation/d/1QIgDo7VKVwI4ftv559TSdDMvu1h8tr45zD5Xm0JXdR0/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+								<hr>
+								<h4 style = "font-size: 300%">Analyzing Roleplays</h4>
+
+								<a href= "https://docs.google.com/presentation/d/13sScoikjZLvvIQHZ4J099t6E2WhUeHkz9Dbd6L1Eqv0/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								
+								<iframe src="https://docs.google.com/presentation/d/13sScoikjZLvvIQHZ4J099t6E2WhUeHkz9Dbd6L1Eqv0/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>								
+								
+								<hr>
+								<h4 style = "font-size: 300%">Analyzing Roleplays Video</h4>
+								
+								<iframe width="100%" height="569" src="https://www.youtube.com/embed/M9Sx5piuwYE?rel=0" frameborder="0" allowfullscreen></iframe>							
+								
+								
+								<hr>
+								<h4 style = "font-size: 300%">Roleplay Basics</h4>
+
+								<a href= "https://docs.google.com/presentation/d/1wpTyxdo3LQf1lsRXe9zvqAaouSMA7iQHuQTo1uryymw/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								
+								<iframe src="https://docs.google.com/presentation/d/1RTfraGTY2V7gawPeehDTbXVmXXEqzAluEt9Ko9842Bs/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>								
+								
+								<hr>
+								<h4 style = "font-size: 300%">Roleplay Basics Video</h4>
+								
+								<iframe width="100%" height="569" src="https://www.youtube-nocookie.com/embed/5_xu10UBjNo?rel=0" frameborder="0" allowfullscreen></iframe>
+							
+							</div>
+							<div class="tab-pane fade" id="pilltab7"> <!-- PSE -->
+								<hr>
+								<h4 style = "font-size: 300%">Communicating Understanding and Facilitating Buying</h4>
+								<a href= "https://docs.google.com/presentation/d/1i6kXW6rBFRosVgs57kNeG7388R1qTOfdOPTjGnhTUoc/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1i6kXW6rBFRosVgs57kNeG7388R1qTOfdOPTjGnhTUoc/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+								<hr>
+								<h4 style = "font-size: 300%">Prescribed Solution to Customer or Client Needs
+ </h4>
+								<a href= "https://docs.google.com/presentation/d/1DIdeXVjebvVsRyb8xSpPZ7i6dGEfJtm-DboxPjbmjuE/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1DIdeXVjebvVsRyb8xSpPZ7i6dGEfJtm-DboxPjbmjuE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+								<hr>
+								<h4 style = "font-size: 300%">Demonstrating Specific Products</h4>
+								<a href= "https://docs.google.com/presentation/d/1-MZ8l2R7q35mAccgzCs5VoKwQsLOyD49BPPlV-7vQDg/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1-MZ8l2R7q35mAccgzCs5VoKwQsLOyD49BPPlV-7vQDg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+								<hr>
+								<h4 style = "font-size: 300%">Introductions</h4>
+								<a href= "https://docs.google.com/presentation/d/1psA21DjuwrO_aVxMTQJYHE3wzxM8dWsO2qKV1CxN3Xo/embed?start=false&loop=false&delayms=3000">click here if you have trouble viewing</a>
+
+								<iframe src="https://docs.google.com/presentation/d/1psA21DjuwrO_aVxMTQJYHE3wzxM8dWsO2qKV1CxN3Xo/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+							</div>
+
+						</div>
+					</div>
+				</div><!--/.panel-->
+			</div><!-- /.col-->
+
+		<script>
+		    $(function () {
+		        $('#hover, #striped, #condensed').click(function () {
+		            var classes = 'table';
+		
+		            if ($('#hover').prop('checked')) {
+		                classes += ' table-hover';
+		            }
+		            if ($('#condensed').prop('checked')) {
+		                classes += ' table-condensed';
+		            }
+		            $('#table-style').bootstrapTable('destroy')
+		                .bootstrapTable({
+		                    classes: classes,
+		                    striped: $('#striped').prop('checked')
+		                });
+		        });
+		    });
+		
+		    function rowStyle(row, index) {
+		        var classes = ['active', 'success', 'info', 'warning', 'danger'];
+		
+		        if (index % 2 === 0 && index / 2 < classes.length) {
+		            return {
+		                classes: classes[index / 2]
+		            };
+		        }
+		        return {};
+		    }
+		</script>
+	</div>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src = "js/dashboard-parse.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+	<script>
+		!function ($) {
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
+				$(this).find('em:first').toggleClass("glyphicon-minus");	  
+			}); 
+			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>

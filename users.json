@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "localId": "a@a.com",
+      "email": "a@a.com",
+      "passwordHash": "868060d806c23959ab70ab3d62534c60",
+      "salt": "[B@3d4eac69",
+      
+    }
+    
+  ]
+}

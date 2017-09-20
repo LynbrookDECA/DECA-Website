@@ -1,0 +1,236 @@
+/*!
+ * Start Bootstrap - Landing Page Bootstrap Theme (https://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see https://www.apache.org/licenses/LICENSE-2.0.
+
+/*a {
+  color: #fed136
+}*/
+a:hover, a:focus, a:active, a.active {
+    color: #1F3A93 !important;  /*#354E9E*/
+}
+.navbar-default {
+    background-color: rgba(255, 255, 255, 0.91) !important;  /*border-color: transparent*/
+}
+.navbar-default .navbar-brand {
+    color: black !important;
+    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+    font-size: 2em;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:active, .navbar-default .navbar-brand.active {
+
+    /*color: black!important;*/
+
+    /*color: red !important;*/
+}
+.navbar-default .navbar-collapse {
+    border-color: rgba(255, 255, 255, .02)
+}
+.navbar-default .navbar-toggle {
+    background-color: white !important;
+    border-color: #1F3A93
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #1F3A93
+}
+.navbar-default .nav li a {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: navy
+}
+.navbar-default .nav li a:hover, .navbar-default .nav li a:focus {
+    color: #1F3A93;
+    outline: 0
+}
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #1F3A93
+}
+.navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #1F3A93 !important;
+}
+@media (min-width:768px) {
+    .navbar-default {
+        background-color: transparent;
+        padding: 25px 0;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+        border: 0
+    }
+    .navbar-default .navbar-brand {
+        font-size: 2.67em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s
+    }
+    .navbar-default .navbar-nav>.active>a {
+        border-radius: 3px
+    }
+    .navbar-default.navbar-shrink {
+        background-color: #222;
+        padding: 10px 0
+    }
+    .navbar-default.navbar-shrink .navbar-brand {
+        font-size: 1.5em
+    }
+}
+.main-content {
+
+    /* you need to assign a min-height to the main content so that the children can inherit it*/
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+.fixed-background {
+    position: relative;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: 1;
+}
+.fixed-background h1, .fixed-background h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    max-width: 1170px;
+    text-align: center;
+    opacity: 1.0;
+    text-shadow: 10 1px 3px rgba(0, 0, 0, 0.3);
+    color: #000;
+}
+.fixed-background h1 span, .fixed-background h2 span {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 2.5);
+    background-color: #fff;
+    opacity: 0.8;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+.fixed-background-top h1, .fixed-background-top h2 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    max-width: 1170px;
+    text-align: center;
+    opacity: 1.0;
+    text-shadow: 10 1px 3px rgba(0, 0, 0, 0.3);
+    color: #000;
+    margin-top: 215px;
+}
+.fixed-background-top h1 span, .fixed-background-top h2 span {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 2.5);
+    background-color: #fff;
+    opacity: 0.8;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 6%;
+    padding-right: 6%;
+    font-size: 400%;
+    font-weight: 300;
+}
+.background-about {
+    background-image: url("../img/officers.jpg");
+}
+h2 span {
+    font-weight: 300 !important;
+    font-size: 3vw !important;
+    font-family: 'Raleway', sans-serif !important;
+}
+@media  (max-width:768px) {
+    h2 span {
+        font-weight: 300 !important;
+        font-size: 6vw !important;
+        font-family: 'Raleway', sans-serif !important;
+    }
+}
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+.topnav {
+    font-size: 14px;
+}
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+.section-heading {
+    margin-bottom: 30px;
+}
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 3em;
+}
+.banner ul {
+    margin-bottom: 0;
+}
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+        font-size: 3em;
+    }
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}

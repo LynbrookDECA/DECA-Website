@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--<script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script> -->
+
+    <!--Fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+    <!--Stylesheets-->
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/design.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!--Script-->
+	<!--<script src="js/modernizr.js"></script> Modernizr -->
+
+	<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-auth.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js" ></script>
+
+	<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+
+	<script>
+        var config = {
+            apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
+            authDomain: "lynbrook-deca.firebaseapp.com",
+            databaseURL: "https://lynbrook-deca.firebaseio.com",
+            storageBucket: "lynbrook-deca.appspot.com",
+            messagingSenderId: "105997057044"
+        };
+        firebase.initializeApp(config);
+	</script>
+    
+
+	<title>Lynbrook DECA</title>
+
+    <link rel="icon" href="img/favico.png"></link>
+</head>
+
+<body style="background-color:whitesmoke">
+	<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" style= "padding-bottom:1.3vw"  >
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <div id="navbarlogo" style="display:inline-block;">
+           			 	<a href ="javascript:harlem()"><img src="img/favico.png" height="30px" /></a>
+        		</div> -->
+                
+                	<a class="navbar-brand page-scroll" href="index.html">Lynbrook DECA</a>
+                
+                
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html" >Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="calendar.html" >Calendar</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="events.html">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="conferences.html">Conferences</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="alumni.html" style=" border-right:1px solid gray;height:50px">Alumni</a>
+                    </li>
+                    
+
+                    <li style="margin-top: -6px; margin-right: -10px">
+                      <a><button type="button" class="btn btn-default navbtn page-scroll" onclick="window.location='signup.html';" >SIGN UP</button></a>
+                    </li>
+                    <li style="margin-top: -6px; margin-right: ">
+                      <a><button type="button" class="btn btn-default navbtn page-scroll" onclick="window.location='login.html';" >LOG IN</button></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>	
+	
+	<main class="main-content" >
+		
+		<!-- <div class="title-up">
+			<h1>
+                <span>Sign Up</span>
+            </h1>
+		</div> -->
+		<div class="fixed-background" style = "min-height: 35vh !important">
+            <h2>
+                <span >Sign-Up</span>
+            </h2>
+        </div>
+
+		<form id="msform" style = "width: 100%">
+			<!-- progressbar -->
+			<ul id="progressbar"  >
+				<li class="active">Step 1</li>
+				<li>Step 2</li>
+				<li>Step 3</li>
+				<li>Step 4</li>
+			</ul>
+
+			<!-- fieldsets -->
+			<fieldset>
+				<h2 class="fs-title">Who Are You?</h2>
+				<h3 class="fs-subtitle">Tell us who you are</h3>
+
+				<div id="wynmistakes" class="errormessages"></div>
+				
+				<input type="text" name="firstname" placeholder="Legal First Name" id="fname"/>
+				<input type="text" name="lastname" placeholder="Legal Last Name" id="lname"/>
+				
+
+
+				<!-- New Info -->
+				<h4 >Gender</h4>
+				<select class="form-control" id = "gender">
+  					<option></option>
+  					<option>Other</option>
+  					<option>Male</option>
+  					<option>Female</option>
+				</select> <br>
+				<input type = "text" name = "nickname" placeholder = "Nickname (optional)" id="nname"/>
+				<input type = "number" name = "idnum" placeholder = "Lynbrook Student ID" id="studentID"/>
+
+
+
+
+
+
+				<input type="button" name="next" class="next1 action-button" value="Next" />
+			</fieldset>
+			<fieldset>
+				<h2 class="fs-title">Personal Information</h2>
+				<h3 class="fs-subtitle">We promise not to sell it</h3>
+				<div id="pimistakes" class="errormessages"></div>
+				<input type="tel" name="cellname" placeholder="Cell Phone (###-###-####)" id="cellphone"/>
+				<input type="number" name="grade" placeholder="Current grade (9-12)" id="currentgrade"/>
+				<input type="number" name="years" placeholder="Year in DECA (1-4)" id="yearindeca"/>
+				<input type="text" name="tshirt" placeholder="T-Shirt Size (Adult)" id="tshirtsize"/>
+				<input type="text" name="parentemail" placeholder="Parent Email" id="parentemail"/>
+
+				<!-- new Info -->
+				<h4 >CTE Course</h4>
+				<select class="form-control" id = "businesscourse">
+					<option></option>
+  					<option>I don't have a business course</option>
+  					<option>Accounting</option>
+  					<option>Virtual Enterprise</option>
+  					<option>POB</option>
+  					<option>Computer Apps</option>
+				</select> <br>
+
+
+				<input type="button" name="previous" class="previous action-button" value="Previous" />
+				<input type="button" name="next" class="next2 action-button" value="Next" />
+			</fieldset>
+			<fieldset>
+				<h2 class="fs-title">Account Details</h2>
+				<h3 class="fs-subtitle">How you will sign in</h3>
+				<div id="admistakes" class="errormessages"></div>
+				<input type="text" name="email" placeholder="Email" id="email"/>
+				<input type="password" name="password" placeholder="Password" id="password"/>
+				<input type="password" name="confirmpassword" placeholder="Confirm Password" id="confirmpassword"/>
+				<input type="button" name="previous" class="previous action-button" value="Previous" />
+				<input type="button" name="next" class="next3 action-button" value="Next" />
+			</fieldset>
+			<fieldset>
+				<h2 class="fs-title">Club Password</h2>
+				<h3 class="fs-subtitle">What's the magic word?</h3>
+				<div id="cpmistakes" class="errormessages"></div>
+				<input type="text" name="clubpassword" placeholder="Club Password" id="clubpassword"/>
+				<input type="button" name="previous" class="previous action-button" value="Previous" />
+				<input type="submit" name="submit" class="submit action-button" value="Submit" id ="signupsubmit"/>
+			</fieldset>
+
+		</form>
+
+
+		<script>
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
+                    window.location.href='dashboard/dashboard.html';
+                    // ...
+                }
+            });
+
+			function signupfunction() {
+	
+                var firstname = $("#fname").val();
+                var lastname = $("#lname").val();
+                var cellphone = $("#cellphone").val();
+                var currentgrade = $("#currentgrade").val();
+                var yearindeca = $("#yearindeca").val();
+                var email = $("#email").val();
+                var password = $("#password").val();
+                var tshirtsize = $("#tshirtsize").val();
+                var parentemail = $("#parentemail").val();
+                var preferedname = $("#nname").val();
+                var studentsIDs = $("#studentID").val();
+                var gens = $("#gender").val();
+                var bus = $("#businesscourse").val();
+
+                firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
+
+                    firebase.database().ref('userData/' + user.uid).set({
+                        firstname: firstname,
+                        lastname: lastname,
+						studentID: studentsIDs,
+						phone: cellphone,
+						businesscourse: bus,
+						currentgrade: currentgrade,
+						email: email,
+						gender: gens,
+						nickname: preferedname,
+						tshirtsize: tshirtsize,
+						yearindeca: yearindeca,
+						parentemail: parentemail
+					});
+
+                    window.location.href='dashboard/dashboard.html';
+
+                }).catch(function(error) {
+                        // Handle Errors here.
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        alert(errorMessage);
+
+                    });
+
+            }
+
+			var current_fs, next_fs, previous_fs; //fieldsets
+			var left, opacity, scale; //fieldset properties which we will animate
+			var animating; //flag to prevent quick multi-click glitches
+			var fnameok=false;
+			var lnameok=false;
+			var cellok=false;
+			var gradeok=false;
+			var yearindecaok=false;
+			var emailok=false;
+			var passwordsmatch=false;
+			var clubpasswordok=false;
+			var clubpassword="epicdiamonds"
+			var error1="";
+			var error2="";
+			var error3="";
+			var error4="";
+			$(".next1").click(function(event){
+				var error1="";
+				fnameok=false;
+				lnameok=false;
+				nnname = false;
+				gen = false;
+				idnums = false;
+				$("#wynmistakes").html(error1);
+				if ($("#fname").val()!="")
+				{
+					fnameok=true;
+				} else {
+					error1+="Please enter your first name.<br>";
+				}
+				if ($("#lname").val()!="")
+				{
+					lnameok=true;
+				} else {
+					error1+="Please enter your last name.<br>";
+				}
+				
+				if ($("#studentID").val() > 0)
+				{
+					idnums= true;
+				}
+				else
+				{
+					error1+="Please enter your studentID.<br>";
+				}
+				if ($("#gender").val() != "")
+				{
+					gen = true;
+				}
+				else
+				{
+					error1+="Please enter your gender.<br>";
+				}
+				if (fnameok && lnameok && idnums && gen) {
+					if(animating) return false;
+					animating = true;
+					current_fs = $(this).parent();
+					next_fs = $(this).parent().next();
+					
+					//activate next step on progressbar using the index of next_fs
+					$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+					
+					//show the next fieldset
+					next_fs.show(); 
+					//hide the current fieldset with style
+					current_fs.animate({opacity: 0}, {
+						step: function(now, mx) {
+							//as the opacity of current_fs reduces to 0 - stored in "now"
+							//1. scale current_fs down to 80%
+							scale = 1 - (1 - now) * 0.2;
+							//2. bring next_fs from the right(50%)
+							left = (now * 50)+"%";
+							//3. increase opacity of next_fs to 1 as it moves in
+							opacity = 1 - now;
+							current_fs.css({'transform': 'scale('+scale+')'});
+							next_fs.css({'left': left, 'opacity': opacity});
+						}, 
+						duration: 800, 
+						complete: function(){
+							current_fs.hide();
+							animating = false;
+						}, 
+						//this comes from the custom easing plugin
+						//easing: 'easeInOutBack'
+					});
+				} else {
+					error1+="<br>";
+					$("#wynmistakes").html(error1);
+				}
+			});
+			$(".next2").click(function(){
+				error2="";
+				cellok=false;
+				gradeok=false;
+				yearindecaok=false;
+				tshirtok=false;
+				parentemailok=false;
+				businessok = false;
+				$("#pimistakes").html(error2);
+				function isvalidphonenumber(inputtxt)  
+				{  
+					var phoneno = new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+					var phonenoo = new RegExp(/^\d{10}$/);
+					if (phoneno.test(inputtxt)) {
+						return true;
+					} else if (phonenoo.test(inputtxt)) {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				if (isvalidphonenumber($("#cellphone").val())) {
+					cellok=true;
+				} else {
+					error2+="Please enter a valid 10-digit phone number like ###-###-####.<br>"
+				}
+
+				if ($("#currentgrade").val() < 9 || $("#currentgrade").val() > 12) {
+					error2+="Your grade must be between 9 and 12.<br>"
+				} else {
+					gradeok=true;
+				}
+				if ($("#yearindeca").val() < 1 || $("#yearindeca").val() > 4) {
+					error2+="Your year in DECA must be between 1 and 4.<br>"
+				} else {
+					yearindecaok=true;
+				}
+				function isEmpty(str) {
+				    return (!str || 0 === str.length);
+				}
+				if (isEmpty($("#tshirtsize").val()))
+				{
+					error2+="Please enter a T-Shirt size.<br>"
+				} else {
+					tshirtok=true;
+				}
+
+				if ($("#businesscourse").val() !="")
+				{
+					businessok = true;
+
+				}
+				else
+				{
+					error2+="Please enter your business course.<br>"
+				}
+				function isValidEmailAddress(emailAddress) {
+			    var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+			    return pattern.test(emailAddress);
+				};
+				if ( isValidEmailAddress($("#parentemail").val()) )
+				{
+					parentemailok=true;
+				} else {
+					error2+="Please enter a valid parent email address.<br>";
+				}
+				if (cellok && gradeok && yearindecaok && tshirtok  && businessok) {
+					if(animating) return false;
+					animating = true;
+					current_fs = $(this).parent();
+					next_fs = $(this).parent().next();
+					
+					//activate next step on progressbar using the index of next_fs
+					$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+					
+					//show the next fieldset
+					next_fs.show(); 
+					//hide the current fieldset with style
+					current_fs.animate({opacity: 0}, {
+						step: function(now, mx) {
+							//as the opacity of current_fs reduces to 0 - stored in "now"
+							//1. scale current_fs down to 80%
+							scale = 1 - (1 - now) * 0.2;
+							//2. bring next_fs from the right(50%)
+							left = (now * 50)+"%";
+							//3. increase opacity of next_fs to 1 as it moves in
+							opacity = 1 - now;
+							current_fs.css({'transform': 'scale('+scale+')'});
+							next_fs.css({'left': left, 'opacity': opacity});
+						}, 
+						duration: 800, 
+						complete: function(){
+							current_fs.hide();
+							animating = false;
+						}, 
+						//this comes from the custom easing plugin
+						//easing: 'easeInOutBack'
+					});
+				} else {
+					error2+="<br>";
+					$("#pimistakes").html(error2);
+				}
+			});
+			$(".next3").click(function(){
+				error3="";
+				emailok=false;
+				passwordsmatch=false;
+				$("#admistakes").html(error3);
+				function isValidEmailAddress(emailAddress) {
+			    var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+			    return pattern.test(emailAddress);
+				};
+				if ( isValidEmailAddress($("#email").val()) )
+				{
+					emailok=true;
+				} else {
+					error3+="Please enter a valid email address.<br>";
+				}
+				if ($("#password").val()=="") {
+					error3+="Please enter a password.<br>";
+				} else if ($("#confirmpassword").val()=="") {
+					error3+="Please confirm your password.<br>";
+				} else if ($('#password').val() != $('#confirmpassword').val()) {
+					error3+="Your passwords don't match.<br>";
+				} else {
+					passwordsmatch=true;
+				}
+				if (emailok && passwordsmatch) {
+					if(animating) return false;
+					animating = true;
+					current_fs = $(this).parent();
+					next_fs = $(this).parent().next();
+					
+					//activate next step on progressbar using the index of next_fs
+					$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+					
+					//show the next fieldset
+					next_fs.show(); 
+					//hide the current fieldset with style
+					current_fs.animate({opacity: 0}, {
+						step: function(now, mx) {
+							//as the opacity of current_fs reduces to 0 - stored in "now"
+							//1. scale current_fs down to 80%
+							scale = 1 - (1 - now) * 0.2;
+							//2. bring next_fs from the right(50%)
+							left = (now * 50)+"%";
+							//3. increase opacity of next_fs to 1 as it moves in
+							opacity = 1 - now;
+							current_fs.css({'transform': 'scale('+scale+')'});
+							next_fs.css({'left': left, 'opacity': opacity});
+						}, 
+						duration: 800, 
+						complete: function(){
+							current_fs.hide();
+							animating = false;
+						}, 
+						//this comes from the custom easing plugin
+						//easing: 'easeInOutBack'
+					});
+				} else {
+					error3+="<br>";
+					$("#admistakes").html(error3);
+				}
+			});
+
+			$("#signupsubmit").click(function(event) {
+				event.preventDefault();
+				error4="";
+				clubpasswordok=false;
+				$("#cpmistakes").html(error4);
+				if ($('#clubpassword').val() != clubpassword) {
+					error4+="That isn't the club password.<br>";
+				} else {
+					clubpasswordok=true;
+					signupfunction();
+				}
+				if (!clubpasswordok) {
+					error4+="<br>";
+					$("#cpmistakes").html(error4);
+				}
+			});
+
+			$(".previous").click(function(){
+				if(animating) return false;
+				animating = true;
+				
+				current_fs = $(this).parent();
+				previous_fs = $(this).parent().prev();
+				
+				//de-activate current step on progressbar
+				$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+				
+				//show the previous fieldset
+				previous_fs.show(); 
+				//hide the current fieldset with style
+				current_fs.animate({opacity: 0}, {
+					step: function(now, mx) {
+						//as the opacity of current_fs reduces to 0 - stored in "now"
+						//1. scale previous_fs from 80% to 100%
+						scale = 0.8 + (1 - now) * 0.2;
+						//2. take current_fs to the right(50%) - from 0%
+						left = ((1-now) * 50)+"%";
+						//3. increase opacity of previous_fs to 1 as it moves in
+						opacity = 1 - now;
+						current_fs.css({'left': left});
+						previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+					}, 
+					duration: 800, 
+					complete: function(){
+						current_fs.hide();
+						animating = false;
+					}, 
+					//this comes from the custom easing plugin
+					//easing: 'easeInOutBack'
+				});
+			});
+
+
+		</script>
+
+		<script src="https://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	
+
+	   
+		
+	</main>
+</body>
+</html>
