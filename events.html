@@ -29,20 +29,20 @@
 
   <link rel="stylesheet" href="css/design.css">
 
-  <script src="js/modernizr.js"></script> 
+  <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+  <script>
+      var config = {
+          apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
+          authDomain: "lynbrook-deca.firebaseapp.com",
+          databaseURL: "https://lynbrook-deca.firebaseio.com",
+          storageBucket: "lynbrook-deca.appspot.com",
+          messagingSenderId: "105997057044"
+      };
+      firebase.initializeApp(config);
 
-
-<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
-<script>
-  var config = {
-      apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
-      authDomain: "lynbrook-deca.firebaseapp.com",
-      databaseURL: "https://lynbrook-deca.firebaseio.com",
-      storageBucket: "lynbrook-deca.appspot.com",
-      messagingSenderId: "105997057044"
-    };
-    firebase.initializeApp(config);
-</script>
+  </script>
+  <!--Script-->
+  <script src="js/modernizr.js"></script> <!-- Modernizr -->
 
 
 </head>
@@ -92,9 +92,7 @@
                   <li>
                         <a class="page-scroll" href="conferences.html" style = "color: gray">Conferences</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="alumni.html" style=" border-right:1px solid gray;height:50px; color:gray">Alumni</a>
-                    </li>
+
 
 
                   <li style="margin-top: -6px; margin-right: -10px">

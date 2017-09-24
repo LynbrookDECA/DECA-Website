@@ -612,7 +612,9 @@ var username = urrentUser.get("username");
 
 
 $("#save").click(function(){                                        // THIS IS IT!!!
-	
+
+alert("aksldjaksdjalksdj");
+	console.log("asd");
 	var currentUser = Parse.User.current();
 	//currentUser.set("firstname",$("#firstname-profile").val());
 	//currentUser.set("email",$("#email-profile").val());

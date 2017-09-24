@@ -23,15 +23,10 @@
  */
 
 
-// // Parse.initialize("kScQXRCZFHxkzilbr6loKIKO2hxt7lcKom9DWKRD", "R0gxChWChXhekNDydkGcxGCLfZndbw3H6dQSUHgr");
-
-// Parse.initialize("DECA_APPLICATION_ID");
-// Parse.serverURL = 'https://54.212.246.50:1337/parse';
-
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // alert("you are logged in");
+    $(".loginbutton1").css("display", "none");
     $(".logbutton").css("display", "none");
     $(".signbutton").css("display", "none");
     $(".user-menu").css("display", "block");
@@ -226,7 +221,7 @@ $('input[type="submit"]').mouseup(function(){
 // $("#login-error-message").html("changing1");
 // alert ("hello");
 $('#loginbutton1').click(function(){
-  // alert("hello");
+
     // $("#login-error-message").html("changing");
     $("#loginbutton").css('background', '#1C3484');
     var username = $("#loginuser").val();

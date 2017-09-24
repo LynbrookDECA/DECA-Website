@@ -24,14 +24,15 @@
 	<link rel="stylesheet" href="css/design.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <!--Script-->
-	<!--<script src="js/modernizr.js"></script> Modernizr -->
+
 
 	<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-auth.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js" ></script>
 
 	<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+	<!--Script-->
+
 
 	<script>
         var config = {
@@ -43,7 +44,8 @@
         };
         firebase.initializeApp(config);
 	</script>
-    
+
+	<script src="js/modernizr.js"></script>
 
 	<title>Lynbrook DECA</title>
 
@@ -93,9 +95,7 @@
                     <li>
                         <a class="page-scroll" href="conferences.html">Conferences</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="alumni.html" style=" border-right:1px solid gray;height:50px">Alumni</a>
-                    </li>
+
                     
 
                     <li style="margin-top: -6px; margin-right: -10px">
@@ -122,8 +122,9 @@
 		</div> -->
 		<div class="fixed-background" style = "min-height: 35vh !important">
             <h2>
-                <span >Sign-Up</span>
+                <span>Sign-Up</span>
             </h2>
+
         </div>
 
 		<form id="msform" style = "width: 100%">
@@ -137,6 +138,8 @@
 
 			<!-- fieldsets -->
 			<fieldset>
+				<h2> If you haven't already, please fill out this form first: <a target="_blank" href="https://goo.gl/forms/bFWFt1Nko37F3Ooj2"> HERE </a></h2>
+
 				<h2 class="fs-title">Who Are You?</h2>
 				<h3 class="fs-subtitle">Tell us who you are</h3>
 
@@ -223,7 +226,7 @@
             });
 
 			function signupfunction() {
-	
+
                 var firstname = $("#fname").val();
                 var lastname = $("#lname").val();
                 var cellphone = $("#cellphone").val();
