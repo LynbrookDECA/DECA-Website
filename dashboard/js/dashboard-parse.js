@@ -40,6 +40,11 @@ firebase.auth().onAuthStateChanged(function (user) {
             $("#tshirt-profile").val(snapshot.val().tshirtsize);
             $("#parentemail-profile").val(snapshot.val().parentemail);
 
+            $("#roleplayevent").val(snapshot.val().roleplay.name);
+            $("#writtenevent").val(snapshot.val().written.name);
+            $("#roleplayPartner").val(snapshot.val().roleplay.teammate1);
+            $("#writtenPartner1").val(snapshot.val().written.teammate1);
+            $("#writtenPartner2").val(snapshot.val().written.teammate2);
 
         });
 
@@ -137,7 +142,7 @@ $("#save").click(function () {
 });
 
 $(".logout-button").click(function () {
-
+    alert("working");
 
     firebase.auth().signOut().then(function () {
         location.reload();
@@ -378,71 +383,8 @@ $("#icon-bar1").click(function () {
 //Profile.html Java Script
 
 
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-
-        // var userId = firebase.auth().currentUser.uid;
-        // firebase.database().ref('/userData/' + 'tejasvikothapalli@gmailcom').once('value').then(function(snapshot) {
-        // var business = snapshot.val().businesscourse;
-        // // alert(business);
-
-
-        // console.log(user.email + " " + user.uid);
-    } else {
-        // No user is signed in.
-        window.location.href = '../index.html';
-    }
-});
-
-
-var urrentUser = Parse.User.current();
-var username = urrentUser.get("username");
-// alert(username);
-// alert($("#roleplayevent").val());
-
-var query1 = new Parse.Query(Parse.Object.extend("Events"));
-query1.limit(1000);
-
-query1.find({
-
-    success: function (results) {
-
-        var Events = null;
-        // alert("hello" + results.length); 
-
-        for (var i = 0; i < results.length; i++) {
-            var object = results[i];
-            console.log(object.id + ' - ' + object.get('column'));
-            if (object.get('username') == username) {
-                Events = object;
-                break;
-            }
-        }
-        if (Events == null) {
-
-
-        } else {
-            $("#roleplayevent").val(Events.get("roleplay"));
-            $("#writtenevent").val(Events.get("written"));
-            $("#roleplayPartner").val(Events.get("roleplayPartner"));
-            $("#writtenPartner1").val(Events.get("writtenPartner1"));
-            $("#writtenPartner2").val(Events.get("writtenPartner2"));
-            // Events.get("roleplay")
-
-
-        }
-
-
-    },
-    error: function (error) {
-        alert("Error" + " " + error.message);
-    }
-
-});
-
-
 $("#eventsSave").click(function () {
-
+    console.log("is this working");
     if ($("option:selected", "select[name=roleplays]").hasClass('team')) {
         //do something
         // alert("hello");
@@ -458,7 +400,6 @@ $("#eventsSave").click(function () {
         return;
     }
 
-
     if ($("#writtenPartner1").val().length > 0 || $("#writtenPartner2").val().length > 0) {
         if (!$("option:selected", "select[name=writtens]").hasClass('team')) {
             // alert("u stupid");
@@ -466,79 +407,18 @@ $("#eventsSave").click(function () {
             return;
         }
     }
-    // alert("hello");
-    var urrentUser = Parse.User.current();
-    var username = urrentUser.get("username");
-    // alert(username);
-    // alert($("#roleplayevent").val());
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            var roleplay = {'name':$("#roleplayevent").val(), 'teammate1':$("#roleplayPartner").val()};
+            var written = {'name':$("#writtenevent").val(), 'teammate1':$("#writtenPartner1").val(), 'teammate2':$("#writtenPartner2").val()};
 
-    var query1 = new Parse.Query(Parse.Object.extend("Events"));
-    query1.limit(1000);
-
-    query1.find({
-
-        success: function (results) {
-
-            var Events = null;
-            // alert("hello" + results.length);
-
-            for (var i = 0; i < results.length; i++) {
-                var object = results[i];
-                console.log(object.id + ' - ' + object.get('column'));
-                if (object.get('username') == username) {
-                    Events = object;
-                    break;
-                }
-            }
-            if (Events == null) {
-
-                var object = new Parse.Object("Events");
-                object.set('username', username);
-                object.set('firstname', currentUser.get('firstname'));
-                object.set('lastname', currentUser.get('lastname'));
-                object.set('yearindeca', currentUser.get('yearindeca'));
-                object.set('roleplay', $("#roleplayevent").val());                          // CHANGE THIS
-                object.set('written', $("#writtenevent").val());
-                object.set('roleplayPartner', $("#roleplayPartner").val());
-                object.set('writtenPartner1', $("#writtenPartner1").val());
-                object.set('writtenPartner2', $("#writtenPartner2").val());
-                object.save(null, {
-                    success: function (object) {
-
-                        // alert("Changing Events.");
-                        location.reload();
-                    },
-                    error: function (object, error) {
-                        alert('error saving for new user:' + error.message);
-                    }
-                });
-                // alert("fail");
-            } else {
-                Events.set('roleplay', $("#roleplayevent").val());                          // CHANGE THIS
-                Events.set('written', $("#writtenevent").val());
-                Events.set('roleplayPartner', $("#roleplayPartner").val());
-                Events.set('writtenPartner1', $("#writtenPartner1").val());
-                Events.set('writtenPartner2', $("#writtenPartner2").val());
-                Events.save(null, {
-                    success: function (object) {
-
-                        // alert("Success logging points!");
-
-                        location.reload();
-                    },
-                    error: function (object, error) {
-                        alert('Error saving for existing user:' + error.message);
-                    }
-                });
-            }
-
-
-        },
-        error: function (error) {
-            alert("Error" + " " + error.message);
+            firebase.database().ref('userData/' + user.uid).update({
+                roleplay: roleplay,
+                written: written
+            });
         }
-
     });
+    location.reload();
 
 });
 
