@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lynbrook DECA - Dashboard</title>
+    <link rel="icon" href="../img/favico.png"></link>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/bootstrap-table.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/tester.css" rel="stylesheet">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBdf755F2RHw5-IUsMR1rYUyCGvpdvKSOk",
+            authDomain: "lynbrook-deca.firebaseapp.com",
+            databaseURL: "https://lynbrook-deca.firebaseio.com",
+            storageBucket: "lynbrook-deca.appspot.com",
+            messagingSenderId: "105997057044"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+</head>
+
+<body class = "bodyDisplay" style = "display:none">
+<nav class="navbar navbar-inverse navbar-fixed-top dash-header" role="navigation" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <div id="navbarlogo">
+                <a href=""><img src="../img/favico.png" height="30px" /></a>
+            </div>
+
+            <!-- <div id="lynbrookdeca">
+                <p><a href="../index.html">Lynbrook DECA</a></p>
+            </div> -->
+
+            <button type="button"  id ="icon-bar1" style = "background-color: #1F3A93; margin-top:17px; margin-right: 5px !important" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar" style = "color:brown" ></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
+            <!-- <span style = "padding-top: 11px; color: #3366FF; display:none; padding-right: 10px;" id= "icon-bar1"class="glyphicon glyphicon-align-justify glyphicon-l"></span>	 -->
+
+            <!-- <a class="navbar-brand" href="dashboard.html"><span>Lynbrook DECA</span> Admin</a> -->
+            <ul class = "dash-hover">
+
+                <li class = "s"><a href="../index.html">HOME</a></li>
+                <li class = "s"><a href="../about.html">ABOUT</a></li>
+                <li class = "s"><a href="../calendar.html">CALENDAR</a></li>
+                <li class = "s"><a href="../events.html">EVENTS</a></li>
+                <li class = "s"><a href="../conferences.html" style="border-right:1px solid black">CONFERENCES</a></li>
+                <!-- <button class="login-button" id="loginform">LOG IN</button>
+                <button class="signup-button" onclick="window.location='signup.html';">SIGN UP</button> -->
+
+
+                <ul class="user-menu">
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><span class ="user-name"> User </span><span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" style ="margin-top:20px">
+                            <li style ="padding-top:0"><a href="dashboard.html"><span class="glyphicon glyphicon-bookmark"></span> Dashboard</a></li>
+                            <li style ="padding-top:0" ><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Edit My Profile</a></li>
+                            <li style ="padding-top:0"><a href="#" class="logout-button"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+                        </ul>
+
+                    </li>
+                </ul>
+            </ul>
+        </div>
+
+    </div><!-- /.container-fluid -->
+</nav>
+<div id="" class="nav-menu" style="padding-top: 0px; display:none">
+
+
+    <ul class="nav menu" style = "text-align:center; background-color:whitesmoke;">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../calendar.html">Calender</a></li>
+        <li><a href="../events.html">Events</a></li>
+        <li><a href="../conferences.html">Conferences</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a class="logout-button" href = "#">Logout</a></li>
+
+
+
+        <li role="presentation" class="divider"></li>
+
+    </ul>
+</div><!--/.sidebar-->
+<div id="" class="test" style="padding-top: 0px; display:none">
+
+    <ul class="nav menu" style = "text-align:center; background-color:white">
+        <li ><a href="dashboard.html"><span id ="test1" class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+        <li class="active1"><a href="presentations.html" style = "color:white"><span class="glyphicon glyphicon-folder-close"></span> Presentations/Videos</a></li>
+        <li><a href="points.html"><span class="glyphicon glyphicon-stats"></span> Point System</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk9qZjc1OWZIZjMxWFBabl9BUmFac1pMU3g1clpjZ1pzTlNxUjlRVjUyQzg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-list-alt"></span> Written Materials</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfjFSamlPMGVsX2llQU1md0ZCSmNEVUxVNUl5Qm83TzVaSWdKbDgxNzkzaUU&usp=sharing" target="_blank"><span class="glyphicon glyphicon-book"></span> Roleplay Materials</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfklJZEFBYlYtTWJxZDIxclBwejVEcGVXeDRvMlpidDdHOTNHU0g2bDR5Z00&usp=sharing" target="_blank"><span class="glyphicon glyphicon-briefcase"></span> Principles Materials</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk91RnNQU3RmRnNRWUJDVjBvX1hfeEtmNWpjZFlmem5PSl9Tcm1iNVh4bDg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Testing Materials</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0Bw48OQ3LltH9fmkwN3VRaTN0T3ZSaHIyUlFjWkdlOEtsNzY5aDhvc3pSXzNvaExNdEJkVU0&usp=sharing" target="_blank"><span class="glyphicon glyphicon-camera"></span> DECA Memories</a></li>
+
+
+        <li role="presentation" class="divider"></li>
+
+    </ul>
+</div><!--/.sidebar-->
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 40px">
+
+    <ul class="nav menu">
+        <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+        <li class="active1"><a href="presentations.html" style = "color:white"><span class="glyphicon glyphicon-folder-close"></span> Presentations/Videos</a></li>
+        <li><a href="points.html"><span class="glyphicon glyphicon-stats"></span> Point System</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk9qZjc1OWZIZjMxWFBabl9BUmFac1pMU3g1clpjZ1pzTlNxUjlRVjUyQzg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-list-alt"></span> Written Materials</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfjFSamlPMGVsX2llQU1md0ZCSmNEVUxVNUl5Qm83TzVaSWdKbDgxNzkzaUU&usp=sharing" target="_blank"><span class="glyphicon glyphicon-book"></span> Roleplay Materials</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfklJZEFBYlYtTWJxZDIxclBwejVEcGVXeDRvMlpidDdHOTNHU0g2bDR5Z00&usp=sharing" target="_blank"><span class="glyphicon glyphicon-briefcase"></span> Principles Materials</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0BzzCrg_W88iyfk91RnNQU3RmRnNRWUJDVjBvX1hfeEtmNWpjZFlmem5PSl9Tcm1iNVh4bDg&usp=sharing" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Testing Materials</a></li>
+        <li><a href="https://drive.google.com/folderview?id=0Bw48OQ3LltH9fmkwN3VRaTN0T3ZSaHIyUlFjWkdlOEtsNzY5aDhvc3pSXzNvaExNdEJkVU0&usp=sharing" target="_blank"><span class="glyphicon glyphicon-camera"></span> DECA Memories</a></li>
+        <li role="presentation" class="divider"></li>
+
+    </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="dashboard.html"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active" >Tests</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header" style = "text-align:center; font-family: Avenir">DECA Question Tester</h1>
+            <hr>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 question">
+                <p id="question"> {{ question }} </p>
+                <button class="option" id="A" onclick="checkAnswer('A')"> A. {{ optionA }}</button>
+                <button class="option" id="B" onclick="checkAnswer('B')"> B. {{ optionB }}</button>
+                <button class="option" id="C" onclick="checkAnswer('C')"> C. {{ optionC }}</button>
+                <button class="option" id="D" onclick="checkAnswer('D')"> D. {{ optionD }}</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class="col-md-8 col-md-offset-2 result" id="result">
+                <p id="resultText"> Congrats! You got the right answer! </p>
+            </div>
+        </div>
+        <div class = "row">
+            <div class="col-md-8 col-md-offset-2">
+                <button id="next" onclick="next()">Next</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        function checkAnswer(selectedAnswer) {
+            var rightAnswer = '{{rightAnswer}}';
+            var result = document.getElementById("result");
+            var resultText = document.getElementById("resultText");
+            result.style.display = "block";
+            if (rightAnswer == selectedAnswer) {
+                result.style.color = "#35EE38";
+                resultText.innerHTML = "Congrats! You got the right answer!";
+                document.getElementById(selectedAnswer).style.backgroundColor = "#35EE38";
+            } else {
+                result.style.color = "red";
+                resultText.innerHTML = "Whoops! The correct answer was " + rightAnswer;
+                document.getElementById(selectedAnswer).style.backgroundColor = "red";
+                document.getElementById(rightAnswer).style.backgroundColor = "#35EE38";
+            }
+            var buttons = document.getElementsByClassName("option")
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
+            }
+        }
+
+        function next() {
+            var ref = window.location.href;
+            var id = "{{ newID }}";
+            if (id.length == 1 || id == "10")  {
+                ref = ref.substring(0, ref.length - 1);
+            } else if (id.length == 2) {
+                ref = ref.substring(0, ref.length - 2);
+            }
+            ref = ref + id;
+            window.location.href = ref;
+
+        }
+
+    </script>
+
+</div>
+
+
+<script>
+    function tester(num){
+        alert("hello");
+        window.location.href = "/tester.html?test=" + num;
+
+    }
+
+</script>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src = "js/dashboard-parse.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/chart-data.js"></script>
+<script src="js/easypiechart.js"></script>
+<script src="js/easypiechart-data.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/bootstrap-table.js"></script>
+<script>
+    !function ($) {
+        $(document).on("click","ul.nav li.parent > a > span.icon", function(){
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+</script>
+</body>
+
+</html>

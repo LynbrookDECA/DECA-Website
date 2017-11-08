@@ -1,0 +1,69 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+.question {
+    margin-top: 20px;
+    font-family: "Avenir Next";
+    border: solid black 1px;
+
+}
+
+#question {
+    font-family: 'Montserrat';
+    padding: 20px 0px;
+
+}
+
+.option {
+    border: solid black 1px;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.option:hover {
+
+    background-color: #2db0fe;
+}
+
+.result {
+    margin-top: 20px;
+    background-color: white;
+    border: 1px black solid;
+    font-family: "Avenir Next";
+    height: 50px;
+    display: none;
+}
+
+.result p {
+    padding-top: 15px;
+}
+
+#next {
+    padding: 20px;
+    float: right;
+    background-color: white;
+    border: 1px black solid;
+    padding: 5px 30px;
+    font-family: 'Avenir Next';
+    margin-top: 20px;
+    margin-right: -20px;
+}
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+

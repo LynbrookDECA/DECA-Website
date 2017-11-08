@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Sheets API Quickstart</title>
+    <meta charset='utf-8' />
+</head>
+<body>
+<p>Google Sheets API Quickstart</p>
+
+<pre id="content"></pre>
+
+<script type="text/javascript">
+    var url = 'https://sheets.googleapis.com/v4/spreadsheets/1B84hzrKLUS1SXRH7HZzcgZ7sxXcOxNPh_Uy6cJyNx-Q/values/1068!A1:G100?key=AIzaSyASXs9-IIZv3QywWdaB2DFpitGqZCb-cWM';
+
+    fetch(url).then(function(response) {
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+    }).catch(function() {
+        console.log("Booo");
+    });
+
+    </script>
+
+</body>
+</html>
