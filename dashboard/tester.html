@@ -12,6 +12,8 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/tester.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     <script src="js/respond.min.js"></script>
@@ -229,10 +231,6 @@
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src = "js/dashboard-parse.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/chart.min.js"></script>
-<script src="js/chart-data.js"></script>
-<script src="js/easypiechart.js"></script>
-<script src="js/easypiechart-data.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/bootstrap-table.js"></script>
 <script>
@@ -250,6 +248,77 @@
         if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
     })
 </script>
+
+<script type="text/javascript">
+    var testData;
+    var userData;
+    //Get TestID from URL
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var testID = url.searchParams.get("testID");
+
+    getTestData(testID);
+    getUserData(testID);
+
+    //Get the TestData
+    function getTestData() {
+        var url = 'https://sheets.googleapis.com/v4/spreadsheets/1B84hzrKLUS1SXRH7HZzcgZ7sxXcOxNPh_Uy6cJyNx-Q/values/' + testID + '!A2:G100?key=AIzaSyASXs9-IIZv3QywWdaB2DFpitGqZCb-cWM';
+        // Grab the Sheets Data
+        fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            console.log(data);
+            testData = data["values"];
+        }).catch(function () {
+            console.log("Didn't work. Figure out why.");
+        });
+    }
+
+    function getUserData(testID) {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).once('value').then(function (snapshot) {
+
+                    if (snapshot.val()) {
+                        console.log("exists in database");
+                        var data = {
+                            'currentQuestion': snapshot.val().currentQuestion,
+                            'questionsCorrect': snapshot.val().questionsCorrect,
+                            'questionsWrong': snapshot.val().questionsWrong
+                        };
+                        userData = data;
+                        updateQuestion(snapshot.val().currentQuestion)
+                    } else {
+                        console.log("Doesn't exist in database")
+                        firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update({
+                            currentQuestion: 1,
+                            questionsRight: 0,
+                            questionsWrong: 0
+                        })
+                    }
+
+
+                });
+            }
+        });
+    }
+
+
+    function updateQuestion(questionNum) {
+        questionData = testData[questionNum];
+        document.getElementById('question').innerHTML = questionData[1];
+        document.getElementById('A').innerHTML = questionData[2];
+        document.getElementById('B').innerHTML = questionData[3];
+        document.getElementById('C').innerHTML = questionData[4];
+        document.getElementById('D').innerHTML = questionData[5];
+    }
+
+
+
+
+</script>
+
+
 </body>
 
 </html>

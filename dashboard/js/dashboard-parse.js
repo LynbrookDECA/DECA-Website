@@ -115,9 +115,37 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 
+function getUserData(testID) {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).once('value').then(function (snapshot) {
+
+                if (snapshot.val()) {
+                    console.log("exists in database");
+                    var userData = {
+                        'currentQuestion': snapshot.val().currentQuestion,
+                        'questionsCorrect': snapshot.val().questionsCorrect,
+                        'questionsWrong': snapshot.val().questionsWrong
+                    };
+
+                    return userData;
+                } else {
+                    console.log("Doesn't exist in database")
+                    firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update({
+                        currentQuestion: 1,
+                        questionsRight: 0,
+                        questionsWrong: 0
+                    })
+                }
+
+
+            });
+        }
+    });
+}
+
 
 $("#save").click(function () {
-
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             var firstname = $("#firstname-profile").val();
@@ -157,127 +185,6 @@ $(".logout-button").click(function () {
 });
 
 
-// var currentUser = Parse.User.current();
-// var username = currentUser.get("username");
-//           // alert(username);
-
-//           var points = 0;
-//           var query = new Parse.Query("DECAdiamonds");
-//           query.limit(1000);
-
-//           query.find( {
-//           	success: function listOfObjects(results) {
-//           		var decaDiamonds = null;
-//           // alert("Error");
-//           // console.log("Successfully retrieved " + results.length);
-//           // Do something with the returned Parse.Object values
-//           if ( results.length == 0 ) {
-
-//           }
-//           for (var i = 0; i < results.length; i++) {
-//           	var object = results[i];
-//           	console.log(object.id + ' - ' + object.get('column'));
-//           	if(object.get('username') == username) {
-//           		decaDiamonds = object;
-//               //alert(JSON.stringify(object));
-//               var str =  JSON.stringify(object);
-//               var jsonObj = $.parseJSON(str);
-
-//               for (var key in jsonObj) {
-//               	if(jsonObj.hasOwnProperty(key)) {
-//                       //alert( key + " " + jsonObj[key]);
-//                       if(key.indexOf("SS_") != -1) {
-//                       	if(jsonObj[key] != undefined) {
-//                       		points += jsonObj[key];
-//                       	}
-
-//                       } else if (key.indexOf("FM_") != -1) {
-//                       	if(jsonObj[key] != undefined) {
-//                       		points += jsonObj[key];
-//                       	}
-//                       }
-//                   }
-//               }
-//               // alert("Points:" + points);
-//               $("#decaDiamondPointDisplay").html("Your DECA Diamond Point Total: " + points);
-//               //Object.keys(jsonObj).forEach(function(key) {
-//               //    var value = jsonObj[key];
-//               //    alert(key + " "  + value);
-//               //});
-//               //JSON.parse(str, function(key, value) {
-//               //    alert(key + " "  +value);
-
-//               //});
-//               //for (key in Object.keys(str) ) {
-//               //    alert(key)
-//               //}
-//               //alert(String(decaDiamonds));
-//               //alert(decaDiamonds.toJSON());
-//               //alert(decaDiamonds.attributes);
-//               //for (key in Object.keys(decaDiamonds.toJSON()) ) {
-//               //    alert(key + object.get(key));
-//               //}
-
-//               // for(key in decaDiamonds.keys().toJSON())
-//               // {
-//               //     alert(key + object.get(key));
-//               // }
-//               break;
-//           }
-//       }
-//   }
-//      //  if (decaDiamonds == null) {
-//      //    var object = new Parse.Object("DECAdiamonds");
-//      //    object.set( 'username', username ) ;
-//      //    object.set( 'firstname', currentUser.get('firstname') ) ;
-//      //    object.set( 'lastname', currentUser.get('lastname') ) ;
-//      //    object.set( 'yearindeca', currentUser.get('yearindeca') ) ;
-//      //    object.set( 'FM_092316', 3 ) ;                                     // CHANGE THIS
-//      //    object.save(null, {
-//      //      success: function(object) {
-//      //          // alert("Saved new user");
-//      //          alert("Success logging points!");
-//      //      },
-//      //      error: function(object, error) {
-//      //          alert('error saving for new user:' + error.message);
-//      //      }
-//      //  });
-//      //             // alert("fail");
-//      //         } else {
-//      //          decaDiamonds.set('FM_092316', 3 ) ;                          // CHANGE THIS
-//      //          decaDiamonds.save(null, {
-//      //              success: function(object) {
-//      //                  // alert("Saved for existing user.");
-//      //                  alert("Success logging points!");
-//      //              },
-//      //              error: function(object, error) {
-//      //                  alert('Error saving for existing user:' + error.message);
-//      //              }
-//      //          });
-//      //      }
-
-
-//      //  },
-//      //  error: function (error) {
-//      //     alert("Error")
-//      // }
-
-//  });
-//         $('#pointspass').keypress(function (e) {
-//         	if (e.which == 13) {
-//         		e.preventDefault();
-//         //do something
-//     }
-// });
-//         $("#pointspass").keyup(function(event){
-//         	$("#pointsbutton").click();
-//         	if(event.keyCode == 13){
-
-
-//         	}
-//         });
-
-
 $("#pointsbutton").click(function () {
     var thepass;
     firebase.database().ref('/DECAdiamonds/' + 'jEZPFSqtThag80UEQB7Ig06HR823').once('value').then(function (snapshot) {
@@ -312,13 +219,6 @@ $("#pointsbutton").click(function () {
             location.reload();
         }
     });
-    // alert(thepass);
-    // CHANGE THIS
-    // alert ($('#pointspass').val());
-
-
-    //FM_bucket
-
 
 });
 

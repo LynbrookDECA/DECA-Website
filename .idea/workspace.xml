@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad58aba3-e300-41a9-955b-ca123e541d75" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/css/tester.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/css/tests.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/tester.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/tests.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/dashboard.html" afterPath="$PROJECT_DIR$/dashboard/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/css/tester.css" afterPath="$PROJECT_DIR$/dashboard/css/tester.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" afterPath="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/tester.html" afterPath="$PROJECT_DIR$/dashboard/tester.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/tests.html" afterPath="$PROJECT_DIR$/dashboard/tests.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tester.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tester.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/tester.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="147" column="83" lean-forward="false" selection-start-line="147" selection-start-column="83" selection-end-line="147" selection-end-column="83" />
+            <state relative-caret-position="210">
+              <caret line="14" column="95" lean-forward="false" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -39,23 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="135" column="16" lean-forward="true" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="quickstart.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/quickstart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -64,54 +50,8 @@
       <file leaf-file-name="tester.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/css/tester.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="853" column="46" lean-forward="true" selection-start-line="853" selection-start-column="46" selection-end-line="853" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testing.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/testing.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="91" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="presentations.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/presentations.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="183" column="51" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="93" lean-forward="false" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
+            <state relative-caret-position="595">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,18 +60,8 @@
       <file leaf-file-name="dashboard-parse.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/js/dashboard-parse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6090">
-              <caret line="406" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard-parse.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/dashboard-parse.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2078">
-              <caret line="600" column="0" lean-forward="true" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
+            <state relative-caret-position="673">
+              <caret line="144" column="1" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="144" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -169,13 +99,16 @@
       <find>eventsSave</find>
       <find>alert</find>
       <find>lynbrook deca</find>
-      <find>background-co</find>
       <find>deca memories</find>
       <find>Presentation</find>
       <find>tester</find>
       <find>tests.html</find>
       <find>var fs \= require\(\'fs\'\)\;\nvar updateDB \= require\(\'\.\/updateDB\.js\'\)\;\nvar readline \= require\(\'readline\'\)\;\nvar google \= require\(\'googleapis\'\)\;\nvar googleAuth \= require\(\'google\-auth\-library\'\)\;\nvar splitData\;\n\n\n\/\/ If modifying these scopes\, delete your previously saved credentials\n\/\/ at \~\/\.credentials\/sheets\.googleapis\.com\-nodejs\-quickstart\.json\nvar SCOPES \= \[\'https\:\/\/www\.googleapis\.com\/auth\/spreadsheets\.readonly\'\]\;\nvar TOKEN_DIR \= \(process\.env\.HOME \|\| process\.env\.HOMEPATH \|\|\nprocess\.env\.USERPROFILE\) \+ \'\/\.credentials\/\'\;\nvar TOKEN_PATH \= TOKEN_DIR \+ \'sheets\.googleapis\.com\-nodejs\-quickstart\.json\'\;\nvar array \= \[\]\;\n\nvar run \= \{\nrunQuickstart \: function\(\) \{\n\/\/ Load client secrets from a local file\.\nfs\.readFile\(\'client_secret\.json\'\, function processClientSecrets\(err\, content\) \{\nif \(err\) \{\nconsole\.log\(\'Error loading client secret file\: \' \+ err\)\;\nreturn\;\n\}\n\/\/ Authorize a client with the loaded credentials\, then call the\n\/\/ Google Sheets API\.\nauthorize\(JSON\.parse\(content\)\, listMajors\)\;\n\}\)\;\n\}\n\}\n\n\/\*\*\n\* Create an OAuth2 client with the given credentials\, and then execute the\n\* given callback function\.\n\*\n\* \@param \{Object\} credentials The authorization client credentials\.\n\* \@param \{function\} callback The callback to call with the authorized client\.\n\*\/\nfunction authorize\(credentials\, callback\) \{\nvar clientSecret \= credentials\.installed\.client_secret\;\nvar clientId \= credentials\.installed\.client_id\;\nvar redirectUrl \= credentials\.installed\.redirect_uris\[0\]\;\nvar auth \= new googleAuth\(\)\;\nvar oauth2Client \= new auth\.OAuth2\(clientId\, clientSecret\, redirectUrl\)\;\n\n\/\/ Check if we have previously stored a token\.\nfs\.readFile\(TOKEN_PATH\, function\(err\, token\) \{\nif \(err\) \{\ngetNewToken\(oauth2Client\, callback\)\;\n\} else \{\noauth2Client\.credentials \= JSON\.parse\(token\)\;\ncallback\(oauth2Client\)\;\n\}\n\}\)\;\n\}\n\n\/\*\*\n\* Get and store new token after prompting for user authorization\, and then\n\* execute the given callback with the authorized OAuth2 client\.\n\*\n\* \@param \{google\.auth\.OAuth2\} oauth2Client The OAuth2 client to get token for\.\n\* \@param \{getEventsCallback\} callback The callback to call with the authorized\n\*     client\.\n\*\/\nfunction getNewToken\(oauth2Client\, callback\) \{\nvar authUrl \= oauth2Client\.generateAuthUrl\(\{\naccess_type\: \'offline\'\,\nscope\: SCOPES\n\}\)\;\nconsole\.log\(\'Authorize this app by visiting this url\: \'\, authUrl\)\;\nvar rl \= readline\.createInterface\(\{\ninput\: process\.stdin\,\noutput\: process\.stdout\n\}\)\;\nrl\.question\(\'Enter the code from that page here\: \'\, function\(code\) \{\nrl\.close\(\)\;\noauth2Client\.getToken\(code\, function\(err\, token\) \{\nif \(err\) \{\nconsole\.log\(\'Error while trying to retrieve access token\'\, err\)\;\nreturn\;\n\}\noauth2Client\.credentials \= token\;\nstoreToken\(token\)\;\ncallback\(oauth2Client\)\;\n\}\)\;\n\}\)\;\n\}\n\n\/\*\*\n\* Store token to disk be used in later program executions\.\n\*\n\* \@param \{Object\} token The token to store to disk\.\n\*\/\nfunction storeToken\(token\) \{\ntry \{\nfs\.mkdirSync\(TOKEN_DIR\)\;\n\} catch \(err\) \{\nif \(err\.code \!\= \'EEXIST\'\) \{\nthrow err\;\n\}\n\}\nfs\.writeFile\(TOKEN_PATH\, JSON\.stringify\(token\)\)\;\nconsole\.log\(\'Token stored to \' \+ TOKEN_PATH\)\;\n\}</find>
+      <find>background-co</find>
       <find>scope</find>
+      <find>firebase</find>
+      <find>return snap</find>
+      <find>html</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,14 +125,14 @@
         <option value="$PROJECT_DIR$/css/design.css" />
         <option value="$PROJECT_DIR$/dashboard/presentations.html" />
         <option value="$PROJECT_DIR$/dashboard/profile.html" />
-        <option value="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" />
         <option value="$PROJECT_DIR$/js/dashboard-parse.js" />
         <option value="$PROJECT_DIR$/dashboard/css/tests.css" />
+        <option value="$PROJECT_DIR$/dashboard/dashboard.html" />
+        <option value="$PROJECT_DIR$/dashboard/quickstart.html" />
         <option value="$PROJECT_DIR$/dashboard/tests.html" />
+        <option value="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" />
         <option value="$PROJECT_DIR$/dashboard/css/tester.css" />
         <option value="$PROJECT_DIR$/dashboard/tester.html" />
-        <option value="$PROJECT_DIR$/dashboard/quickstart.html" />
-        <option value="$PROJECT_DIR$/dashboard/dashboard.html" />
       </list>
     </option>
   </component>
@@ -403,12 +336,12 @@
       <workItem from="1508365241287" duration="2068000" />
       <workItem from="1509420844221" duration="1780000" />
       <workItem from="1510087710878" duration="2000" />
-      <workItem from="1510095630269" duration="6120000" />
+      <workItem from="1510095630269" duration="9405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12238000" />
+    <option name="totallyTimeSpent" value="15523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -466,11 +399,12 @@
         <state relative-caret-position="2985">
           <caret line="199" column="24" lean-forward="false" selection-start-line="199" selection-start-column="24" selection-end-line="199" selection-end-column="24" />
           <folding>
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -530,11 +464,12 @@
         <state relative-caret-position="2985">
           <caret line="199" column="24" lean-forward="false" selection-start-line="199" selection-start-column="24" selection-end-line="199" selection-end-column="24" />
           <folding>
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -644,11 +579,12 @@
         <state relative-caret-position="2985">
           <caret line="199" column="24" lean-forward="false" selection-start-line="199" selection-start-column="24" selection-end-line="199" selection-end-column="24" />
           <folding>
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -730,57 +666,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="93" lean-forward="false" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/js/dashboard-parse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6090">
-          <caret line="406" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dashboard-parse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2078">
-          <caret line="600" column="0" lean-forward="true" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/testing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="91" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/presentations.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="183" column="51" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,29 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="853" column="46" lean-forward="true" selection-start-line="853" selection-start-column="46" selection-end-line="853" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/tests.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="166" column="32" lean-forward="false" selection-start-line="166" selection-start-column="32" selection-end-line="166" selection-end-column="32" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/css/tests.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -823,42 +690,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/css/tester.css">
+    <entry file="file://$PROJECT_DIR$/dashboard/testing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        <state relative-caret-position="1425">
+          <caret line="95" column="26" lean-forward="true" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/tester.html">
+    <entry file="file://$PROJECT_DIR$/dashboard/tests.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="147" column="83" lean-forward="false" selection-start-line="147" selection-start-column="83" selection-end-line="147" selection-end-column="83" />
+        <state relative-caret-position="327">
+          <caret line="166" column="50" lean-forward="false" selection-start-line="166" selection-start-column="50" selection-end-line="166" selection-end-column="50" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/quickstart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="135" column="16" lean-forward="true" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="16" />
+        <state relative-caret-position="356">
+          <caret line="295" column="35" lean-forward="false" selection-start-line="295" selection-start-column="27" selection-end-line="295" selection-end-column="35" />
           <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/dashboard/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/presentations.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="181" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="853" column="46" lean-forward="true" selection-start-line="853" selection-start-column="46" selection-end-line="853" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/quickstart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dashboard-parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3398">
+          <caret line="600" column="0" lean-forward="true" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/js/dashboard-parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="144" column="1" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="144" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/css/tester.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/tester.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="95" lean-forward="false" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
