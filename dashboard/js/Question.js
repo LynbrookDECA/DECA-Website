@@ -32,7 +32,7 @@ class Question{
         return this.optionD;
     }
 
-    getrightAnswer() {
+    getRightAnswer() {
         return this.rightAnswer;
     }
 

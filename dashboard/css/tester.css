@@ -30,6 +30,7 @@
     text-align: left;
     background-color: white;
     margin-bottom: 20px;
+    color: black;
 }
 
 .option:hover {
@@ -59,6 +60,7 @@
     font-family: 'Avenir Next';
     margin-top: 20px;
     margin-right: -20px;
+    margin-bottom: 20px;
 }
 
 html {
