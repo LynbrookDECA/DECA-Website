@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad58aba3-e300-41a9-955b-ca123e541d75" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/css/tester.css" afterPath="$PROJECT_DIR$/dashboard/css/tester.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/js/Question.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" afterPath="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/tester.html" afterPath="$PROJECT_DIR$/dashboard/tester.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/tests.html" afterPath="$PROJECT_DIR$/dashboard/tests.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +23,8 @@
       <file leaf-file-name="tester.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/tester.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="95" lean-forward="false" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
+            <state relative-caret-position="461">
+              <caret line="309" column="30" lean-forward="false" selection-start-line="309" selection-start-column="30" selection-end-line="309" selection-end-column="30" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -33,6 +33,16 @@
                 <element signature="n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Question.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/js/Question.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,8 +70,8 @@
       <file leaf-file-name="dashboard-parse.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/js/dashboard-parse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="144" column="1" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="144" selection-end-column="1" />
+            <state relative-caret-position="223">
+              <caret line="114" column="3" lean-forward="false" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -74,12 +84,12 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>harsh</find>
       <find>president</find>
       <find>https</find>
       <find>announce</find>
@@ -107,8 +117,9 @@
       <find>background-co</find>
       <find>scope</find>
       <find>firebase</find>
-      <find>return snap</find>
       <find>html</find>
+      <find>Tests</find>
+      <find>return snap</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,8 +141,9 @@
         <option value="$PROJECT_DIR$/dashboard/dashboard.html" />
         <option value="$PROJECT_DIR$/dashboard/quickstart.html" />
         <option value="$PROJECT_DIR$/dashboard/tests.html" />
-        <option value="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" />
         <option value="$PROJECT_DIR$/dashboard/css/tester.css" />
+        <option value="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" />
+        <option value="$PROJECT_DIR$/dashboard/js/Question.js" />
         <option value="$PROJECT_DIR$/dashboard/tester.html" />
       </list>
     </option>
@@ -198,6 +210,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DECA-Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DECA-Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -336,12 +366,12 @@
       <workItem from="1508365241287" duration="2068000" />
       <workItem from="1509420844221" duration="1780000" />
       <workItem from="1510087710878" duration="2000" />
-      <workItem from="1510095630269" duration="9405000" />
+      <workItem from="1510095630269" duration="10350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15523000" />
+    <option name="totallyTimeSpent" value="16468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -376,14 +406,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3330">
@@ -778,14 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/js/dashboard-parse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="144" column="1" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="144" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/css/tester.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -794,10 +808,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/js/dashboard-parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="114" column="3" lean-forward="false" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/js/Question.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/tester.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="95" lean-forward="false" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
+        <state relative-caret-position="461">
+          <caret line="309" column="30" lean-forward="false" selection-start-line="309" selection-start-column="30" selection-end-line="309" selection-end-column="30" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />

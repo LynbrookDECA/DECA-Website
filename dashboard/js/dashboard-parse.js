@@ -115,36 +115,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 
-function getUserData(testID) {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).once('value').then(function (snapshot) {
-
-                if (snapshot.val()) {
-                    console.log("exists in database");
-                    var userData = {
-                        'currentQuestion': snapshot.val().currentQuestion,
-                        'questionsCorrect': snapshot.val().questionsCorrect,
-                        'questionsWrong': snapshot.val().questionsWrong
-                    };
-
-                    return userData;
-                } else {
-                    console.log("Doesn't exist in database")
-                    firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update({
-                        currentQuestion: 1,
-                        questionsRight: 0,
-                        questionsWrong: 0
-                    })
-                }
-
-
-            });
-        }
-    });
-}
-
-
 $("#save").click(function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {

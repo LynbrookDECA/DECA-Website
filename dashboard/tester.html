@@ -141,7 +141,8 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="dashboard.html"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="active" >Tests</li>
+            <li><a href="tests.html"><span class="glyphicon glyphicon-file"></span></a> Tests </li>
+            <li class="active" >1068</li>
         </ol>
     </div><!--/.row-->
 
@@ -151,8 +152,6 @@
             <hr>
         </div>
     </div><!--/.row-->
-
-
     <div class="container-fluid">
 
         <div class="row">
@@ -233,6 +232,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/bootstrap-table.js"></script>
+<script src="js/Question.js"></script>
 <script>
     !function ($) {
         $(document).on("click","ul.nav li.parent > a > span.icon", function(){
@@ -252,6 +252,7 @@
 <script type="text/javascript">
     var testData;
     var userData;
+    var currentQuestion = new Question();
     //Get TestID from URL
     var url_string = window.location.href;
     var url = new URL(url_string);
@@ -306,11 +307,12 @@
 
     function updateQuestion(questionNum) {
         questionData = testData[questionNum];
-        document.getElementById('question').innerHTML = questionData[1];
-        document.getElementById('A').innerHTML = questionData[2];
-        document.getElementById('B').innerHTML = questionData[3];
-        document.getElementById('C').innerHTML = questionData[4];
-        document.getElementById('D').innerHTML = questionData[5];
+        currentQuestion = new Question(questionData[1], questionData[2], questionData[3], questionData[4], questionData[5]);
+        document.getElementById('question').innerHTML = questionNum + ". " + currentQuestion.getText();
+        document.getElementById('A').innerHTML = currentQuestion.getOptionA();
+        document.getElementById('B').innerHTML = currentQuestion.getOptionB();
+        document.getElementById('C').innerHTML = currentQuestion.getOptionC();
+        document.getElementById('D').innerHTML = currentQuestion.getOptionD();
     }
 
 
