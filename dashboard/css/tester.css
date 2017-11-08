@@ -14,12 +14,12 @@
     margin-top: 20px;
     font-family: "Avenir Next";
     border: solid black 1px;
-
 }
 
 #question {
     font-family: 'Montserrat';
     padding: 20px 0px;
+    color: black;
 
 }
 
@@ -49,6 +49,7 @@
 
 .result p {
     padding-top: 15px;
+    color: black;
 }
 
 #next {
@@ -61,6 +62,7 @@
     margin-top: 20px;
     margin-right: -20px;
     margin-bottom: 20px;
+    outline: none;
 }
 
 html {

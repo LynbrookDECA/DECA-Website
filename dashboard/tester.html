@@ -314,7 +314,6 @@
     }
 
     function updateFirebase() {
-        alert("updateFirebase");
         firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update({
             currentQuestion: userData['currentQuestion'],
             questionsRight: userData['questionsRight'],
@@ -323,15 +322,26 @@
     }
 
     function next() {
-        var ref = window.location.href;
-        var id = "{{ newID }}";
-        if (id.length == 1 || id == "10")  {
-            ref = ref.substring(0, ref.length - 1);
-        } else if (id.length == 2) {
-            ref = ref.substring(0, ref.length - 2);
+        if (document.getElementById("result").style.display === 'block') {
+            if (userData['currentQuestion'] > 100){
+                alert('You have completed this test!');
+            } else {
+                resetTester();
+                updateQuestion(userData['currentQuestion']);
+            }
         }
-        ref = ref + id;
-        window.location.href = ref;
+        else {
+            alert('Complete the current question!');
+
+        }
+    }
+
+    function resetTester() {
+        document.getElementById('question').style.display = "hidden";
+        document.getElementById('A').style.backgroundColor = "white";
+        document.getElementById('B').style.backgroundColor = "white";
+        document.getElementById('C').style.backgroundColor = "white";
+        document.getElementById('D').style.backgroundColor = "white";
 
     }
 

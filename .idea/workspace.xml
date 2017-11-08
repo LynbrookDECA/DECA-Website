@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad58aba3-e300-41a9-955b-ca123e541d75" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/css/tester.css" afterPath="$PROJECT_DIR$/dashboard/css/tester.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/js/Question.js" afterPath="$PROJECT_DIR$/dashboard/js/Question.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/tester.html" afterPath="$PROJECT_DIR$/dashboard/tester.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tester.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tester.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/tester.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="272" column="32" lean-forward="false" selection-start-line="272" selection-start-column="32" selection-end-line="272" selection-end-column="32" />
+            <state relative-caret-position="375">
+              <caret line="331" column="9" lean-forward="true" selection-start-line="331" selection-start-column="9" selection-end-line="331" selection-end-column="9" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -37,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tester.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tester.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/css/tester.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            <state relative-caret-position="645">
+              <caret line="43" column="28" lean-forward="true" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -133,8 +131,8 @@
         <option value="$PROJECT_DIR$/dashboard/tests.html" />
         <option value="$PROJECT_DIR$/dashboard/js/dashboard-parse.js" />
         <option value="$PROJECT_DIR$/dashboard/js/Question.js" />
-        <option value="$PROJECT_DIR$/dashboard/tester.html" />
         <option value="$PROJECT_DIR$/dashboard/css/tester.css" />
+        <option value="$PROJECT_DIR$/dashboard/tester.html" />
       </list>
     </option>
   </component>
@@ -357,12 +355,12 @@
       <workItem from="1509420844221" duration="1780000" />
       <workItem from="1510087710878" duration="2000" />
       <workItem from="1510095630269" duration="10473000" />
-      <workItem from="1510161503389" duration="1500000" />
+      <workItem from="1510161503389" duration="2445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18091000" />
+    <option name="totallyTimeSpent" value="19036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -737,10 +735,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/css/tester.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="28" lean-forward="true" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/tester.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="272" column="32" lean-forward="false" selection-start-line="272" selection-start-column="32" selection-end-line="272" selection-end-column="32" />
+        <state relative-caret-position="375">
+          <caret line="331" column="9" lean-forward="true" selection-start-line="331" selection-start-column="9" selection-end-line="331" selection-end-column="9" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -749,14 +755,6 @@
             <element signature="n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/css/tester.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
