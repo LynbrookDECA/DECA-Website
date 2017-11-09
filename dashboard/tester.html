@@ -155,47 +155,46 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 question">
-                <p id="question"> {{ question }} </p>
-                <button class="option" id="A" onclick="checkAnswer('A')"> A. </button>
-                <button class="option" id="B" onclick="checkAnswer('B')"> B. </button>
-                <button class="option" id="C" onclick="checkAnswer('C')"> C. </button>
-                <button class="option" id="D" onclick="checkAnswer('D')"> D. </button>
+            <div class="col-md-7 col-md-offset-1 question" style="background-color: white; ">
+                <p id="question"> Loading... Refresh if nothing shows up. </p>
+                <button class="option" id="A" onclick="checkAnswer('A')"> Loading... </button>
+                <button class="option" id="B" onclick="checkAnswer('B')"> Loading... </button>
+                <button class="option" id="C" onclick="checkAnswer('C')"> Loading... </button>
+                <button class="option" id="D" onclick="checkAnswer('D')"> Loading... </button>
             </div>
-        </div>
-        <div class = "row">
-            <div class="col-md-8 col-md-offset-2 result" id="result">
+            <div class="col-md-3 doughnutChart">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Progress Report</div>
+                    <div class="panel-body">
+                        <div class="canvas-wrapper">
+                            <canvas class="chart" id="doughnut-chart" ></canvas>
+                            <p id="currentScore"> Current Score: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-md-offset-1" id="result">
                 <p id="resultText"> Congrats! You got the right answer! </p>
             </div>
-        </div>
-        <div class = "row">
-            <div class="col-md-8 col-md-offset-2">
+
+            <div class="col-md-7 col-md-offset-1">
                 <button id="next" onclick="next()">Next</button>
             </div>
-        </div>
 
+        </div><!--/.row-->
 
     </div>
 
 </div>
 
-
-<script>
-    function tester(num){
-        alert("hello");
-        window.location.href = "/tester.html?test=" + num;
-
-    }
-
-</script>
-
-
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src = "js/dashboard-parse.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/chart-data.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/bootstrap-table.js"></script>
-<script src="js/Question.js"></script>
+
 <script>
     !function ($) {
         $(document).on("click","ul.nav li.parent > a > span.icon", function(){
@@ -253,9 +252,11 @@
                             'questionsWrong': snapshot.val().questionsWrong
                         };
                         userData = data;
-                        updateQuestion(snapshot.val().currentQuestion)
+                        updateQuestion(snapshot.val().currentQuestion);
+                        makeDoughnutChart();
+
                     } else {
-                        console.log("Doesn't exist in database")
+                        console.log("Doesn't exist in database");
                         firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update({
                             currentQuestion: 1,
                             questionsRight: 0,
@@ -276,30 +277,29 @@
         document.getElementById('B').innerHTML = "B. " + questionData[3];
         document.getElementById('C').innerHTML = "C. " + questionData[4];
         document.getElementById('D').innerHTML = "D. " + questionData[5];
-        document.getElementById('resultText').style.display = "hidden";
-
     }
 
 
     function checkAnswer(selectedAnswer) {
-        var result = document.getElementById("result");
-        var resultText = document.getElementById("resultText");
-        result.style.display = "block";
-        if (questionData[6] == selectedAnswer) {
-            result.style.color = "#35EE38";
-            resultText.innerHTML = "Congrats! You got the right answer!";
-            document.getElementById(selectedAnswer).style.backgroundColor = "#35EE38";
-            updateUserData(true);
+        if (document.getElementById("result").style.display === 'block') {
+            console.log("Buttons are disabled")
         } else {
-            result.style.color = "red";
-            resultText.innerHTML = "Whoops! The correct answer was " + questionData[6];
-            document.getElementById(selectedAnswer).style.backgroundColor = "red";
-            document.getElementById(questionData[6]).style.backgroundColor = "#35EE38";
-            updateUserData(false);
-        }
-        var buttons = document.getElementsByClassName("option")
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].disabled = true;
+            var result = document.getElementById("result");
+            var resultText = document.getElementById("resultText");
+            result.style.display = "block";
+            if (questionData[6] == selectedAnswer) {
+                result.style.color = "#35EE38";
+                resultText.innerHTML = "Congrats! You got the right answer!";
+                document.getElementById(selectedAnswer).style.backgroundColor = "#35EE38";
+                updateUserData(true);
+            } else {
+                result.style.color = "red";
+                resultText.innerHTML = "Whoops! The correct answer was " + questionData[6];
+                document.getElementById(selectedAnswer).style.backgroundColor = "red";
+                document.getElementById(questionData[6]).style.backgroundColor = "#35EE38";
+                updateUserData(false);
+            }
+            makeDoughnutChart();
         }
     }
 
@@ -332,18 +332,48 @@
         }
         else {
             alert('Complete the current question!');
-
         }
     }
 
     function resetTester() {
-        document.getElementById('question').style.display = "hidden";
-        document.getElementById('A').style.backgroundColor = "white";
-        document.getElementById('B').style.backgroundColor = "white";
-        document.getElementById('C').style.backgroundColor = "white";
-        document.getElementById('D').style.backgroundColor = "white";
+        document.getElementById('result').style.display = "none";
+        var buttons = document.getElementsByClassName("option");
+        var css = 'option:hover{ background-color: #2db0fe; }';
+        var style = document.createElement('style');
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].appendChild(style);
+            buttons[i].style.backgroundColor = "white";
 
+        }
     }
+
+    function makeDoughnutChart() {
+
+        var doughnutData = [
+            {
+                value: userData["questionsRight"],
+                color:"#35EE38",
+                highlight: "#008000",
+                label: "Right"
+            },
+            {
+                value: userData["questionsWrong"],
+                color: "red",
+                highlight: "#e50000",
+                label: "Wrong"
+            }];
+
+        document.getElementById("currentScore").innerHTML = "Current Score: " + userData["questionsRight"] + " / " + (userData["currentQuestion"] - 1);
+        var chart3 = document.getElementById("doughnut-chart").getContext("2d");
+        window.myDoughnut = new Chart(chart3).Doughnut(doughnutData, {responsive : true
+        });
+    }
+
 
 
 </script>
@@ -352,3 +382,4 @@
 </body>
 
 </html>
+
