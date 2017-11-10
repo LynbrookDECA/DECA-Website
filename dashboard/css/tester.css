@@ -14,14 +14,30 @@
     margin-top: 20px;
     font-family: "Avenir Next";
     border: solid black 1px;
+    border-radius: 5px;
 }
 
 .doughnutChart {
+    margin-left: 20px;
     margin-top: 20px;
+    border: 1px black solid;
+    border-radius: 5px;
 }
 
-.panel {
-    border: 1px black solid;
+.doughnutChart #title {
+    color: black;
+    font-family: "Avenir Next";
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+#currentScore {
+    color: black;
+    text-align: center;
+    font-family: "Avenir Next";
 }
 
 #question {
@@ -44,7 +60,7 @@
 
 .option:hover {
 
-    background-color: #2db0fe;
+    background-color: #62b9fb;
 }
 
 #result {
@@ -69,9 +85,10 @@
     padding: 5px 30px;
     font-family: 'Avenir Next';
     margin-top: 20px;
-    margin-right: -20px;
     margin-bottom: 20px;
     outline: none;
+    position:absolute;
+    right: 0;
 }
 
 .panel p {

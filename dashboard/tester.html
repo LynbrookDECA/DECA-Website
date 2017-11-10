@@ -162,17 +162,18 @@
                 <button class="option" id="C" onclick="checkAnswer('C')"> Loading... </button>
                 <button class="option" id="D" onclick="checkAnswer('D')"> Loading... </button>
             </div>
-            <div class="col-md-3 doughnutChart">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Progress Report</div>
-                    <div class="panel-body">
-                        <div class="canvas-wrapper">
-                            <canvas class="chart" id="doughnut-chart" ></canvas>
-                            <p id="currentScore"> Current Score: </p>
-                        </div>
-                    </div>
+
+
+            <div class="col-md-3 doughnutChart"  style="background-color: white; ">
+                <p id="title"> Progress Report </p>
+                <div id="chart" style="width:60%; margin-left: 20%;">
+                    <canvas class="chart" id="doughnut-chart" ></canvas>
                 </div>
+                    <p id="currentScore"> Current Score: </p>
+
             </div>
+
+
             <div class="col-md-7 col-md-offset-1" id="result">
                 <p id="resultText"> Congrats! You got the right answer! </p>
             </div>
@@ -189,8 +190,7 @@
 
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src = "js/dashboard-parse.js"></script>
-<script src="js/chart.min.js"></script>
-<script src="js/chart-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/bootstrap-table.js"></script>
@@ -211,11 +211,20 @@
     })
 </script>
 
+<script>
+    function setChart() {
+        var q = document.getElementById('question');
+        var chart = document.getElementById('pan');
+        chart.style.width = q.style.height;
+        alert(q.style.height);
+
+</script>
+
 <script type="text/javascript">
     var testData;
     var userData;
     var questionData;
-    var rightAnswer;
+    var rotate = true;
 
     //Get TestID from URL
     var url_string = window.location.href;
@@ -226,7 +235,7 @@
 
     //Get the TestData
     function getTestData() {
-        var url = 'https://sheets.googleapis.com/v4/spreadsheets/1B84hzrKLUS1SXRH7HZzcgZ7sxXcOxNPh_Uy6cJyNx-Q/values/' + testID + '!A2:G100?key=AIzaSyASXs9-IIZv3QywWdaB2DFpitGqZCb-cWM';
+        var url = 'https://sheets.googleapis.com/v4/spreadsheets/1B84hzrKLUS1SXRH7HZzcgZ7sxXcOxNPh_Uy6cJyNx-Q/values/' + testID + '!A2:G101?key=AIzaSyASXs9-IIZv3QywWdaB2DFpitGqZCb-cWM';
         // Grab the Sheets Data
         fetch(url).then(function (response) {
             return response.json();
@@ -271,7 +280,8 @@
     }
 
     function updateQuestion(questionNum) {
-        questionData = testData[questionNum];
+        questionData = testData[questionNum-1];
+        console.log(testData);
         document.getElementById('question').innerHTML = questionNum + ". " + questionData[1];
         document.getElementById('A').innerHTML = "A. " + questionData[2];
         document.getElementById('B').innerHTML = "B. " + questionData[3];
@@ -295,15 +305,15 @@
             var resultText = document.getElementById("resultText");
             result.style.display = "block";
             if (questionData[6] == selectedAnswer) {
-                result.style.color = "#35EE38";
+                result.style.color = "#29AB87";
                 resultText.innerHTML = "Congrats! You got the right answer!";
-                document.getElementById(selectedAnswer).style.backgroundColor = "#35EE38";
+                document.getElementById(selectedAnswer).style.backgroundColor = "#29AB87";
                 updateUserData(true);
             } else {
-                result.style.color = "red";
+                result.style.color = "#29AB87";
                 resultText.innerHTML = "Whoops! The correct answer was " + questionData[6];
-                document.getElementById(selectedAnswer).style.backgroundColor = "red";
-                document.getElementById(questionData[6]).style.backgroundColor = "#35EE38";
+                document.getElementById(selectedAnswer).style.backgroundColor = "#f9243f";
+                document.getElementById(questionData[6]).style.backgroundColor = "#00A86B";
                 updateUserData(false);
             }
             makeDoughnutChart();
@@ -356,24 +366,65 @@
 
     function makeDoughnutChart() {
 
-        var doughnutData = [
-            {
-                value: userData["questionsRight"],
-                color:"#35EE38",
-                highlight: "#008000",
-                label: "Right"
-            },
-            {
-                value: userData["questionsWrong"],
-                color: "red",
-                highlight: "#e50000",
-                label: "Wrong"
-            }];
+        var doughnutData = {
+            datasets: [{
+                data: [userData["questionsRight"], userData["questionsWrong"]],
+                backgroundColor: ["#30a5ff", "#f9243f"]
+            }],
+            labels: [
+                'Right',
+                'Wrong'
+            ],
+        };
 
-        document.getElementById("currentScore").innerHTML = "Current Score: " + userData["questionsRight"] + " / " + (userData["currentQuestion"] - 1);
-        var chart3 = document.getElementById("doughnut-chart").getContext("2d");
-        window.myDoughnut = new Chart(chart3).Doughnut(doughnutData, {responsive : true
+        var doughnutDataEmpty = {
+            datasets: [{
+                data: [1, 1],
+                backgroundColor: ["#30a5ff", "#f9243f"]
+            }],
+            labels: [
+                'None',
+                'None'
+            ],
+        };
+
+        var options = {
+            layout: {
+                padding: {
+                    bottom: 20
+                }
+            },
+
+            legend: {
+                display: false,
+                reverse: true,
+                position: 'bottom',
+                labels: {
+                    // This more specific font property overrides the global property
+                    fontColor: 'black',
+                    fontFamily: 'Avenir Next'
+
+                }
+            },
+
+
+        };
+        var finalData = {}
+        if (userData["currentQuestion"] == 1) {
+            document.getElementById("currentScore").innerHTML = "No Questions Answered Yet";
+            finalData = doughnutDataEmpty;
+        } else {
+            document.getElementById("currentScore").innerHTML = "Current Score: " + userData["questionsRight"] + " / " + (userData["currentQuestion"] - 1);
+            finalData = doughnutData;
+        }
+
+        var ctx = document.getElementById("doughnut-chart").getContext("2d");
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: finalData,
+            options: options
         });
+
     }
 
 
