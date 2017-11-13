@@ -223,15 +223,28 @@
         }
 
         var div = document.getElementById('q');
-        for (var i = 1; i < 101; i++) {
+        for (var i = 0; i < 100; i++) {
+            var userAnswer = userData['history'].charAt(i);
+            var actualAnswer = rightAnswers.charAt(i);
 
             var btn = document.createElement('button');
-            var txt = document.createTextNode(String(i));
+            var txt = document.createTextNode(String(i+1));
 
             btn.appendChild(txt);
             btn.setAttribute('type', 'button');
             btn.setAttribute('id', "button"+i);
             btn.setAttribute('class', 'questionButton');
+
+            if (userAnswer == actualAnswer) {
+                btn.style.backgroundColor = '#29AB87'
+            } else {
+                if (userAnswer == 'E') {
+                    btn.style.backgroundColor = '#C0C0C0'
+                } else {
+                    btn.style.backgroundColor = '#f9243f'
+                }
+            }
+
             div.appendChild(btn);
         }
     });
@@ -240,6 +253,7 @@
 
 <script type="text/javascript">
     var testData;
+    var rightAnswers = "";
     var userData;
     var questionData;
     var rotate = true;
@@ -265,6 +279,10 @@
         }).then(function (data) {
             console.log(data);
             testData = data["values"];
+            for (var i = 0; i < testData.length; i++) {
+                rightAnswers += testData[i][6];
+            }
+            console.log(rightAnswers);
             getUserData(testID);
         }).catch(function () {
             console.log("Didn't work. Figure out why.");

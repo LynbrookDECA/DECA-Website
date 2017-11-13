@@ -60,13 +60,14 @@
     height: 35px;
     width: 35px;
     outline: none;
+    color: white;
 }
 
 #button1 {
     margin-top: 15px;
 }
 
-#button100 {
+#button99 {
     margin-bottom: 15px;
 }
 
