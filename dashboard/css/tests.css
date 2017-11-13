@@ -1,8 +1,22 @@
 button {
-    height: 40px;
-    width: 100px;
     background-color: white;
-    border: 2px black solid;
+    border: 1px black solid !important;
     border-radius: 10px;
     margin: 10px;
+    outline: none;
+    font-family: "Montserrat";
+    font-size: 16px;
+    color: black;
+}
+
+button .glyphicon {
+    font-size: 25px;
+}
+
+.icdc {
+    color: red;
+}
+
+.district {
+    color: green;
 }

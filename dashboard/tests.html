@@ -14,6 +14,8 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+
     <script src="js/respond.min.js"></script>
     <![endif]-->
 
@@ -152,10 +154,11 @@
 
 
     <div class="col-md-6" style = "width:100%">
-        <button class="btn btn-secondary" type="button" aria-expanded="false" onclick="tester(1068)">1068</button>
-        <button class="btn btn-secondary" type="button" aria-expanded="false">2011</button>
-        <button class="btn btn-secondary" type="button" aria-expanded="false">2010</button>
-        <button class="btn btn-secondary" type="button" aria-expanded="false">1020</button>
+        <button class="btn btn-secondary" type="button" aria-expanded="false" onclick="tester(1020)"><span class="glyphicon glyphicon-briefcase district"></span> <br>Principles District <br> <b>2010</b> </button>
+        <button class="btn btn-secondary" type="button" onclick="tester(1068)"><span class="glyphicon glyphicon-briefcase district"></span> <br>Principles District <br> <b>2013</b> </button>
+        <button class="btn btn-secondary" type="button" aria-expanded="false" onclick="tester(2010)"><span class="glyphicon glyphicon-briefcase icdc"></span> <br>Principles ICDC <br> <b>2010</b> </button>
+        <button class="btn btn-secondary" type="button" aria-expanded="false" onclick="tester(2011)"><span class="glyphicon glyphicon-briefcase icdc"></span> <br>Principles ICDC <br> <b>2011</b> </button>
+
     </div><!-- /.col-->
 
 
@@ -166,7 +169,7 @@
     function tester(num){
         window.location.href = "tester.html?testID=" + num;
 
-    }
+    }z
 
 </script>
 
