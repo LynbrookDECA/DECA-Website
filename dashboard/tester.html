@@ -216,7 +216,15 @@
 </script>
 
 <script>
+
+    function disableHistory(bool) {
+        document.getElementById('allQ').disabled = bool;
+        resetTester();
+    }
+
     $('#allQ').click(function () {
+
+        disableHistory(true);
         var qObjects = document.getElementsByClassName('qbox');
         for (var i = 0; i < qObjects.length; i++) {
             qObjects[i].hidden = true;
@@ -227,19 +235,31 @@
             var userAnswer = userData['history'].charAt(i);
             var actualAnswer = rightAnswers.charAt(i);
 
-            var btn = document.createElement('button');
-            var txt = document.createTextNode(String(i+1));
+            var btn;
 
-            btn.appendChild(txt);
-            btn.setAttribute('type', 'button');
-            btn.setAttribute('id', "button"+i);
-            btn.setAttribute('class', 'questionButton');
+            if (historyCreated == false) {
+
+                btn = document.createElement('button');
+                var txt = document.createTextNode(String(i + 1));
+                btn.appendChild(txt);
+                btn.setAttribute('type', 'button');
+                btn.setAttribute('id', "" + i);
+                btn.setAttribute('onclick', "questionClick(this.getAttribute('id'))");
+                btn.setAttribute('class', 'questionButton button' + i);
+
+            } else {
+                btn = document.getElementById(i.toString());
+            }
 
             if (userAnswer == actualAnswer) {
                 btn.style.backgroundColor = '#29AB87'
             } else {
                 if (userAnswer == 'E') {
-                    btn.style.backgroundColor = '#C0C0C0'
+                    btn.style.backgroundColor = '#ffb53e';
+                    if (i != userData['currentQuestion'] - 1) {
+                        btn.disabled = true;
+                        btn.style.backgroundColor = '#C0C0C0';
+                    }
                 } else {
                     btn.style.backgroundColor = '#f9243f'
                 }
@@ -248,6 +268,26 @@
             div.appendChild(btn);
         }
     });
+
+    function questionClick(questionNum) {
+        if (parseInt(questionNum)+1 == userData['currentQuestion']) {
+            var qObjects = document.getElementsByClassName('qbox');
+            var bObjects = document.getElementsByClassName('questionButton');
+            for (var i = 0; i < bObjects.length; i++) {
+                bObjects[i].hidden = true;
+            }
+
+            for (var i = 0; i < qObjects.length; i++) {
+                qObjects[i].hidden = false;
+                disableHistory(false);
+                resetTester();
+                updateQuestion(userData['currentQuestion'])
+
+            }
+        }
+
+    }
+
 </script>
 
 
@@ -256,7 +296,7 @@
     var rightAnswers = "";
     var userData;
     var questionData;
-    var rotate = true;
+    var historyCreated = false;
 
     //Get TestID from URL
     var url_string = window.location.href;
