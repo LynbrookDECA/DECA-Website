@@ -466,6 +466,7 @@
             'history': "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
         };
         firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update(userData);
+        questionClick(0);
         updateQuestion(userData['currentQuestion']);
         disableHistory(false);
         makeDoughnutChart();
