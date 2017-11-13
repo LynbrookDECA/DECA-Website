@@ -52,6 +52,19 @@
     outline: none;
 }
 
+#restart {
+
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 3px;
+    padding: 5px 30px;
+    font-family: 'Avenir Next';
+    margin-left: 5px;
+    margin-top: 20px;
+    outline: none;
+}
+
+
 .questionButton {
     background-color: white;
     border: 1px black solid;

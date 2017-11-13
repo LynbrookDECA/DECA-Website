@@ -175,6 +175,7 @@
 
             <div class="col-md-3">
                 <button id="allQ" >History</button>
+                <button id="restart" onclick="restartTest()">Restart</button>
             </div>
 
 
@@ -272,31 +273,21 @@
 
     //questionNum = 0-99
     function questionClick(questionNum) {
-        if (parseInt(questionNum)+1 == userData['currentQuestion']) {
+        var qObjects = document.getElementsByClassName('qbox');
+        var bObjects = document.getElementsByClassName('questionButton');
+        for (var i = 0; i < bObjects.length; i++) {
+            bObjects[i].hidden = true;
+        }
+        for (var i = 0; i < qObjects.length; i++) {
+            qObjects[i].hidden = false;
+        }
+        disableHistory(false);
+        resetTester();
 
+        if (parseInt(questionNum)+1 == userData['currentQuestion']) {
             document.getElementById('next').disabled = false;
-            var qObjects = document.getElementsByClassName('qbox');
-            var bObjects = document.getElementsByClassName('questionButton');
-            for (var i = 0; i < bObjects.length; i++) {
-                bObjects[i].hidden = true;
-            }
-            for (var i = 0; i < qObjects.length; i++) {
-                qObjects[i].hidden = false;
-            }
-            disableHistory(false);
-            resetTester();
             updateQuestion(userData['currentQuestion'])
         } else {
-            var qObjects = document.getElementsByClassName('qbox');
-            var bObjects = document.getElementsByClassName('questionButton');
-            for (var i = 0; i < bObjects.length; i++) {
-                bObjects[i].hidden = true;
-            }
-            for (var i = 0; i < qObjects.length; i++) {
-                qObjects[i].hidden = false;
-            }
-            disableHistory(false);
-            resetTester();
             updateQuestion(parseInt(questionNum)+1);
             checkAnswer((userData['history'].charAt(questionNum)), false);
         }
@@ -468,8 +459,20 @@
         }
     }
 
-    function makeDoughnutChart() {
+    function restartTest() {
+        userData = {'currentQuestion': 1,
+            'questionsRight': 0,
+            'questionsWrong': 0,
+            'history': "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+        };
+        firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update(userData);
+        updateQuestion(userData['currentQuestion']);
+        disableHistory(false);
+        makeDoughnutChart();
 
+    }
+
+    function makeDoughnutChart() {
         var doughnutData = {
             datasets: [{
                 data: [userData["questionsRight"], userData["questionsWrong"]],
@@ -480,7 +483,6 @@
                 'Wrong'
             ],
         };
-
         var doughnutDataEmpty = {
             datasets: [{
                 data: [1, 1],
@@ -491,14 +493,12 @@
                 'None'
             ],
         };
-
         var options = {
             layout: {
                 padding: {
                     bottom: 20
                 }
             },
-
             legend: {
                 display: false,
                 reverse: true,
@@ -507,11 +507,8 @@
                     // This more specific font property overrides the global property
                     fontColor: 'black',
                     fontFamily: 'Avenir Next'
-
                 }
             },
-
-
         };
         var finalData = {}
         if (userData["currentQuestion"] == 1) {
@@ -521,7 +518,6 @@
             document.getElementById("currentScore").innerHTML = "Current Score: " + userData["questionsRight"] + " / " + (userData["currentQuestion"] - 1);
             finalData = doughnutData;
         }
-
         var ctx = document.getElementById("doughnut-chart").getContext("2d");
         var myDoughnutChart = new Chart(ctx, {
             type: 'doughnut',
