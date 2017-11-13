@@ -155,12 +155,13 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-7 col-md-offset-1 question" style="background-color: white; ">
-                <p id="question"> Loading... Refresh if nothing shows up. </p>
-                <button class="option" id="A" onclick="checkAnswer('A')"> Loading... </button>
-                <button class="option" id="B" onclick="checkAnswer('B')"> Loading... </button>
-                <button class="option" id="C" onclick="checkAnswer('C')"> Loading... </button>
-                <button class="option" id="D" onclick="checkAnswer('D')"> Loading... </button>
+            <div class="col-md-7 col-md-offset-1 question" id="q" style="background-color: white; ">
+                <p class="qbox" id="question"> Loading... Refresh if nothing shows up. </p>
+                <button class="option qbox" id="A" onclick="checkAnswer('A')"> Loading... </button>
+                <button class="option qbox" id="B" onclick="checkAnswer('B')"> Loading... </button>
+                <button class="option qbox" id="C" onclick="checkAnswer('C')"> Loading... </button>
+                <button class="option qbox" id="D" onclick="checkAnswer('D')"> Loading... </button>
+
             </div>
 
 
@@ -169,8 +170,11 @@
                 <div id="chart" style="width:60%; margin-left: 20%;">
                     <canvas class="chart" id="doughnut-chart" ></canvas>
                 </div>
-                    <p id="currentScore"> Current Score: </p>
+                <p id="currentScore"> Current Score: </p>
+            </div>
 
+            <div class="col-md-3">
+                <button id="allQ" >History</button>
             </div>
 
 
@@ -188,7 +192,7 @@
 
 </div>
 
-<script src="js/jquery-1.11.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src = "js/dashboard-parse.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -212,13 +216,27 @@
 </script>
 
 <script>
-    function setChart() {
-        var q = document.getElementById('question');
-        var chart = document.getElementById('pan');
-        chart.style.width = q.style.height;
-        alert(q.style.height);
+    $('#allQ').click(function () {
+        var qObjects = document.getElementsByClassName('qbox');
+        for (var i = 0; i < qObjects.length; i++) {
+            qObjects[i].hidden = true;
+        }
 
+        var div = document.getElementById('q');
+        for (var i = 1; i < 101; i++) {
+
+            var btn = document.createElement('button');
+            var txt = document.createTextNode(String(i));
+
+            btn.appendChild(txt);
+            btn.setAttribute('type', 'button');
+            btn.setAttribute('id', "button"+i);
+            btn.setAttribute('class', 'questionButton');
+            div.appendChild(btn);
+        }
+    });
 </script>
+
 
 <script type="text/javascript">
     var testData;
@@ -232,6 +250,11 @@
     var testID = url.searchParams.get("testID");
 
     getTestData(testID);
+
+    // String function to replace character at particular index
+    String.prototype.replaceAt=function(index, replacement) {
+        return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+    }
 
     //Get the TestData
     function getTestData() {
@@ -255,22 +278,25 @@
 
                     if (snapshot.val()) {
                         console.log("exists in database");
-                        var data = {
+                        userData = {
                             'currentQuestion': snapshot.val().currentQuestion,
                             'questionsRight': snapshot.val().questionsRight,
-                            'questionsWrong': snapshot.val().questionsWrong
+                            'questionsWrong': snapshot.val().questionsWrong,
+                            'history': snapshot.val().history,
                         };
-                        userData = data;
                         updateQuestion(snapshot.val().currentQuestion);
                         makeDoughnutChart();
 
                     } else {
                         console.log("Doesn't exist in database");
-                        firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update({
-                            currentQuestion: 1,
-                            questionsRight: 0,
-                            questionsWrong: 0
-                        })
+                        userData = {'currentQuestion': 1,
+                            'questionsRight': 0,
+                            'questionsWrong': 0,
+                            'history': "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+                        };
+                        firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update(userData);
+                        updateQuestion(userData['currentQuestion']);
+                        makeDoughnutChart();
                     }
 
 
@@ -308,13 +334,13 @@
                 result.style.color = "#29AB87";
                 resultText.innerHTML = "Congrats! You got the right answer!";
                 document.getElementById(selectedAnswer).style.backgroundColor = "#29AB87";
-                updateUserData(true);
+                updateUserData(true, selectedAnswer);
             } else {
                 result.style.color = "#29AB87";
                 resultText.innerHTML = "Whoops! The correct answer was " + questionData[6];
                 document.getElementById(selectedAnswer).style.backgroundColor = "#f9243f";
                 document.getElementById(questionData[6]).style.backgroundColor = "#00A86B";
-                updateUserData(false);
+                updateUserData(false, selectedAnswer);
             }
             makeDoughnutChart();
 
@@ -322,13 +348,14 @@
         }
     }
 
-    function updateUserData(result) {
-        userData['currentQuestion'] = userData['currentQuestion'] + 1;
+    function updateUserData(result, ans) {
         if (result) {
             userData['questionsRight'] = userData['questionsRight'] + 1;
         } else {
             userData['questionsWrong'] = userData['questionsWrong'] + 1;
         }
+        userData['history'] = userData['history'].replaceAt(userData['currentQuestion']-1, ans);
+        userData['currentQuestion'] = userData['currentQuestion'] + 1;
         updateFirebase();
     }
 
@@ -336,7 +363,8 @@
         firebase.database().ref('/userData/' + globalUserID + "/tests/" + testID).update({
             currentQuestion: userData['currentQuestion'],
             questionsRight: userData['questionsRight'],
-            questionsWrong: userData['questionsWrong']
+            questionsWrong: userData['questionsWrong'],
+            history: userData['history']
         })
     }
 
