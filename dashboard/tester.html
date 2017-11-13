@@ -157,10 +157,10 @@
         <div class="row">
             <div class="col-md-7 col-md-offset-1 question" id="q" style="background-color: white; ">
                 <p class="qbox" id="question"> Loading... Refresh if nothing shows up. </p>
-                <button class="option qbox" id="A" onclick="checkAnswer('A')"> Loading... </button>
-                <button class="option qbox" id="B" onclick="checkAnswer('B')"> Loading... </button>
-                <button class="option qbox" id="C" onclick="checkAnswer('C')"> Loading... </button>
-                <button class="option qbox" id="D" onclick="checkAnswer('D')"> Loading... </button>
+                <button class="option qbox" id="A" onclick="checkAnswer('A', true)"> Loading... </button>
+                <button class="option qbox" id="B" onclick="checkAnswer('B', true)"> Loading... </button>
+                <button class="option qbox" id="C" onclick="checkAnswer('C', true)"> Loading... </button>
+                <button class="option qbox" id="D" onclick="checkAnswer('D', true)"> Loading... </button>
 
             </div>
 
@@ -219,11 +219,12 @@
 
     function disableHistory(bool) {
         document.getElementById('allQ').disabled = bool;
+
         resetTester();
     }
 
     $('#allQ').click(function () {
-
+        document.getElementById('next').disabled = true;
         disableHistory(true);
         var qObjects = document.getElementsByClassName('qbox');
         for (var i = 0; i < qObjects.length; i++) {
@@ -269,21 +270,35 @@
         }
     });
 
+    //questionNum = 0-99
     function questionClick(questionNum) {
         if (parseInt(questionNum)+1 == userData['currentQuestion']) {
+
+            document.getElementById('next').disabled = false;
             var qObjects = document.getElementsByClassName('qbox');
             var bObjects = document.getElementsByClassName('questionButton');
             for (var i = 0; i < bObjects.length; i++) {
                 bObjects[i].hidden = true;
             }
-
             for (var i = 0; i < qObjects.length; i++) {
                 qObjects[i].hidden = false;
-                disableHistory(false);
-                resetTester();
-                updateQuestion(userData['currentQuestion'])
-
             }
+            disableHistory(false);
+            resetTester();
+            updateQuestion(userData['currentQuestion'])
+        } else {
+            var qObjects = document.getElementsByClassName('qbox');
+            var bObjects = document.getElementsByClassName('questionButton');
+            for (var i = 0; i < bObjects.length; i++) {
+                bObjects[i].hidden = true;
+            }
+            for (var i = 0; i < qObjects.length; i++) {
+                qObjects[i].hidden = false;
+            }
+            disableHistory(false);
+            resetTester();
+            updateQuestion(parseInt(questionNum)+1);
+            checkAnswer((userData['history'].charAt(questionNum)), false);
         }
 
     }
@@ -374,7 +389,7 @@
     }
 
 
-    function checkAnswer(selectedAnswer) {
+    function checkAnswer(selectedAnswer, update) {
         if (document.getElementById("result").style.display === 'block') {
             console.log("Buttons are disabled")
         } else {
@@ -392,17 +407,20 @@
                 result.style.color = "#29AB87";
                 resultText.innerHTML = "Congrats! You got the right answer!";
                 document.getElementById(selectedAnswer).style.backgroundColor = "#29AB87";
-                updateUserData(true, selectedAnswer);
+                if (update) {
+                    updateUserData(true, selectedAnswer);
+                    makeDoughnutChart();
+                }
             } else {
                 result.style.color = "#29AB87";
                 resultText.innerHTML = "Whoops! The correct answer was " + questionData[6];
                 document.getElementById(selectedAnswer).style.backgroundColor = "#f9243f";
                 document.getElementById(questionData[6]).style.backgroundColor = "#00A86B";
-                updateUserData(false, selectedAnswer);
+                if (update) {
+                    updateUserData(false, selectedAnswer);
+                    makeDoughnutChart();
+                }
             }
-            makeDoughnutChart();
-
-
         }
     }
 
