@@ -10,9 +10,11 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:300|Raleway:300|Lato');
+
 .question {
     margin-top: 20px;
-    font-family: "Avenir Next";
+    font-family: "Raleway";
     border: solid black 1px;
     border-radius: 5px;
 }
@@ -26,7 +28,7 @@
 
 .doughnutChart #title {
     color: black;
-    font-family: "Avenir Next";
+    font-family: "Raleway";
     font-weight: 300;
     font-size: 18px;
     text-align: center;
@@ -37,7 +39,7 @@
 #currentScore {
     color: black;
     text-align: center;
-    font-family: "Avenir Next";
+    font-family: "Raleway";
 }
 
 #allQ {
@@ -46,10 +48,11 @@
     border: 1px black solid;
     border-radius: 3px;
     padding: 5px 30px;
-    font-family: 'Avenir Next';
+    font-family: 'Raleway';
     margin-left: 5px;
     margin-top: 20px;
     outline: none;
+    color: black;
 }
 
 #restart {
@@ -58,10 +61,11 @@
     border: 1px black solid;
     border-radius: 3px;
     padding: 5px 30px;
-    font-family: 'Avenir Next';
+    font-family: 'Raleway';
     margin-left: 5px;
     margin-top: 20px;
     outline: none;
+    color: black;
 }
 
 
@@ -74,6 +78,7 @@
     width: 35px;
     outline: none;
     color: white;
+    font-family: 'Lato';
 }
 
 .button0 {
@@ -111,7 +116,7 @@
     margin-top: 20px;
     background-color: white;
     border: 1px black solid;
-    font-family: "Avenir Next";
+    font-family: "Raleway";
     height: 50px;
     display: none;
 }
@@ -128,18 +133,19 @@
     border: 1px black solid;
     border-radius: 3px;
     padding: 5px 30px;
-    font-family: 'Avenir Next';
+    font-family: 'Raleway';
     margin-top: 20px;
     margin-bottom: 40px;
     outline: none;
     position:absolute;
     right: 0;
+    color: black;
 }
 
 .panel p {
     text-align: center;
     color: black;
-    font-family:"Avenir Next";
+    font-family:"Raleway";
     font-size: 16px;
 }
 

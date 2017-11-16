@@ -3,6 +3,7 @@ Lumino Admin Bootstrap Template
 Version 1.0
 */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:300|Raleway:300|Lato');
 
 /*Global Styles*/
 
@@ -175,11 +176,13 @@ a, a:hover, a:focus {
 
 h1, h2, h3, h4, h5, h6 {
 	color: black;
+
 }
 
 h1 {
 	font-weight: 300;
 	font-size: 40px;
+	font-family: Raleway;
 }
 
 h2 {
@@ -458,6 +461,7 @@ a.bg-danger:hover {
 	letter-spacing: 0.025em;
 	height: 66px;
 	line-height: 45px;
+	font-family: Raleway;
 }
 
 .panel-default .panel-heading {
