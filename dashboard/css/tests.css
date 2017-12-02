@@ -9,6 +9,8 @@ button {
     font-family: "Montserrat";
     font-size: 16px;
     color: black;
+    width: 175px;
+    height: 100px;
 }
 
 button .glyphicon {
