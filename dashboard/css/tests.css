@@ -17,10 +17,17 @@ button .glyphicon {
     font-size: 25px;
 }
 
+.district {
+    color: green;
+}
+
+.states {
+	color: #F3CD05;
+}
+
 .icdc {
     color: red;
 }
 
-.district {
-    color: green;
-}
+
+
