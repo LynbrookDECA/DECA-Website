@@ -408,7 +408,7 @@ a:hover {
 
 .background-conferences
 {
-  background-image: url("../img/conferences-top.jpg");
+  background-image: url("../data1/images/newPics/2018states.jpg");
 }
 
 
@@ -709,21 +709,33 @@ button:hover {
     transition:opacity 3s ease-in-out;
 }
 .background-2 {
-    background-image: url("../img/cd-background-2.jpg");
+  background-image: url("../data1/images/newPics/2018pres.jpg");
 }
 .background-3 {
-    background-image: url("../img/cd-background-main.jpg");
+  background-image: url("../data1/images/newPics/2018sv.jpg");
 }
 .background-4 {
-    background-image: url("../img/cd-background-4.jpg");
+  background-image: url("../data1/images/img/cd-background-4.jpg");
 }
 .background-5 {
-    background-image: url("../img/culture.jpg");
+  background-image: url("../data1/images/newPics/2018icdc.jpg");
 }
 
 .background-about
 {
-  background-image: url("../img/officers.jpg");
+  background-image: url("../data1/images/officers.jpg");
+}
+
+.background-aboutUs {
+  background-image: url("../data1/images/2018officers.jpg");
+}
+
+.background-events {
+  background-image: url("../data1/images/newPics/incubator.jpg");
+}
+
+.background-eventsHtml {
+  background-image: url("../data1/images/newPics/incubator.jpg");
 }
 
 .background-alums
